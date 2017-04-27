@@ -1,0 +1,116 @@
+<extend name="./Application/Admin/View/base.html" />
+<block name="title">
+    <title>分类添加</title>
+</block>
+<block name="extends-style">
+</block>
+<block name="content">
+    <!--分类添加框 start-->
+    <div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main">
+        <div class="row">
+            <ol class="breadcrumb">
+                <li><a href="#"><span class="glyphicon glyphicon-home"></span></a></li>
+                <li class="active">分类管理</li>
+            </ol>
+        </div><!--/.row-->
+
+        <div class="row">
+            <div class="col-md-12">
+                <h1 class="page-header">分类管理</h1>
+            </div>
+        </div><!--/.row-->
+
+
+        <div class="row">
+            <form name="category_info" role="form">
+                <div class="category-input">
+                    <div class="col-md-6 col-md-offset-3">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">{$cateInfo['title'] | default="分类添加"} <a class="back-list" href="{:U('Category/index')}">[返回分类列表]</a></div>
+
+                            <if condition="$cateInfo['title'] eq '分类添加'">
+                                <notempty name="cateInfo['name']">
+                                    <p class="parent-cate">[上级分类是：<span>{$cateInfo['name']}</span>]</p>
+                                </notempty>
+                            </if>
+                            <empty name="cateInfo['name']">
+                                <p class="parent-cate">[添加顶级分类]</p>
+                            </empty>
+
+                            <div class="panel-body">
+                                <div class="col-md-12 input-data">
+                                    <div class="input-msg">
+                                        <div class="input-group category-attr">
+                                            <label class="input-group-addon" for="category_name">分类名称：</label>
+                                            <input class="form-control input-name not-null" id="category_name" name="category_name" type="text"
+                                                   placeholder="分类名称"/>
+                                            <!--<span class="alert-msg"></span>-->
+                                            <span class="glyphicon glyphicon-ok form-control-feedback input-correct"></span>
+                                            <div class="alert-msg" style="display: none">
+                                                <div class="up"></div>
+                                                <div class="msg-show"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="input-msg">
+                                        <div class="input-group category-attr">
+                                            <label class="input-group-addon" for="category_sort">分类排序：</label>
+                                            <input class="form-control category_sort not-null is-number" id="category_sort" name="category_sort"
+                                                   type="text" placeholder="分类排序"/>
+                                            <span class="glyphicon glyphicon-ok form-control-feedback input-correct"></span>
+                                            <div class="alert-msg" style="display: none">
+                                                <div class="up"></div>
+                                                <div class="msg-show"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <input type="hidden" name="category_pid" id="category_pid" value="{:I('get.id','','intval')}"/>
+                                <hr/>
+                            </div>
+                        </div><!-- /.col-->
+                    </div>
+                </div>
+                <div class="form-group form-btn">
+                    <button id="btn-upload" type="submit" class="btn btn-success btn-block" onclick="return addCate();">提交
+                    </button>
+                </div>
+            </form>
+            <!-- /.row -->
+        </div><!--/.main-->
+
+
+        <!--模态框 start-->
+        <div class="modal fade" id="submit-msg">
+            <div class="modal-dialog  modal-sm">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">关闭</span></button>
+                        <h3 class="modal-title">添加信息提示</h3>
+                    </div>
+                    <div class="modal-body">
+                        <div class="response-msg"></div>
+                    </div>
+                    <!--  <div class="modal-footer">
+                          <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                      </div>-->
+                </div><!-- /.modal-content -->
+            </div><!-- /.modal-dialog -->
+        </div><!-- /.modal -->
+        <!--模态框 end-->
+    </div>
+    <!--分类添加框 end-->
+</block>
+<block name="js">
+    <script src="__PUBLIC__/js/admin/cateVertify.js"></script>
+    <script>
+
+        if("{$cateInfo['title']}" == "分类修改"){
+            $('#category_name').val("{$cateInfo['name']}");
+            $('#category_sort').val("{$cateInfo['sort']}");
+            var ajaxUrl ='{:U("Category/updateCate")}';
+        }else{
+            var ajaxUrl ='{:U("Category/addCate")}';
+        }
+    </script>
+</block>

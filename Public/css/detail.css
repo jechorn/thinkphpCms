@@ -1,0 +1,632 @@
+/**===============================================================
+| Author     :  "王志传"
+| Author URL :  http://www.jechorn.cn
+|
+| Email      : <jechorn@163.com>
+| Description:
+| CreateTime : 2016/12/27-3:17
+|
+| Copyright (c) 2016-2019, www.jechorn.cn. All Rights Reserved.
+ ================================================================== */
+
+@charset "utf-8";
+/*start 备注*/
+/*====================================================
+	备注
+====================================================*/
+.list-margin{
+    padding-left: 20px;
+    padding-right: 20px;
+    background: #ffffff;
+
+}
+.right-margin{
+    padding-left: 10px;
+    padding-right: 10px;
+    background: #ffffff;
+}
+.article-content {
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+.content {
+    padding: 50px 0px;
+    margin: 0 auto;
+    padding-top: 40px;
+}
+
+.content-title {
+    display: block;
+    overflow: hidden;
+    margin-bottom: 10px;
+}
+
+.mscc-title {
+    line-height: 45px;
+    font-weight: bold;
+    display: block;
+}
+
+.mscc-title a {
+    font-size: 30px;
+    color: #414141;
+}
+
+.mscc-address {
+    color: #a2a2a2;
+    margin-top: 8px;
+    font-style: normal;
+    float: left;
+    margin-bottom: 10px;
+}
+
+.mscc-address span {
+    margin-right: 20px;
+
+}
+
+.content .content-text a {
+    text-align: center;
+}
+
+.content .content-text img {
+    vertical-align: middle;
+    text-align: center;
+    overflow-y: hidden;
+    display: none;
+    margin:auto;
+
+}
+
+.content .content-text p, .content .content-text div {
+    text-indent: 34px;
+    clear: both;
+    width: auto;
+    padding: 8px 0;
+    font-size: 17px;
+    line-height: 38px;
+    color: #555555;
+    font-family: "Microsoft Yahei", "冬青黑体简体中文 w3";
+
+}
+
+.content .content-text h2 {
+    display: inline-block;
+    height: 40px;
+    line-height: 40px;
+    background: #d6623d;
+    padding-left: 32px;
+    padding-right: 40px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #fff;
+    border-radius: 2px;
+    margin-left: -15px;
+}
+
+
+.post-like {
+    margin: 0 auto;
+    width: 90px;
+    height: 35px;
+    border-radius: 2px;
+    background: #d6623d;
+    margin-top: 20px;
+}
+
+.post-like .favorite {
+    position: relative;
+    color: #FFFFFF;
+    font-size: 12px;
+    text-decoration: none;
+    outline: none;
+    width: 90px;
+    height: 35px;
+    display: block;
+    cursor: pointer;
+    /*background: url(../images/zan.png) no-repeat;
+    background-size: 20px auto;
+    background-position: 13px 8px;*/
+}
+
+.post-like .fa-thumbs-o-up {
+    font-size: 25px;
+    line-height: 35px;
+    margin-left: 10px;
+}
+
+.count {
+    float: right;
+    /*margin-left: 40px;*/
+    margin-right: 10px;
+    display: block;
+    height: 35px;
+    line-height: 35px;
+    width: 40px;
+    color: #fff;
+    font-size: 17px;
+    text-align: center;
+}
+
+.content-text blockquote, .content-text ol, .content-text ul {
+    padding: 5px 25px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    background: #fdf7e9;
+    border-radius: 2px;
+    border-left: none;
+}
+
+.content-text ol li, .content-text ul li {
+    clear: both;
+    width: auto;
+    padding: 8px 0;
+    font-size: 17px;
+    line-height: 25px;
+    color: #555555;
+    font-family: "Microsoft Yahei", "冬青黑体简体中文 w3";
+}
+
+.zhuan {
+    padding: 30px 0px;
+    margin-top: 50px;
+    background: #FAFAFA;
+    font-size: 17px;
+    padding-left: 30px;
+    margin-left: -15px;
+    line-height: 34px;
+}
+
+.xianguantitle {
+    line-height: 25px;
+    font-size: 17px;
+    color: #000;
+    font-weight: bold;
+    padding: 5px 15px;
+}
+.xiangguan {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.xiangguan .list-about {
+    padding: 15px 10px;
+}
+
+.xiangguan .list-about a {
+    display: block;
+    width: 100%;
+    padding: 0px 0px;
+    color: #656565;
+    line-height: 24px;
+    text-decoration: none;
+
+}
+
+.xiangguan .list-about a.about-title {
+    padding: 5px 0px;
+
+}
+
+.xiangguan .list-about a:hover {
+    color: #d6623d;
+}
+
+.xiangguan .list-about img {
+    transition: all 0.5s ease-out;
+    display: none;
+}
+
+.xiangguan .list-about img:hover {
+    transform: scale(1.1, 1.1);
+
+}
+
+@media (max-width: 767px) {
+    .content {
+        padding: 20px 0px;
+        padding-top: 10px;
+    }
+    .content-title .mscc-title{
+        line-height: 25px;
+    }
+    .content-title .mscc-title a{
+        font-size: 16px;
+
+    }
+    .content .content-text h2{
+        font-size: 16px;
+        height: 30px;
+        line-height: 30px;
+    }
+    .content .content-text p, .content .content-text div {
+        font-size: 14px;
+        line-height: 28px;
+        padding: 0;
+    }
+    .list-margin{
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+    .right-margin{
+        padding-left: 2px;
+        padding-right: 2px;
+    }
+    .content-text ol li, .content-text ul li{
+        font-size: 15px;
+        line-height: 30px;
+    }
+
+}
+
+/*start left-btn-group*/
+/*====================================================
+	left-btn-group 评论、微信分享的样式
+====================================================*/
+#detail-content{
+    position: relative;
+}
+.left-btn-group {
+    z-index: 50;
+
+}
+.position-absolute{
+    position: absolute;
+    left: -60px;
+    top:30px;
+}
+.position-fixed{
+    position: fixed;
+}
+
+.left-btn-group ul {
+    list-style-type: none;
+}
+
+.left-btn-group ul li {
+    width: 60px;
+    height: 60px;
+    cursor: pointer;
+    background-color: #fafafa;
+    border-bottom: 1px solid #f0f0f0
+}
+
+.left-btn-group ul li:hover {
+    opacity: 1;
+}
+
+.left-btn-group ul li a {
+    text-align: center;
+    display: block;
+    padding-top: 12px;
+    position: relative;
+    z-index: 99;
+}
+
+.left-btn-group ul li:last-child {
+    border: none;
+}
+
+.left-btn-group ul li:before {
+    content: "";
+    position: absolute;
+    z-index: 0;
+    width: 60px;
+    height: 60px;
+    opacity: 0;
+    -webkit-transition: .5s cubic-bezier(.3, 0, 0, 1.3);
+    -moz-transition: .5s cubic-bezier(.3, 0, 0, 1.3);
+    -ms-transition: .5s cubic-bezier(.3, 0, 0, 1.3);
+    -o-transition: .5s cubic-bezier(.3, 0, 0, 1.3);
+    transition: .5s cubic-bezier(.3, 0, 0, 1.3);
+    -webkit-transform: scale(0, 0);
+    -moz-transform: scale(0, 0);
+    -ms-transform: scale(0, 0);
+    -o-transform: scale(0, 0);
+    transform: scale(0, 0);
+}
+
+.left-btn-group ul li:hover:before {
+    transform: scale(1, 1);
+    opacity: 1;
+}
+
+.left-btn-group ul li a i {
+    font-size: 37px;
+    color: #999999;
+
+}
+
+.left-btn-group ul li:hover a i {
+    color: #fff;
+}
+
+.left-btn-group ul li:nth-child(1):hover:before {
+    background-color: #1ec354;
+
+}
+
+.left-btn-group ul li:nth-child(2):hover:before {
+    background-color: #17a9ff;
+
+}
+
+.left-btn-group ul li:nth-child(3):hover:before {
+    background-color: #f63756;
+
+}
+.left-btn-group ul li.wx-share{
+    position: relative;
+}
+.left-btn-group ul li.wx-share .pic-container{
+    top:-30px;
+    right: -160px;
+    width: 130px;
+    visibility: hidden;
+    opacity: 0;
+
+   /* display: none;*/
+}
+
+.left-btn-group ul li.wx-share .pic-container .triangle{
+    margin-top: 52px;
+    width: 0px;
+    height: 0px;
+    float: left;
+    border-top:8px solid transparent;
+    border-bottom:8px solid transparent;
+    border-right:8px solid #fff;
+}
+.left-btn-group ul li.wx-share:hover .pic-container{
+
+    /*display: block;*/
+    visibility: visible;
+    right: -136px;
+    opacity: 1;
+
+}
+.left-btn-group ul li.zan-favorite{
+    position: relative;
+}
+.left-btn-group ul li span.article-zan{
+    position: absolute;
+    top:4px;
+    right: 4px;
+    font-weight: bolder;
+    color: #fff;
+    display: block;
+    font-size: 15px;
+    z-index: 51;
+    opacity: 0;
+
+}
+.left-btn-group ul li .res-msg{
+    position: absolute;
+    bottom: 0;
+    text-align: center;
+    margin: 0 auto;
+    z-index: 99;
+    opacity: 0;
+    font-size: 12px;
+    color: #fff;
+    background: #000;
+    padding: 2px;
+    border-radius: 2px;
+
+}
+
+/*end left-btn-group*/
+
+
+/*start comment*/
+/*====================================================
+	.comment 类发表评论样式
+====================================================*/
+.comment{
+    padding: 10px 15px;
+    border-bottom: 2px #eee solid;
+    margin-bottom: 30px;
+    margin-top: 30px;
+}
+.comment .comment-title{
+    border-bottom: 1px #eee solid;
+    text-align: left;
+    width: 100%;
+    padding-bottom: 4px;
+    padding-left: 0;
+}
+.comment .comment-title span{
+    font-size: 20px;
+    color: #333;
+    border-bottom: 4px solid #f63756;
+}
+.comment .comment-content-not-login{
+    margin-top: 20px;
+    width: 100%;
+    height: 150px;
+    background: #eee;
+    border: 1px #999999 solid;
+    text-align: center;
+}
+.comment .comment-content-not-login span{
+    color: #bbb;
+    font-size: 20px;
+    margin-top: auto;
+    margin-bottom: auto;
+    line-height: 150px;
+
+}
+.comment .comment-content-not-login span a{
+    color: #333;
+    text-decoration: none;
+}
+.comment .comment-content-not-login span a:hover{
+    text-decoration: underline;
+}
+.comment .comment-content-login{
+    margin-top: 20px;
+    /*display: none;*/
+}
+.comment .comment-content-login textarea{
+    width: 100%;
+    height: 150px;
+    font-size: 16px;
+    color: #333;
+    line-height: 28px;
+    resize: none;
+    border: 1px #999999 solid;
+}
+.comment .btn-comment{
+    position: relative;
+    margin-top: 20px;
+
+
+}
+.comment .btn-comment .is-login-msg{
+    position: absolute;
+    top:-38px;
+    width: 30%;
+    border-radius: 2px;
+    background: #f63756;
+    padding: 10px;
+    color: #ffffff;
+    font-size: 16px;
+    text-align: center;
+    letter-spacing: 2px;
+    opacity: 0;
+}
+.comment .btn-comment .btn-submit{
+    background: #2f99ea;
+    border: none;
+    width: 30%;
+    font-size: 25px;
+    padding: 10px auto;
+    color: #ffffff;
+
+
+}
+#form-comment {
+    position: relative;
+}
+#form-comment .comment-alert-msg{
+    position: absolute;
+    /*width: 120px;*/
+    left: 50%;
+    top: 50%;
+    transform:translate(-50%,-50%);
+    -webkit-transform:translate(-50%,-50%);
+    -moz-transform: translate(-50%,-50%);
+    -o-transform: translate(-50%,-50%);
+    border-radius: 2px;
+    background: #f63756;
+    padding: 10px;
+    color: #ffffff;
+    font-size: 16px;
+    text-align: center;
+    letter-spacing: 2px;
+    opacity: 0;
+    animation-duration: 2s;    /*动画持续时间*/
+    animation-delay: 0s;    /*动画延迟时间*/
+}
+
+/*end comment*/
+
+/*start show-comments*/
+/*====================================================
+	.show-comments 类 评论展示模块
+====================================================*/
+.comment-show .empty{
+    text-align: center;
+    font-size: 18px;
+    color: #bbb;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+.show-comments,.comment-tabs{
+    padding: 15px 20px;
+    border-bottom: 1px #eee solid;
+}
+.comment-tabs{
+    overflow: auto;
+}
+.comment-title a{
+    float: left;
+    margin-right: 15px;
+    font-size: 18px;
+    color: #bbb;
+    text-decoration: none;
+
+}
+.comment-title a:first-child{
+    color: #1d1d1d;
+}
+.show-comments .comment-member-info{
+    overflow: auto;
+    line-height: 48px;
+    margin-bottom: 15px;
+}
+.show-comments .comment-member-info img{
+    border-radius: 50%;
+    border: 1px #eee solid;
+    width: 48px;
+    float: left;
+    margin-right: 30px;
+
+}
+.show-comments .comment-member-info span{
+    float: left;
+    margin-right: 30px;
+    font-size: 16px;
+    color: #1d1d1d;
+
+}
+.show-comments .comment-member-info span:last-child{
+    color: #bbb;
+}
+.show-comments span.comment-content{
+    display: block;
+    font-size: 14px;
+    line-height: 30px;
+    text-indent: 28px;
+    color: #555555;
+}
+.show-comments .comment-up span.thumb{
+    position: relative;
+    float: right;
+    font-size: 14px;
+    color: #bbb;
+    margin-right: 15px;
+}
+.show-comments .comment-up{
+    height: 18px;
+}
+.show-comments .comment-up span.thumb:hover{
+    cursor: pointer;
+}
+.show-comments .comment-up span.thumb i{
+    margin-right: 3px;
+}
+.toast-msg{
+    display: none;
+    position: absolute;
+    top:14px;
+    left: -40px;
+    width: 120px;
+    text-align: center;
+    color: #bbb;
+    padding: 2px;
+    border-radius: 4px;
+    z-index: 1000;
+}
+/*end show-comments*/
+
+
+
+
+
+
+
+
+
+

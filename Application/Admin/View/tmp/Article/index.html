@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>文章列表</title>
+
+    <link href="__PUBLIC__/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <link href="__PUBLIC__/FontAwesome-3.2.1/css/font-awesome.min.css" rel="stylesheet">
+    <!--[if IE 7]>
+    <link rel="stylesheet" href="__PUBLIC__/FontAwesome-3.2.1/css/font-awesome-ie7.min.css">
+    <![endif]-->
+    <link href="__PUBLIC__/css/admin/styles.css" rel="stylesheet">
+    <link href="__PUBLIC__/css/admin/article.list.css" rel="stylesheet">
+    <link href="__PUBLIC__/css/admin/x0popup.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/pagination.css">
+
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if Viewview the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="http://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+
+
+</head>
+
+<body>
+<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                    data-target="#sidebar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#"><span>后台</span>管理系统</a>
+            <ul class="user-menu">
+                <li class="dropdown pull-right">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span
+                            class="glyphicon glyphicon-user"></span>管理员<span class="caret"></span></a>
+                    <ul class="dropdown-menu" role="menu">
+                        <li><a href="#"><span class="glyphicon glyphicon-user"></span>属性</a></li>
+                        <li><a href="#"><span class="glyphicon glyphicon-cog"></span>设置</a></li>
+                        <li><a href="#"><span class="glyphicon glyphicon-log-out"></span>登出</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div><!-- /.container-fluid -->
+</nav>
+
+<div id="sidebar-collapse" class="col-sm-3 col-lg-2 sidebar">
+    <form role="search">
+        <div class="form-group">
+            <input type="text" class="form-control" placeholder="搜索">
+        </div>
+    </form>
+    <ul class="nav menu">
+        <li class="active"><a href="{:U('Index/index')}"><span class="glyphicon glyphicon-dashboard"></span>控制板</a></li>
+        <li><a href="{:U('System/add')}"><span class="glyphicon glyphicon-th"></span>系统设置</a></li>
+        <li class="parent ">
+            <a href="#">
+                <span class="glyphicon glyphicon-list"></span>轮播图设置<span data-toggle="collapse" href="#sub-item-2"
+                                                                         class="icon pull-right"><em
+                    class="glyphicon glyphicon-s glyphicon-plus"></em></span>
+            </a>
+            <ul class="children collapse" id="sub-item-2">
+                <li class="active">
+                    <a class="" href="{:U('Carousel/add')}">
+                        <span class="glyphicon glyphicon-share-alt"></span>轮播图添加
+                    </a>
+                </li>
+                <li>
+                    <a class="" href="{:U('Carousel/index')}">
+                        <span class="glyphicon glyphicon-share-alt"></span>轮播图列表
+                    </a>
+                </li>
+                <li>
+                    <a class="" href="{:U('Carousel/update')}">
+                        <span class="glyphicon glyphicon-share-alt"></span>轮播图修改
+                    </a>
+                </li>
+            </ul>
+        </li>
+        <li><a href="{:U('Link/add')}"><span class="glyphicon glyphicon-list-alt"></span>友情链接</a></li>
+        <li class="parent ">
+            <a href="#">
+                <span class="glyphicon glyphicon-list"></span>分类管理<span data-toggle="collapse" href="#sub-item-3"
+                                                                        class="icon pull-right"><em
+                    class="glyphicon glyphicon-s glyphicon-plus"></em></span>
+            </a>
+            <ul class="children collapse" id="sub-item-3">
+                <li class="active">
+                    <a class="" href="{:U('Category/add')}">
+                        <span class="glyphicon glyphicon-share-alt"></span>添加分类
+                    </a>
+                </li>
+                <li>
+                    <a class="" href="{:U('Category/index')}">
+                        <span class="glyphicon glyphicon-share-alt"></span>分类列表
+                    </a>
+                </li>
+            </ul>
+        </li>
+        <li><a href="comment.html"><span class="glyphicon glyphicon-info-sign"></span>评论列表</a></li>
+        <li class="parent ">
+            <a href="#">
+                <span class="glyphicon glyphicon-list"></span>文章管理<span data-toggle="collapse" href="#sub-item-1"
+                                                                        class="icon pull-right"><em
+                    class="glyphicon glyphicon-s glyphicon-plus"></em></span>
+            </a>
+            <ul class="children collapse" id="sub-item-1">
+                <li>
+                    <a class="" href="{:U('Article/add')}">
+                        <span class="glyphicon glyphicon-share-alt"></span>添加文章
+                    </a>
+                </li>
+                <li>
+                    <a class="" href="{:U('Article/add')}">
+                        <span class="glyphicon glyphicon-share-alt"></span>文章列表
+                    </a>
+                </li>
+                <li>
+                    <a class="" href="{:U('Article/add')}">
+                        <span class="glyphicon glyphicon-share-alt"></span>文章管理
+                    </a>
+                </li>
+            </ul>
+        </li>
+        <li role="presentation" class="divider"></li>
+        <li><a href="login.html"><span class="glyphicon glyphicon-user"></span>会员管理</a></li>
+    </ul>
+</div><!--/.sidebar-->
+
+<div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main">
+    <div class="row">
+        <ol class="breadcrumb">
+            <li><a href="#"><span class="glyphicon glyphicon-home"></span></a></li>
+            <li class="active">文章管理</li>
+        </ol>
+    </div><!--/.row-->
+
+    <div class="row">
+        <div class="col-md-12">
+            <h1 class="page-header">
+                <switch name="ACTION_NAME|strtolower">
+                    <case value="index">文章列表</case>
+                    <case value="trashlist">回收站</case>
+                </switch>
+            </h1>
+        </div>
+    </div><!--/.row-->
+
+    <div class="row">
+        <div class="col-md-12">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <switch name="ACTION_NAME|strtolower">
+                        <case value="index">文章列表</case>
+                        <case value="trashlist">回收站</case>
+                    </switch>
+                    <a class="back-list" href="{:U('Article/add')}">[文章添加]</a><a class="back-list" href="{$url}">[
+                        <switch name="ACTION_NAME|strtolower">
+                            <case value="index">回收站</case>
+                            <case value="trashlist">文章列表</case>
+                        </switch>
+                    ]</a>
+                </div>
+                <div class="panel-body">
+                    <div class="table-responsive">
+                        <table class="table table-hover table-bordered article-list">
+                            <tr>
+                                <th>编号</th>
+                                <th>标题</th>
+                                <th>标签</th>
+                                <th>时间</th>
+                                <th>点击率</th>
+                                <th>操作</th>
+                            </tr>
+                            <empty name="article">
+                                <tr>
+                                    <td colspan="6">
+                                        <h4>尚没有文章<a href="{:U('Article/add')}">点击此处添加文章</a></h4>
+                                    </td>
+
+                                </tr>
+                                <else/>
+                                <foreach name="article" item="vo">
+                                    <tr>
+                                        <td>{$vo.id}</td>
+                                        <td><a class="article-title" href="" target="_blank">{$vo.title}</a></td>
+                                        <td>{$vo.tags}</td>
+                                        <td>{$vo.createtime|date="Y年m月d日H:i",###}</td>
+                                        <td>{$vo.click}</td>
+                                        <td>
+                                            <a class="btn btn-xs btn-success btn-margin btn-first" cid="{$vo['id']}"
+                                               href="<switch name="ACTION_NAME|strtolower">
+                                            <case value="index">{:U('Article/update',array('id'=>$vo['id']))}</case>
+                                            <case value="trashlist">{:U('Article/cancelTrash',array('id'=>$vo['id']))}</case>
+                                            </switch>" target="_blank"><i
+                                                class="icon icon-edit" style="margin-right: 3px"></i>
+                                            <switch name="ACTION_NAME|strtolower">
+                                                <case value="index">修改</case>
+                                                <case value="trashlist">还原</case>
+                                            </switch>
+                                            </a>
+                                            <button  class="btn btn-xs btn-danger btn-margin btn-trash btn-second" cid="{$vo['id']}"><i
+                                                    class="icon icon-trash" style="margin-right: 3px"></i>
+                                                <switch name="ACTION_NAME|strtolower">
+                                                    <case value="index">回收</case>
+                                                    <case value="trashlist">彻底删除</case>
+                                                </switch>
+
+                                            </button>
+
+                                        </td>
+                                    </tr>
+
+                                </foreach>
+
+
+                            </empty>
+
+
+
+                        </table>
+                    </div>
+                    <!--start分页-->
+                    <div class="page row">
+                        <div class="M-box col-md-12">
+                            <!--<div class="clearfix"></div>-->
+                        </div>
+                    </div>
+                    <!--end分页-->
+
+                </div>
+            </div><!-- /.col-->
+                </div>
+                <!-- /.row -->
+            </div><!--/.main-->
+        </div>
+
+        <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+        <script src="__PUBLIC__/js/vender/jquery.1.11.1.js"></script>
+        <!-- Include all compiled plugins (below), or include individual files as needed -->
+        <script src="__PUBLIC__/bootstrap/js/bootstrap.min.js"></script>
+        <script src="//cdn.bootcss.com/angular.js/1.4.8/angular.js"></script>
+        <script src="__PUBLIC__/js/vender/x0popup.min.js"></script>
+        <script src="__PUBLIC__/js/vender/jquery.pagination.js"></script>
+
+        <script>
+            !function ($) {
+                $(document).on("click", "ul.nav li.parent > a > span.icon", function () {
+                    $(this).find('em:first').toggleClass("glyphicon-minus");
+                });
+                $(".sidebar span.icon").find('em:first').addClass("glyphicon-plus");
+            }(window.jQuery);
+
+            $(window).on('resize', function () {
+                if ($(window).width() > 768) $('#sidebar-collapse').collapse('show')
+            })
+            $(window).on('resize', function () {
+                if ($(window).width() <= 767) $('#sidebar-collapse').collapse('hide')
+            });
+
+
+        </script>
+        <script>
+            $(function () {
+                var curreyAction = "{:ACTION_NAME}";   //当前页面方法
+                var actionName =curreyAction.toLowerCase();
+
+                //阻止方法为trashList时a标签的链接跳转
+                $(document).on('click', '.btn-success', function () {
+                    if(curreyAction.toLowerCase()=='trashlist'){
+                        return false;
+                    }
+
+                });
+
+                //文章的回收、还原、彻底删除处理
+                var ajaxHandle =function(element) {
+                    $(document).on('click',element,function () {
+                        var _this = $(this);
+                        var url;
+                        var title;
+                        var isPop = true;
+                        var handleType;
+
+                        switch (actionName) {
+                            case 'index':
+                                if(element == '.btn-first'){
+                                    isPop =false;
+
+
+                                }else if(element == '.btn-second'){
+                                    title = '你是否把这篇文章放入回收站？';
+                                    url  = '{:U("Article/trash")}';
+                                    handleType = 1;
+                                }
+                                break;
+                            case 'trashlist':
+                                if(element == '.btn-first'){
+                                    title = '你是否要还原这篇文章？';
+                                    url  = '{:U("Article/trash")}';
+                                    handleType = 2;
+
+
+                                }else if(element == '.btn-second'){
+                                    title = '你是否要彻底删除这篇文章？';
+                                    url  = '{:U("Article/delete")}';
+                                    handleType = 3;
+                                }
+                                break;
+                            default:
+                                window.location.href = '{:U("Article/index")}';
+                        }
+                        var showMsg = function (state, msg) {
+                            x0p(msg, null, state, false);
+                            $('#x0p-button-0').click(function () {
+                                window.location.reload();
+                            });
+                        };
+
+                        if(isPop === true){
+                            x0p({
+                                title: title,
+                                text: null,
+                                icon: 'info',
+                                animationType: 'pop',
+                                buttons: [
+                                    {
+                                        type: 'cancel',
+                                        text: '取消'
+                                    },
+                                    {
+                                        type: 'info',
+                                        text: '确定',
+                                        showLoading: true
+                                    }
+                                ]
+                            }, function (button) {
+                                if (button == 'info') {
+                                    var cid = _this.attr('cid');
+                                    $.ajax({
+                                        url:  url,
+                                        type: 'post',
+                                        dataType: 'json',
+                                        data: {id: cid,handle:handleType},
+                                        async: true,
+                                        success: function (response) {
+                                            if (response.state == 'ok') {
+                                                showMsg(response.state, response.msg);
+
+
+                                            } else {
+                                                showMsg(response.state, response.msg);
+                                            }
+
+                                        },
+                                        error: function (response) {
+                                            x0p('数据连接失败，请重新刷新', null, 'error', false);
+                                        }
+
+                                    });
+
+                                }
+                            });
+                        }
+
+                    });
+
+                };
+                ajaxHandle('.btn-first');
+                ajaxHandle('.btn-second');
+
+                if({$pages}>0){
+                    $('.M-box').pagination({
+                        pageCount: {$pages},
+                        jump: true,
+                        coping: true,
+                        homePage: '首页',
+                        endPage: '末页',
+                        prevContent: '上页',
+                        nextContent: '下页',
+                        callback: function (api) {
+                            var pageNum = api.getCurrent();
+                            var pageTotal = api.getTotalPage();
+                            $.ajax({
+                                type :"POST",
+                                data :{currey:pageNum,handleName:actionName},
+                                dataType:"json",
+                                url:"{:U('Article/getPage')}",
+                                success:function (data) {
+                                    console.log(data);
+                                    if(data.length > 0){
+                                        $('.article-list tr:gt(0)').remove();
+                                        $.each(data,function (index,value) {
+                                            var url;
+                                            var handleName;
+
+                                            switch (actionName) {
+                                                case 'index':
+                                                    url = "{:U('Article/update')}"+"?id="+value.id;
+                                                    handleName ={
+                                                        first:'修改',
+                                                        second:'回收'
+                                                    };
+                                                    break;
+                                                case 'trashlist':
+                                                    //url = "{:U('Article/cancelTrash')}"+"?id="+value.id;
+                                                    url ="";
+                                                    handleName ={
+                                                        first:'还原',
+                                                        second:'彻底删除'
+                                                    };
+                                                    break;
+                                                default:
+                                                    url = "{:U('Article/index')}";
+                                                    window,location.href =url;
+                                            }
+
+                                            var html = '<tr>'+
+                                                    '<td>'+value.id+'</td>'+
+                                                    '<td><a class="article-title" href="" target="_blank">'+value.title+'</a></td>'+
+                                                    '<td>'+value.tags+'</td>'+
+                                                    '<td>'+value.createtime+'</td>'+
+                                                    '<td>'+value.click +'</td>'+
+                                                    '<td>'+
+                                                    '<a class="btn btn-xs btn-success btn-margin btn-first" href="'+url+'"  cid="'+value.id+'">' +
+                                                    '<i class="icon  icon-edit" style="margin-right: 3px"></i>'+handleName.first+
+                                                    '</a>'+
+                                                    '<button class="btn btn-xs btn-danger btn-margin btn-trash btn-second" cid="'+value.id+'">' +
+                                                    '<i class="icon icon-trash" style="margin-right: 3px"></i>'+handleName.second+
+                                                    '</button>'+
+                                                    '</td>'+
+                                                    '</tr>';
+                                            $('.article-list').append(html);
+                                        });
+
+                                    }else{
+                                        window.location.href = "{:U('Article/index')}";
+                                    }
+
+                                },
+                                error: function (response) {
+
+                                    x0p('数据连接失败，请重新刷新', null, 'error', false);
+                                }
+
+
+                            });
+                        }
+                    });
+                }
+
+            });
+        </script>
+
+</body>
+
+</html>

@@ -1,0 +1,39 @@
+/**===============================================================
+| Author     :  "王志传"
+| Author URL :  http://www.jechorn.cn
+|
+| Email      : <jechorn@163.com>
+| Description:
+| CreateTime : 2017/1/10-20:33
+|
+| Copyright (c) 2016-2019, www.jechorn.cn. All Rights Reserved.
+ ================================================================== */
+
+@charset "utf-8";
+
+/*start category list*/
+/*====================================================
+	分类列表的样式
+====================================================*/
+.cate-table tr th{
+    text-align: center;
+    line-height: 30px!important;
+}
+.cate-table tr td{
+    text-align: center;
+    line-height: 30px!important;
+}
+.cate-table tr:hover{
+    cursor: pointer;
+    background-color: #eee;
+}
+.cate-table tr td .btn{
+    margin-right: 10px;
+}
+
+
+
+
+
+
+/*end category list*/

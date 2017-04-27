@@ -1,0 +1,161 @@
+<extend name="./Application/Admin/View/base.html" />
+<block name="title">
+    <title>友情链接添加</title>
+</block>
+<block name="extends-style">
+
+</block>
+<block name="content">
+    <!--友情链接添加 start-->
+    <div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main" ng-app="link" ng-controller="submit">
+        <div class="row">
+            <ol class="breadcrumb">
+                <li><a href="#"><span class="glyphicon glyphicon-home"></span></a></li>
+                <li class="active">友情链接设置</li>
+            </ol>
+        </div><!--/.row-->
+
+        <div class="row">
+            <div class="col-md-12">
+                <h1 class="page-header">友情链接设置</h1>
+            </div>
+        </div><!--/.row-->
+
+
+        <div class="row">
+            <form name="link_info" novalidate ng-submit="linkBtn(link_info)" id="link_info" role="form">
+                <div class="repeat-input" link-url  ng-repeat="(k,v) in data"></div>
+                <div class="form-group form-btn">
+                    <button id="btn-upload" type="submit" class="btn btn-success btn-block"
+                            style="width: 50%;margin-left:auto;margin-right:auto;">提交
+                    </button>
+                </div>
+            </form>
+            <!-- /.row -->
+        </div><!--/.main-->
+
+        <!--模态框 start-->
+        <div class="modal fade" id="submit-msg">
+            <div class="modal-dialog  modal-sm">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">关闭</span></button>
+                        <h3 class="modal-title">信息提示</h3>
+                    </div>
+                    <div class="modal-body">
+                        <div class="response-msg"></div>
+                    </div>
+                    <!--  <div class="modal-footer">
+                          <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                      </div>-->
+                </div><!-- /.modal-content -->
+            </div><!-- /.modal-dialog -->
+        </div><!-- /.modal -->
+        <!--模态框 end-->
+
+    </div>
+    <!--友情链接添加 end-->
+</block>
+<block name="js">
+    <script>
+        var m = angular.module('link', []);
+
+        m.directive('linkUrl', [function () {
+            return {
+                restrict: 'EA',//a attr e element  c class
+                replace: false,
+                templateUrl: '__PUBLIC__/html/weblink.html',
+                scope: true,
+                controller: ['$scope',function ($scope) {
+
+
+                }]
+            }
+        }]);
+        m.controller('submit', ['$scope','$http','$timeout', function ($scope, $http,$timeout) {
+            $scope.data = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+            $scope.submitted = false;
+            $scope.linkBtn = function (link_info) {
+                var inputData;
+                var tmp={};
+
+                if(link_info.$valid){
+                    $('.repeat-input').each(function (index) {
+                        var inputName =$(this).find('.input-name').val().trim();
+                        var inputUrl= $(this).find('.input-url').val().trim();
+                        tmp[index]={name:inputName,url:inputUrl};
+                    });
+                    inputData=JSON.stringify(tmp);
+
+
+                    $scope.submitted = true;
+
+                    $http({
+                        method:'post',
+                        url:"{:U('Link/addLink')}",
+                        data:inputData,
+                        //headers:{'Content-type':'application/x-www-form-urlencoded'}
+                    }).then(function(res){
+
+                        if(res.data.status == 1){
+                            x0p(res.data.msg, null, 'ok', false);
+                            $('#x0p-button-0').click(function () {
+
+                                location.reload();
+
+                            });
+                        }else{
+                            x0p(res.data.msg, null, 'error', false);
+                        }
+
+
+
+                        $scope.submitted = false;
+
+                    });
+
+                }else {
+                    $scope.submitted = false;
+                    $('#link_info input').each(function () {
+                        var _this =$(this);
+                        if(_this.val().trim()==''){
+
+                            $scope.showMsg(_this,'不能为空');
+                            return false;
+
+                        }else{
+                            if(_this.hasClass('input-name')){
+                                if(_this.val().trim().length <2 || $(this).val().trim().length > 5){
+                                    $scope.showMsg(_this,'长度必须是2-5个字符！');
+                                    return false;
+                                }
+
+                            } else if(_this.hasClass('input-url')){
+                                if(_this.next().hasClass('ng-hide')){
+                                    $scope.showMsg(_this,'URL地址不合法！');
+                                    return false;
+                                }
+
+                            }
+                        }
+                    })
+
+                }
+                $timeout(function () {
+                    $('.alert-msg').fadeOut(2000);
+                },3000);
+
+            };
+            $scope.showMsg = function (element,msg) {
+                $('.alert-msg').remove();
+                element.parent().append('<div class="alert-msg" style="display: none"><div class="up"></div><div class="msg-show">'+msg+'</div> </div>');
+                element.parent().find('.alert-msg').fadeIn(1000);
+
+            };
+
+
+
+        }]);
+
+    </script>
+</block>

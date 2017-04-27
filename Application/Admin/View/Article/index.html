@@ -1,0 +1,316 @@
+<extend name="./Application/Admin/View/base.html" />
+<block name="title">
+    <title><switch name="Think.ACTION_NAME|strtolower">
+            <case value="index">文章列表</case>
+            <case value="trashlist">回收站列表</case>
+            <default />位置列表
+        </switch></title>
+</block>
+<block name="extends-style">
+    <link href="__PUBLIC__/css/admin/article.list.css" rel="stylesheet">
+</block>
+<block name="content">
+    <!--文章列表框 start-->
+    <div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main">
+        <div class="row">
+            <ol class="breadcrumb">
+                <li><a href="#"><span class="glyphicon glyphicon-home"></span></a></li>
+                <li class="active">文章管理</li>
+            </ol>
+        </div><!--/.row-->
+
+        <div class="row">
+            <div class="col-md-12">
+                <h1 class="page-header">
+                    <switch name="ACTION_NAME|strtolower">
+                        <case value="index">文章列表</case>
+                        <case value="trashlist">回收站</case>
+                    </switch>
+                </h1>
+            </div>
+        </div><!--/.row-->
+
+        <div class="row">
+            <div class="col-md-12">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <switch name="ACTION_NAME|strtolower">
+                            <case value="index">文章列表</case>
+                            <case value="trashlist">回收站</case>
+                        </switch>
+                        <a class="back-list" href="{:U('Article/add')}">[文章添加]</a><a class="back-list" href="{$url}">[
+                        <switch name="ACTION_NAME|strtolower">
+                            <case value="index">回收站</case>
+                            <case value="trashlist">文章列表</case>
+                        </switch>
+                        ]</a>
+                    </div>
+                    <div class="panel-body">
+                        <div class="table-responsive">
+                            <table class="table table-hover table-bordered article-list">
+                                <tr>
+                                    <th>编号</th>
+                                    <th>标题</th>
+                                    <th>标签</th>
+                                    <th>时间</th>
+                                    <th>点击率</th>
+                                    <th>操作</th>
+                                </tr>
+                                <empty name="article">
+                                    <tr>
+                                        <td colspan="6">
+                                            <h4>尚没有文章<a href="{:U('Article/add')}">点击此处添加文章</a></h4>
+                                        </td>
+
+                                    </tr>
+                                    <else/>
+                                    <foreach name="article" item="vo">
+                                        <tr>
+                                            <td>{$vo.id}</td>
+                                            <td><a class="article-title" href="" target="_blank">{$vo.title}</a></td>
+                                            <td>{$vo.tags}</td>
+                                            <td>{$vo.createtime|date="Y年m月d日H:i",###}</td>
+                                            <td>{$vo.click}</td>
+                                            <td>
+                                                <a class="btn btn-xs btn-success btn-margin btn-first" cid="{$vo['id']}"
+                                                   href="<switch name="ACTION_NAME|strtolower">
+                                                <case value="index">{:U('Article/update',array('id'=>$vo['id']))}</case>
+                                                <case value="trashlist">{:U('Article/cancelTrash',array('id'=>$vo['id']))}</case>
+                                                </switch>" target="_blank"><i
+                                                    class="icon icon-edit" style="margin-right: 3px"></i>
+                                                <switch name="ACTION_NAME|strtolower">
+                                                    <case value="index">修改</case>
+                                                    <case value="trashlist">还原</case>
+                                                </switch>
+                                                </a>
+                                                <button  class="btn btn-xs btn-danger btn-margin btn-trash btn-second" cid="{$vo['id']}"><i
+                                                        class="icon icon-trash" style="margin-right: 3px"></i>
+                                                    <switch name="ACTION_NAME|strtolower">
+                                                        <case value="index">回收</case>
+                                                        <case value="trashlist">彻底删除</case>
+                                                    </switch>
+
+                                                </button>
+
+                                            </td>
+                                        </tr>
+
+                                    </foreach>
+
+
+                                </empty>
+
+
+
+                            </table>
+                        </div>
+                        <!--start分页-->
+                        <div class="page row">
+                            <div class="M-box col-md-12">
+                                <!--<div class="clearfix"></div>-->
+                            </div>
+                        </div>
+                        <!--end分页-->
+
+                    </div>
+                </div><!-- /.col-->
+            </div>
+            <!-- /.row -->
+        </div><!--/.main-->
+    </div>
+    <!--文章列表框 end-->
+</block>
+<block name="js">
+    <script>
+        $(function () {
+            var curreyAction = "{:ACTION_NAME}";   //当前页面方法
+            var actionName =curreyAction.toLowerCase();
+
+            //阻止方法为trashList时a标签的链接跳转
+            $(document).on('click', '.btn-success', function () {
+                if(curreyAction.toLowerCase()=='trashlist'){
+                    return false;
+                }
+
+            });
+
+            //文章的回收、还原、彻底删除处理
+            var ajaxHandle =function(element) {
+                $(document).on('click',element,function () {
+                    var _this = $(this);
+                    var url;
+                    var title;
+                    var isPop = true;
+                    var handleType;
+
+                    switch (actionName) {
+                        case 'index':
+                            if(element == '.btn-first'){
+                                isPop =false;
+
+
+                            }else if(element == '.btn-second'){
+                                title = '你是否把这篇文章放入回收站？';
+                                url  = '{:U("Article/trash")}';
+                                handleType = 1;
+                            }
+                            break;
+                        case 'trashlist':
+                            if(element == '.btn-first'){
+                                title = '你是否要还原这篇文章？';
+                                url  = '{:U("Article/trash")}';
+                                handleType = 2;
+
+
+                            }else if(element == '.btn-second'){
+                                title = '你是否要彻底删除这篇文章？';
+                                url  = '{:U("Article/delete")}';
+                                handleType = 3;
+                            }
+                            break;
+                        default:
+                            window.location.href = '{:U("Article/index")}';
+                    }
+                    var showMsg = function (state, msg) {
+                        x0p(msg, null, state, false);
+                        $('#x0p-button-0').click(function () {
+                            window.location.reload();
+                        });
+                    };
+
+                    if(isPop === true){
+                        x0p({
+                            title: title,
+                            text: null,
+                            icon: 'info',
+                            animationType: 'pop',
+                            buttons: [
+                                {
+                                    type: 'cancel',
+                                    text: '取消'
+                                },
+                                {
+                                    type: 'info',
+                                    text: '确定',
+                                    showLoading: true
+                                }
+                            ]
+                        }, function (button) {
+                            if (button == 'info') {
+                                var cid = _this.attr('cid');
+                                $.ajax({
+                                    url:  url,
+                                    type: 'post',
+                                    dataType: 'json',
+                                    data: {id: cid,handle:handleType},
+                                    async: true,
+                                    success: function (response) {
+                                        if (response.state == 'ok') {
+                                            showMsg(response.state, response.msg);
+
+
+                                        } else {
+                                            showMsg(response.state, response.msg);
+                                        }
+
+                                    },
+                                    error: function (response) {
+                                        x0p('数据连接失败，请重新刷新', null, 'error', false);
+                                    }
+
+                                });
+
+                            }
+                        });
+                    }
+
+                });
+
+            };
+            ajaxHandle('.btn-first');
+            ajaxHandle('.btn-second');
+
+            if({$pages}>0){
+                $('.M-box').pagination({
+                    pageCount: {$pages},
+                    jump: true,
+                    coping: true,
+                    homePage: '首页',
+                    endPage: '末页',
+                    prevContent: '上页',
+                    nextContent: '下页',
+                    callback: function (api) {
+                        var pageNum = api.getCurrent();
+                        var pageTotal = api.getTotalPage();
+                        $.ajax({
+                            type :"POST",
+                            data :{currey:pageNum,handleName:actionName},
+                            dataType:"json",
+                            url:"{:U('Article/getPage')}",
+                            success:function (data) {
+                                console.log(data);
+                                if(data.length > 0){
+                                    $('.article-list tr:gt(0)').remove();
+                                    $.each(data,function (index,value) {
+                                        var url;
+                                        var handleName;
+
+                                        switch (actionName) {
+                                            case 'index':
+                                                url = "{:U('Article/update')}"+"?id="+value.id;
+                                                handleName ={
+                                                    first:'修改',
+                                                    second:'回收'
+                                                };
+                                                break;
+                                            case 'trashlist':
+                                                //url = "{:U('Article/cancelTrash')}"+"?id="+value.id;
+                                                url ="";
+                                                handleName ={
+                                                    first:'还原',
+                                                    second:'彻底删除'
+                                                };
+                                                break;
+                                            default:
+                                                url = "{:U('Article/index')}";
+                                                window,location.href =url;
+                                        }
+
+                                        var html = '<tr>'+
+                                            '<td>'+value.id+'</td>'+
+                                            '<td><a class="article-title" href="" target="_blank">'+value.title+'</a></td>'+
+                                            '<td>'+value.tags+'</td>'+
+                                            '<td>'+value.createtime+'</td>'+
+                                            '<td>'+value.click +'</td>'+
+                                            '<td>'+
+                                            '<a class="btn btn-xs btn-success btn-margin btn-first" href="'+url+'"  cid="'+value.id+'">' +
+                                            '<i class="icon  icon-edit" style="margin-right: 3px"></i>'+handleName.first+
+                                            '</a>'+
+                                            '<button class="btn btn-xs btn-danger btn-margin btn-trash btn-second" cid="'+value.id+'">' +
+                                            '<i class="icon icon-trash" style="margin-right: 3px"></i>'+handleName.second+
+                                            '</button>'+
+                                            '</td>'+
+                                            '</tr>';
+                                        $('.article-list').append(html);
+                                    });
+
+                                }else{
+                                    window.location.href = "{:U('Article/index')}";
+                                }
+
+                            },
+                            error: function (response) {
+
+                                x0p('数据连接失败，请重新刷新', null, 'error', false);
+                            }
+
+
+                        });
+                    }
+                });
+            }
+
+        });
+    </script>
+</block>
+

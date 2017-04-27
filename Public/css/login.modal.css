@@ -1,0 +1,194 @@
+@charset "UTF-8";
+/*start login register modal*/
+/*====================================================
+	.login-modal-container 类登录模态框样式
+====================================================*/
+#login-modal .modal-dialog{
+    margin: 0 auto;
+    vertical-align: middle;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform:translate(-50%,-50%);
+    -webkit-transform:translate(-50%,-50%);
+    -moz-transform: translate(-50%,-50%);
+    -o-transform: translate(-50%,-50%);
+
+}
+#login-modal .modal-content{
+    border-radius: 0;
+
+}
+@media (min-width: 768px) {
+    #login-modal .modal-dialog{
+        width: 452px;
+    }
+
+}
+@media (max-width: 767px) {
+    #login-modal .modal-dialog{
+        width: 90%
+    }
+
+}
+
+#login-modal .modal-body{
+    padding: 40px 30px;
+}
+#login-modal .modal-body .register-module{
+    display: none;
+}
+#login-modal .modal-body .close{
+    font-size: 1.2em;
+}
+#login-modal .modal-body .title-text{
+    font-size: 18px;
+    color: #1d1d1d;
+}
+#login-modal .modal-body input.form-control{
+    width: 100%;
+    height: 40px;
+    border: 1px solid #eee;
+    outline: 0;
+    font-size: 12px;
+    color: #333;
+    padding: 0 12px;
+    border-radius: 0;
+    box-shadow: none;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    -o-box-shadow: none;
+    transition: none;
+    -moz-transition: none;
+    -webkit-transition: none;
+
+}
+#login-modal .modal-body .login-module input.form-control{
+    margin-bottom: 15px;
+}
+#login-modal .modal-body .login-module img{
+    cursor: pointer;
+}
+
+#login-modal .modal-body .login-module .input-group{
+    display: block;
+}
+#login-modal .modal-body .login-module .input-group input.form-control{
+    width: 50%;
+    margin-right: 15px;
+    margin-left: 0 !important;
+
+}
+
+#login-modal .modal-body input.form-control:focus{
+    border: 1px #1d1d1d solid;
+}
+#login-modal .modal-body .login-title,
+#login-modal .modal-body .register-title{
+    margin-bottom: 30px;
+}
+
+#login-modal .modal-body form{
+    position: relative;
+}
+#login-modal .modal-body .register-msg , #login-modal .modal-body .login-msg{
+    position: absolute;
+    bottom: 45px;
+    width: 100%;
+    z-index: 999;
+    border-radius: 2px;
+    background: #f63756;
+    padding: 10px;
+    color: #ffffff;
+    font-size: 16px;
+    text-align: center;
+    letter-spacing: 2px;
+    display: none;
+    /*opacity: 0;*/
+}
+
+#login-modal .modal-body .btn-login, #login-modal .modal-body .btn-register{
+    width: 100%;
+    height: 40px;
+    text-align: center;
+    font-size: 18px;
+    color: #FFFFFF;
+    background: #1d1d1d;
+    border: none;
+    border-radius: 0;
+    -moz-border-radius: 0;
+    -webkit-border-radius: 0;
+    outline: none;
+
+}
+#login-modal .modal-body .href-style{
+    margin: 30px auto;
+    text-align: center;
+    padding: 8px 20px;
+}
+#login-modal .modal-body .href-register,
+#login-modal .modal-body .href-login{
+    font-size: 16px;
+    color: #1d1d1d;
+    text-align: center;
+    text-decoration: none;
+}
+#login-modal .modal-body .href-register:hover{
+    cursor: pointer;
+
+}
+#login-modal .modal-body .href-register:link{
+    color: #1d1d1d;
+}
+#login-modal .third-login{
+    text-align: center;
+}
+#login-modal .third-login .third-title{
+    border-top: 1px #eee solid;
+    position: relative;
+
+    margin-bottom: 30px;
+}
+#login-modal .third-login .third-title span{
+    padding: 0px 5px;
+    background: #fff;
+    position: absolute;
+    color: #1d1d1d;
+    top:-9px;
+    left:50%;
+    transform: translateX(-50%);
+    margin: auto;
+    font-size: 10px;
+
+}
+#login-modal .third-login a{
+    margin-right: 30px;
+    text-decoration: none;
+    color: #1d1d1d;
+    font-size: 3em;
+}
+#login-modal .modal-body .register-content .input-group{
+    margin-bottom: 15px;
+}
+#login-modal .modal-body .register-content .input-group label{
+    border: none;
+    border-radius: 0;
+    background: #1d1d1d;
+    color: #ffffff;
+    font-weight: normal;
+}
+#login-modal .register-content .verify-code-group{
+    position: relative;
+}
+#login-modal .register-content .verify-code-group .input{
+    width: auto !important;
+}
+#login-modal .register-content .verify-code-group img{
+    position: absolute;
+    top:0;
+    right: 0;
+    z-index: 999;
+    cursor: pointer;
+}
+
+/*end login register modal*/

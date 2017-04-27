@@ -1,0 +1,238 @@
+<extend name="./Application/Home/View/base.html" />
+<block name="title">
+    <title>标签页</title>
+</block>
+<block name="style">
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/list.css">
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/sidebar.css">
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/pagination.css">
+</block>
+<block name="content">
+
+    <!-- start container content-->
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8">
+                <div class="list-margin" style="margin-left: 15px;margin-right: 15px">
+                    <div id="cate-show">
+                        <empty name="tagsArticle">
+                            <div data-scroll-reveal class="row list-items">
+                                <h4 style="text-align: center">没有找到相应的文章</h4>
+                                <p style="text-align: center;margin-top: 15px">点击这里返回<a href="{:U('Index/index')}">首页</a></p>
+                            </div>
+
+                            <else/>
+                            <foreach name="tagsArticle" item="ca">
+                                <div data-scroll-reveal class="row list-items">
+                                    <div class="col-md-4 list-thumb">
+                                        <a class="news-img-hover" title="{$ca.title}" href="{:U('Index/detail',array('id'=>$ca['id']))}" target="_blank">
+                                            <img src="{$ca.image}"/>
+                                            <span class="mod-hot">{$ca['Attr'][0]['name']}</span>
+                                        </a>
+                                    </div>
+                                    <div class="col-md-8 list-detail">
+                                        <h4>
+                                            <a href="{:U('Details/detail',array('id'=>$ca['id']))}" target="_blank" title="{$ca.title}">{$ca.title}</a>
+                                        </h4>
+                                        <div class="news-tags-and-time">
+                                            <span class="news-time">{$ca.createtime}</span>
+                                            <foreach name="ca['tags']" item="tags">
+                                                <a href="{:U('Index/tags',array('tags'=>urlencode($tags)))}" target="_blank" title="{$tags}">{$tags}</a>
+                                            </foreach>
+
+                                            <span class="news-time">阅 {$ca.click}</span>
+
+                                            <div class="clearfix"></div>
+                                        </div>
+                                        <div class="list-description">
+                                            <p>{$ca.content}<a href="{:U('Details/detail',array('id'=>$ca['id']))}">查看全文>></a></p>
+                                        </div>
+
+
+                                    </div>
+
+                                </div>
+
+                            </foreach>
+
+
+                        </empty>
+                    </div>
+
+
+                    <!--start分页-->
+                    <div class="page row">
+                        <span id="tags-search" tags="{$tags}" style="display: none"></span>
+                        <div class="M-box col-md-12">
+
+                            <!--<div class="clearfix"></div>-->
+                        </div>
+                    </div>
+                    <!--end分页-->
+
+                </div>
+
+            </div>
+
+            <div class="col-md-4">
+                <div class="list-margin" style="padding-right: 10px;padding-left: 10px;background: #ffffff">
+                    <div data-scroll-reveal class="search-keyword">
+                        <form action="" method="post">
+                            <input class="keyword-search form-control" name="keyword" type="text" value=""
+                                   placeholder="请输入关键词"/>
+                            <input class="submit-btn" type="submit" value=""/>
+                        </form>
+                    </div>
+                    <hr/>
+                    <div data-scroll-reveal class="rand-hot-news">
+                        <span class="change-item"><i class="fa fa-refresh" aria-hidden="true"  style="float:right;"></i>换一批</span>
+                        <h4>随机热文</h4>
+                        <ul class="rand-items">
+
+                            <foreach name="randArticle" item="ra" key="index">
+                                <li class="rand-news-list">
+                                    <a href="{:U('Details/detail',array('id'=>$ra['id']))}" target="_blank"
+                                       title="{$ra.title}"><span>{$index+1}</span>{$ra.title}</a>
+                                </li>
+
+                            </foreach>
+
+                        </ul>
+                    </div>
+                    <div class="hot-tags">
+                        <h4>图文热文</h4>
+                        <div class="list-for-hot">
+                            <ul>
+                                <foreach name="hotArticle" item="ho">
+                                    <li data-scroll-reveal>
+                                        <div class="list-article-img">
+                                            <a href="{:U('Details/detail',array('id'=>$ho['id']))}" title="" target="_blank">
+                                                <img src="{$ho.image}">
+                                            </a>
+                                        </div>
+                                        <a class="list-title" href="{:U('Details/detail',array('id'=>$ho['id']))}" target="_blank" title="{$ho.title}">
+                                            {$ho.title}
+                                        </a>
+                                    </li>
+
+                                </foreach>
+                            </ul>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <!--end container content-->
+
+</block>
+
+<block name="js-first">
+    <script src="__PUBLIC__/js/vender/jquery.pagination.js"></script>
+</block>
+<block name="js-second">
+    <script>
+        if({$pagenumber} >0){
+            $('.M-box').pagination({
+                pageCount: {$pagenumber},
+                jump: true,
+                coping: true,
+                homePage: '首页',
+                endPage: '末页',
+                prevContent: '上页',
+                nextContent: '下页',
+                callback: function (api) {
+                    var pageNum = api.getCurrent();
+                    var tags =$('#tags-search').attr('tags');
+                    var pageTotal = api.getTotalPage();
+                    $.ajax({
+                        type :"POST",
+                        data :{currey:pageNum,tags:tags},
+                        dataType:"json",
+                        url:"{:U('Index/ajaxTags')}",
+                        success:function (res) {
+                            var html = '';
+                            $.each(res,function (index,list) {
+                                var url ="{:U('Details/detail')}"+"?id="+list.id;
+                                html +='<div data-scroll-reveal class="row list-items">';
+                                html += '<div class="col-md-4 list-thumb">';
+                                html += '<a class="news-img-hover" title="" href="'+url+'" target="_blank">';
+                                html += '<img src="'+list.image+'"/>';
+                                html += '<span class="mod-hot"></span>';
+                                html += '</a>';
+                                html += '</div>';
+                                html += '<div class="col-md-8 list-detail">';
+                                html += '<h4>';
+                                html += '<a href="'+url+'" target="_blank" title="'+list.title+'">'+list.title+'</a>';
+                                html += '</h4>';
+                                html += '<div class="news-tags-and-time">';
+                                html += '<span class="news-time">'+list.createtime+'</span>';
+                                $.each(list.tags,function (key,value) {
+                                    var urlTags ="{:U('Index/tags')}"+"?tags="+value;
+                                    html += '<a href="'+urlTags+'" target="_blank" title="'+value+'">'+value+'</a>';
+                                });
+                                html += '<span class="news-time">阅 '+list.click+'</span>';
+                                html += '<div class="clearfix"></div>';
+                                html += '</div>';
+                                html += '<div class="list-description">';
+                                html += '<p>'+list.content+'<a href="'+url+'">查看全文>></a></p>';
+                                html += '</div>';
+                                html += '</div>';
+                                html += '</div>';
+
+                            });
+                            $('#cate-show').empty().html(html);
+                            $('.list-thumb').removeClass('col-md-8').addClass('col-md-4');
+                            $('.news-img-hover img').css({
+                                'width' :'100%',
+                                'display':'block'
+                            });
+                            //setImgWidth();
+                            //checkNull();
+
+
+                        }
+
+                    });
+                }
+            });
+        }
+
+        $('.list-thumb').removeClass('col-md-8').addClass('col-md-4');
+        $('.news-img-hover img').css({
+            'width' :'100%',
+            'display':'block'
+        });
+    </script>
+    <script>
+        $('.change-item').click(function () {
+            $.ajax({
+                type: 'POST',
+                url: '{:U("Index/randArticle")}',
+                dataType: 'json',
+                success: function (res) {
+                    if(res.state ==1) {
+                        $('.rand-items').empty();
+                        var html = '' ;
+                        $.each(res.randArticle,function (index,value) {
+                            var url ='{:U("Details/detail")}'+'?id='+value.id;
+                            html += '<li class="rand-news-list">';
+                            html +=  '<a href="'+url+'" target="_blank" title="'+value.title+'"><span>'+(index+1)+'</span>'+value.title+'</a>';
+                            html += '</li>';
+
+                        });
+                        $('.rand-items').html(html);
+
+                    }
+                }
+
+            });
+        });
+
+    </script>
+</block>

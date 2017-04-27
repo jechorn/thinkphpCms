@@ -1,0 +1,121 @@
+<extend name="./Application/Admin/View/base.html" />
+<block name="title">
+    <title>轮播图列表</title>
+</block>
+<block name="extends-style">
+    <link href="__PUBLIC__/css/admin/cate.list.css" rel="stylesheet">
+</block>
+<block name="content">
+    <!--轮播图列表框 start-->
+    <div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main">
+        <div class="row">
+            <ol class="breadcrumb">
+                <li><a href="#"><span class="glyphicon glyphicon-home"></span></a></li>
+                <li class="active">轮播图设置</li>
+            </ol>
+        </div><!--/.row-->
+
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="page-header">轮播图设置</h1>
+            </div>
+        </div><!--/.row-->
+
+
+        <div class="row">
+
+            <div class="col-lg-12">
+                <div class="panel panel-default">
+                    <div class="panel-heading">轮播图列表</div>
+                    <div class="panel-body">
+                        <form role="form">
+                            <div class="col-md-12">
+                                <div class="table-responsive">
+                                    <table class="table table-carousel table-bordered">
+                                        <tr>
+                                            <th>编号</th>
+                                            <th>轮播图名称</th>
+                                            <th>状态</th>
+                                            <th>图片</th>
+                                            <th>操作</th>
+                                        </tr>
+                                        <empty name="list">
+                                            <tr>
+                                                <td colspan="5">
+                                                    <h4>尚没有设置轮播图<a href="{:U('Carousel/add')}">点击此处添加轮播图</a></h4>
+                                                </td>
+
+                                            </tr>
+                                            <else/>
+                                            <foreach name="list" item="v">
+                                                <tr class="tr-carousel">
+                                                    <td>{$v.id}</td>
+                                                    <td><a href="{$v.link}" target="_blank">{$v.name}</a></td>
+                                                    <td>
+                                                        <if condition="$v.status == 0">关闭
+                                                            <else/>开启
+                                                        </if>
+                                                    </td>
+                                                    <td class="image-td">
+                                                        <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#Modal-{$v.id}">
+                                                            显示图片
+                                                        </button>
+                                                    </td>
+
+                                                    <!--模态框 start-->
+
+                                                    <!-- Modal -->
+                                                    <div class="modal fade" id="Modal-{$v.id}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                                                        <div class="modal-dialog">
+                                                            <div class="modal-content">
+                                                                <div class="modal-header">
+                                                                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">关闭</span></button>
+                                                                    <h4 class="modal-title" id="myModalLabel">轮播图照片</h4>
+                                                                </div>
+                                                                <div class="modal-body">
+                                                                    <img class="image-show" src="__UPLOAD__/{$v.url}"/>
+                                                                </div>
+                                                                <div class="modal-footer">
+                                                                    <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <!--模态框 end-->
+                                                    <td cid="{$v.id}" status="{$v.status}">
+                                                        <button  type="button" class="btn btn-primary btn-update"><span
+                                                                class="glyphicon glyphicon-edit"></span>
+                                                            <if condition="$v['status']== 0">开启
+                                                                <else/>关闭
+                                                            </if>
+                                                        </button>
+                                                        <button type="button" class="btn btn-danger btn-delete"><span
+                                                                class="glyphicon glyphicon-trash"></span>删除
+                                                        </button>
+                                                    </td>
+                                                </tr>
+                                            </foreach>
+
+                                        </empty>
+                                    </table>
+                                    <div style="padding: 20px"></div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div><!-- /.col-->
+            </div><!-- /.row -->
+
+        </div><!--/.main-->
+    </div>
+    <!--轮播图列表框 end-->
+</block>
+<block name="js">
+    <script>
+        var updateStatus = "{:U('Carousel/updateStatus')}";
+        var deleteCarousel ="{:U('Carousel/deleteCarousel')}";
+
+    </script>
+    <script src="__PUBLIC__/js/admin/carousel.list.js"></script>
+</block>
+

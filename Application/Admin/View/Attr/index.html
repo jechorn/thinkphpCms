@@ -1,0 +1,84 @@
+<extend name="./Application/Admin/View/base.html" />
+<block name="title">
+    <title>属性列表</title>
+</block>
+<block name="extends-style">
+    <link href="__PUBLIC__/css/admin/cate.list.css" rel="stylesheet">
+</block>
+<block name="content">
+    <!--属性列表框 start-->
+    <div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main">
+        <div class="row">
+            <ol class="breadcrumb">
+                <li><a href="#"><span class="glyphicon glyphicon-home"></span></a></li>
+                <li class="active">属性列表</li>
+            </ol>
+        </div><!--/.row-->
+
+        <div class="row">
+            <div class="col-md-12">
+                <h1 class="page-header">属性列表</h1>
+            </div>
+        </div><!--/.row-->
+
+        <div class="row">
+            <div class="col-md-12">
+                <div class="panel panel-default">
+                    <div class="panel-heading">属性列表 <a class="back-list" href="{:U('Attr/add')}">[添加属性]</a></div>
+                    <div class="panel-body">
+                        <form role="form">
+                            <div class="col-md-12">
+                                <div class="table-responsive">
+                                    <table class="table table-attr table-bordered">
+                                        <tr>
+                                            <th>编号</th>
+                                            <th>属性名称</th>
+                                            <th>颜色</th>
+                                            <th>操作</th>
+                                        </tr>
+                                        <empty name="list">
+                                            <tr>
+                                                <td colspan="5">
+                                                    <h4>尚没有设置属性<a href="{:U('Attr/add')}">点击此处添加属性</a></h4>
+                                                </td>
+
+                                            </tr>
+                                            <else/>
+                                            <foreach name="list" item="v">
+                                                <tr class="tr-carousel">
+                                                    <td>{$v.id}</td>
+                                                    <td>{$v.name}</td>
+                                                    <td><span class="attr-color" style="background:{$v.color}"></span></td>
+                                                    <td cid="{$v.id}">
+                                                        <a href="{:U('Attr/update', array('id'=>$v['id']))}" type="button" class="btn btn-primary btn-update"><span
+                                                                class="glyphicon glyphicon-edit"></span>修改
+                                                        </a>
+                                                        <button type="button" class="btn btn-danger btn-delete"><span
+                                                                class="glyphicon glyphicon-trash"></span>删除
+                                                        </button>
+                                                    </td>
+                                                </tr>
+                                            </foreach>
+
+                                        </empty>
+                                    </table>
+                                    <div style="padding: 20px"></div>
+                                </div>
+                            </div>
+                        </form>
+
+                    </div>
+                </div><!-- /.col-->
+            </div>
+            <!-- /.row -->
+        </div><!--/.main-->
+    </div>
+    <!--属性列表框 end-->
+</block>
+<block name="js">
+    <script>
+        var attrDelete ="{:U('Attr/delete')}";
+    </script>
+
+    <script src="__PUBLIC__/js/admin/attr.list.js"></script>
+</block>

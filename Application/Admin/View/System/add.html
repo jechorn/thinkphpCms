@@ -1,0 +1,199 @@
+<extend name="./Application/Admin/View/base.html" />
+<block name="title">
+    <title>系统设置</title>
+</block>
+<block name="extends-style">
+
+    <link href="__PUBLIC__/css/admin/cropper.css" rel="stylesheet">
+    <!--<link href="__PUBLIC__/css/admin/system.pic.upload.css" rel="stylesheet">-->
+    <link href="__PUBLIC__/css/admin/pic_upload.css" rel="stylesheet">
+
+</block>
+<block name="content">
+    <!--系统设置 start-->
+    <div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main">
+        <div class="row">
+            <ol class="breadcrumb">
+                <li><a href="#"><span class="glyphicon glyphicon-home"></span></a></li>
+                <li class="active">系统设置</li>
+            </ol>
+        </div><!--/.row-->
+
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="page-header">系统设置</h1>
+            </div>
+        </div><!--/.row-->
+
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <div class="panel panel-default">
+                    <div class="panel-heading"><span class="glyphicon glyphicon-cog"></span>系统设置</div>
+                    <div class="panel-body">
+                        <form id="system-form" class="form-horizontal" method="post">
+                            <fieldset>
+                                <!-- webname input-->
+                                <div class="input-msg">
+                                    <div class="input-group carousel-attr">
+                                        <label class="input-group-addon system-label" for="webname">网站名称</label>
+                                        <input id="webname" name="webname" type="text" placeholder="webname"
+                                               class="form-control">
+                                    </div>
+                                </div>
+
+
+                                <!-- keywords input-->
+                                <div class="input-msg">
+                                    <div class="input-group carousel-attr">
+                                        <label class="input-group-addon system-label" for="keywords">网站关键词</label>
+                                        <input id="keywords" name="keywords" type="text" placeholder="网站关键词请用英文逗号分隔"
+                                               class="form-control">
+                                    </div>
+                                </div>
+
+
+                                <!--icp input-->
+
+                                <div class="input-msg">
+                                    <div class="input-group carousel-attr">
+                                        <label class="input-group-addon system-label" for="icp">ICP备案号</label>
+                                        <input id="icp" name="icp" type="text" placeholder="icp备案"
+                                               class="form-control">
+                                    </div>
+                                </div>
+
+                                <!--copyright input-->
+                                <div class="input-msg">
+                                    <div class="input-group carousel-attr">
+                                        <label class="input-group-addon system-label" for="copyright">copyright</label>
+                                        <input id="copyright" name="copyright" type="text" placeholder="copyright"
+                                               class="form-control">
+                                    </div>
+                                </div>
+
+                                <!-- description body -->
+                                <div class="input-msg">
+                                    <div class="input-group carousel-attr">
+                                        <label class="input-group-addon system-label" for="description">网站描述</label>
+                                        <textarea class="form-control" id="description" name="description"
+                                                  placeholder="请输入网站描述" rows="5"></textarea>
+                                    </div>
+                                </div>
+
+
+
+                            <!-- footer picture input-->
+
+                            <div class="" id="carousel-upload">
+                                <label>底部logo上传：</label>
+                                <!--<div pic-upload></div>-->
+                                <!---->
+
+                                <!-- Content -->
+
+                                    <div class="row">
+
+                                        <div class="col-md-12">
+                                            <div class="btn-group upload-image">
+                                                <label class="btn btn-primary btn-upload" for="inputImage"
+                                                       title="Upload image file">
+
+                                                    <input class="sr-only" id="inputImage" name="file" type="file"
+                                                           accept="image/*">
+                                                    <em class="docs-tooltip" data-toggle="tooltip" title="请选择本地图片"
+                                                        style="margin-left: auto;margin-right: auto;text-align: center;">
+                                                        选择图片
+                                                    </em>
+                                                </label>
+
+                                            </div>
+                                            <!-- Alert -->
+                                            <div class="docs-alert"><span class="warning message"></span></div>
+
+                                        </div>
+
+                                        <div class="col-md-12">
+                                            <!-- <h3 class="page-header">Demo:</h3> -->
+                                            <div class="img-container">
+                                                <img src="__PUBLIC__/images/picture.jpg" alt="Picture"/>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12 docs-buttons">
+
+                                            <div class="btn-group btn-group-justified" data-toggle="buttons">
+                                                <label class="btn btn-primary active" data-method="setAspectRatio"
+                                                       data-option="1.7777777777777777">
+                                                        <span class="docs-tooltip" data-toggle="tooltip" title="16 / 9比例">
+                                                            16:9
+                                                        </span>
+                                                </label>
+                                                <label class="btn btn-primary" data-method="setAspectRatio"
+                                                       data-option="1.3333333333333333">
+                                                        <span class="docs-tooltip" data-toggle="tooltip" title="4 / 3比例">
+                                                              4:3
+                                                        </span>
+                                                </label>
+                                                <label class="btn btn-primary" data-method="setAspectRatio"
+                                                       data-option="1">
+                                                        <span class="docs-tooltip" data-toggle="tooltip" title="1 / 1比例">
+                                                            1:1
+                                                        </span>
+                                                </label>
+                                                <label class="btn btn-primary" data-method="setAspectRatio"
+                                                       data-option="0.6666666666666666">
+                                                        <span class="docs-tooltip" data-toggle="tooltip" title="2 / 3比例">
+                                                        2:3
+                                                        </span>
+                                                </label>
+                                                <label class="btn btn-primary" data-method="setAspectRatio"
+                                                       data-option="NaN" title="Set Aspect Ratio">
+
+                                                        <span class="docs-tooltip" data-toggle="tooltip" title="自由剪切">
+                                                            自由剪切
+                                                        </span>
+                                                </label>
+                                            </div>
+                                            <input class="form-control" id="putData" name="cropData" type="hidden"/>
+                                        </div><!-- /.docs-buttons -->
+                                    </div>
+
+                                <!--upload pic-->
+                                <p class="help-block">请选择本地图片上传，像素最好为200*200</p>
+                            </div>
+                            </fieldset>
+                        </form>
+
+                        <!-- Form actions -->
+                        <div class="form-group">
+                            <div class="col-md-12 widget-right">
+                                <button id="system-submit" type="button" class="btn btn-success" onclick="return systemForms();">提交</button>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div><!--/.col-->
+
+        </div><!--/.row-->
+    </div>
+    <!--系统设置 end-->
+
+
+
+</block>
+<block name="js">
+    <script src="__PUBLIC__/js/vender/cropper.min.js"></script>
+    <script src="__PUBLIC__/js/admin/pic_upload.js"></script>
+
+    <script>
+        var systemForm ="{:U('System/addInfo')}";
+        var hrefUrl ="{:U('Index/index')}";
+
+    </script>
+    <script src="__PUBLIC__/js/admin/system.form.js"></script>
+</block>
+
+

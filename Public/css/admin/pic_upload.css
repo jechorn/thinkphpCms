@@ -1,0 +1,165 @@
+/**===============================================================
+| Author     :  "王志传"
+| Author URL :  http://www.jechorn.cn
+|
+| Email      : <jechorn@163.com>
+| Description:
+| CreateTime : 2017/1/2-7:38
+|
+| Copyright (c) 2016-2019, www.jechorn.cn. All Rights Reserved.
+ ================================================================== */
+
+@charset "utf-8";
+/* Main
+ * ========================================================================== */
+
+/* Alerts
+ * -------------------------------------------------------------------------- */
+
+.docs-alert {
+    display: none;
+  /*  position: fixed;
+    top: 120px;
+    left: 0;
+    right: 0;
+    height: 0;*/
+    text-align: center;
+    opacity: 0.9;
+    z-index: 999;
+}
+
+.docs-alert .message {
+    display: inline-block;
+    padding: 5px 10px;
+    border-radius: 2px;
+    background-color: #aaa;
+    color: #fff;
+}
+
+.docs-alert .primary {
+    background-color: #0074d9;
+}
+
+.docs-alert .success {
+    background-color: #2ecc40;
+}
+
+.docs-alert .info {
+    background-color: #39cccc;
+}
+
+.docs-alert .warning {
+    background-color: #ff851b;
+}
+
+.docs-alert .danger {
+    background-color: #ff4136;
+}
+
+/* Button
+ * -------------------------------------------------------------------------- */
+
+.btn-primary {
+    border-color: #ffffff; /* hsb(210, 100%, 45%) */
+    background-color: #30a5ff; /* hsb(210, 100%, 55%) */
+}
+
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary:active,
+.btn-primary.active,
+.btn-primary.active:focus,
+.btn-primary.active:hover {
+    border-color: #ffffff; /* hsb(208, 100%, 10%) */
+    background-color: #4775FF; /* hsb(208, 100%, 40%) */
+}
+
+
+
+/* Basic style
+ * -------------------------------------------------------------------------- */
+
+body {
+    overflow-x: hidden;
+}
+.upload-image{
+    width: 100%;
+
+}
+.upload-image label{
+    margin-right: auto !important;
+    margin-left: auto !important;
+    margin-bottom: 10px;
+}
+.upload-image label span{
+    font-weight: 600;
+    font-size: 16px;
+    padding-right: 20px;
+    padding-left: 20px;
+}
+
+/* Content */
+
+.img-container,
+.img-preview {
+    background-color: #f7f7f7;
+    overflow: hidden;
+    width: 100%;
+    text-align: center;
+}
+
+.img-container {
+    min-height: 200px;
+    max-height: 466px;
+    margin-bottom: 20px;
+}
+
+@media (min-width: 768px) {
+    .img-container {
+        min-height: 466px;
+    }
+}
+
+.img-container > img {
+    max-width: 100%;
+}
+
+.docs-buttons > .btn,
+.docs-buttons > .btn-group,
+.docs-buttons > .form-control {
+    margin-right: 5px;
+    margin-bottom: 10px;
+}
+
+
+
+.docs-tooltip {
+    display: block;
+    margin: -6px -12px;
+    padding: 6px 12px;
+}
+
+.docs-tooltip > .icon {
+    margin: 0 -3px;
+    vertical-align: top;
+}
+
+.tooltip-inner {
+    white-space: normal;
+}
+
+.btn-upload .tooltip-inner {
+    white-space: nowrap;
+}
+
+.avatar-view {
+    position: relative;
+}
+
+.btn-upload {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    min-width: 100px;
+
+}

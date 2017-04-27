@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>首页</title>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/FontAwesome-3.2.1/css/font-awesome.min.css">
+    <!--[if IE 7]>
+    <link rel="stylesheet" href="__PUBLIC__/FontAwesome-3.2.1/css/font-awesome-ie7.min.css">
+    <![endif]-->
+    <link href="http://cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" media="all">
+    <link href="http://cdn.bootcss.com/animate.css/3.5.2/animate.min.css" rel="stylesheet" media="all">
+    <link href="__PUBLIC__/css/vender/bootstrap-touch-slider.css" rel="stylesheet" media="all">
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/base.css">
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/index.css">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if Viewview the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="http://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+<!-- start header -->
+<header class="main-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 logo-image">
+                <h1 id="logo-title">{$system.webname}</h1>
+                <hr/>
+            </div>
+            <div class="col-md-12 logo-description">
+                <p class="logo-description">{$system.description}</p>
+
+            </div>
+        </div>
+
+    </div>
+
+</header>
+<!-- end header -->
+<!-- start nav -->
+<nav class="navbar navbar-default main-navigation">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                            data-target="#main-menu">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                </div>
+                <div class="collapse navbar-collapse" id="main-menu">
+                    <ul class="nav-justified menu" role="tablist">
+                        <li class="nav-current" role="presentation"><a href="#" target="_self">首页</a></li>
+                        <foreach name="nav" item="na">
+                            <li role="presentation"><a href="{:U('Index/cate',array('id'=>$na['id']))}" target="_self">{$na.name}</a></li>
+                        </foreach>
+
+
+                    </ul>
+
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+</nav>
+<!--end nav-->
+
+<!--start Picture Carousel  PS:图片轮播-->
+<div id="bootstrap-touch-slider" class="carousel bs-slider fade  control-round indicators-line" data-ride="carousel"
+     data-pause="hover" data-interval="5000">
+
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+        <li data-target="#bootstrap-touch-slider" data-slide-to="0" class="active"></li>
+        <li data-target="#bootstrap-touch-slider" data-slide-to="1"></li>
+        <li data-target="#bootstrap-touch-slider" data-slide-to="2"></li>
+    </ol>
+
+    <!-- Wrapper For Slides -->
+    <div class="carousel-inner" role="listbox">
+
+        <!-- start Slide -->
+        <foreach name="carousel" item="ca">
+            <div class="item">
+                <!-- Slide Background -->
+                <img src="__UPLOAD__/{$ca.url}" alt="{$ca.description}" class="slide-image"/>
+                <div class="bs-slider-overlay"></div>
+
+                <div class="container">
+                    <div class="row">
+                        <!-- Slide Text Layer -->
+                        <div class="slide-text">
+                            <h1 data-animation="animated zoomInRight">{$ca.name}</h1>
+                            <p data-animation="animated fadeInLeft">{$ca.description}</p>
+                            <a href="{$ca.link}" target="_blank" class="btn btn-default"
+                               data-animation="animated fadeInLeft">查看</a>
+                            <a href="{$ca.link}" target="_blank" class="btn btn-primary"
+                               data-animation="animated fadeInRight">查看</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </foreach>
+        <!-- End of Slide -->
+
+
+    </div><!-- End of Wrapper For Slides -->
+
+    <!-- Left Control -->
+    <a class="left carousel-control" href="#bootstrap-touch-slider" role="button" data-slide="prev">
+        <span class="fa fa-angle-left" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+    </a>
+
+    <!-- Right Control -->
+    <a class="right carousel-control" href="#bootstrap-touch-slider" role="button" data-slide="next">
+        <span class="fa fa-angle-right" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+    </a>
+</div> <!-- End  bootstrap-touch-slider Slider -->
+
+<!--end Picture Carousel-->
+<div class="container split-line">
+    <div class="row">
+        <div class="col-md-12">
+            <hr>
+        </div>
+    </div>
+</div>
+
+<!--start hot news-->
+<div class="container" id="hot-news">
+    <div class="row">
+        <div data-scroll-reveal class="col-md-3 hot-news-list" onclick="location.href='list.html'">
+            <section class="list-news">
+                <div class="content-title">
+                    <h1>孙便便</h1>
+                </div>
+
+                <div class="content-description">
+                    <span>我是孙便便，牛男网前主编</span>
+                    <hr/>
+                    <p>大家有什么问题可以来问我大家有什么问题可以来问我大家有什么问题可以来问我大家有什么问题可以来问我</p>
+                    <span class="click-for-detail"><a>点击查看详情</a></span>
+                </div>
+            </section>
+        </div>
+        <div data-scroll-reveal class="col-md-3 hot-news-list" onclick="location.href='list.html'">
+            <section class="list-news">
+                <div class="content-title">
+                    <h1>孙便便</h1>
+                </div>
+
+                <div class="content-description">
+                    <span>我是孙便便，牛男网前主编</span>
+                    <hr/>
+                    <p>大家有什么问题可以来问我大家有什么问题可以来问我大家有什么问题可以来问我大家有什么问题可以来问我</p>
+                    <span class="click-for-detail"><a>点击查看详情</a></span>
+                </div>
+            </section>
+        </div>
+        <div data-scroll-reveal class="col-md-3 hot-news-list" onclick="location.href='list.html'">
+            <section class="list-news">
+                <div class="content-title">
+                    <h1>孙便便</h1>
+                </div>
+
+                <div class="content-description">
+                    <span>我是孙便便，牛男网前主编</span>
+                    <hr/>
+                    <p>大家有什么问题可以来问我大家有什么问题可以来问我大家有什么问题可以来问我大家有什么问题可以来问我</p>
+                    <span class="click-for-detail"><a>点击查看详情</a></span>
+                </div>
+            </section>
+        </div>
+        <div data-scroll-reveal class="col-md-3 hot-news-list" onclick="location.href='list.html'">
+            <section class="list-news">
+                <div class="content-title">
+                    <h1>孙便便</h1>
+                </div>
+
+                <div class="content-description">
+                    <span>我是孙便便，牛男网前主编</span>
+                    <hr/>
+                    <p>大家有什么问题可以来问我大家有什么问题可以来问我大家有什么问题可以来问我大家有什么问题可以来问我</p>
+                    <span class="click-for-detail"><a>点击查看详情</a></span>
+                </div>
+            </section>
+        </div>
+        <div data-scroll-reveal class="col-md-3 hot-news-list" onclick="location.href='list.html'">
+            <section class="list-news">
+                <div class="content-title">
+                    <h1>孙便便</h1>
+                </div>
+
+                <div class="content-description">
+                    <span>我是孙便便，牛男网前主编</span>
+                    <hr/>
+                    <p>大家有什么问题可以来问我大家有什么问题可以来问我大家有什么问题可以来问我大家有什么问题可以来问我</p>
+                    <span class="click-for-detail"><a>点击查看详情</a></span>
+                </div>
+            </section>
+        </div>
+        <div data-scroll-reveal class="col-md-3 hot-news-list" onclick="location.href='list.html'">
+            <section class="list-news">
+                <div class="content-title">
+                    <h1>孙便便</h1>
+                </div>
+
+                <div class="content-description">
+                    <span>我是孙便便，牛男网前主编</span>
+                    <hr/>
+                    <p>大家有什么问题可以来问我大家有什么问题可以来问我大家有什么问题可以来问我大家有什么问题可以来问我</p>
+                    <span class="click-for-detail"><a>点击查看详情</a></span>
+                </div>
+            </section>
+        </div>
+        <div data-scroll-reveal class="col-md-3 hot-news-list" onclick="location.href='list.html'">
+            <section class="list-news">
+                <div class="content-title">
+                    <h1>孙便便</h1>
+                </div>
+
+                <div class="content-description">
+                    <span>我是孙便便，牛男网前主编</span>
+                    <hr/>
+                    <p>大家有什么问题可以来问我大家有什么问题可以来问我大家有什么问题可以来问我大家有什么问题可以来问我</p>
+                    <span class="click-for-detail"><a>点击查看详情</a></span>
+                </div>
+            </section>
+        </div>
+        <div data-scroll-reveal class="col-md-3 hot-news-list" onclick="location.href='list.html'">
+            <section class="list-news">
+                <div class="content-title">
+                    <h1>孙便便</h1>
+                </div>
+
+                <div class="content-description">
+                    <span>我是孙便便，牛男网前主编</span>
+                    <hr/>
+                    <p>大家有什么问题可以来问我大家有什么问题可以来问我大家有什么问题可以来问我大家有什么问题可以来问我</p>
+                    <span class="click-for-detail"><a>点击查看详情</a></span>
+                </div>
+            </section>
+        </div>
+    </div>
+</div>
+<!-- end hot news -->
+<div class="clearfix"></div>
+
+<!--start category news-->
+<div class="container" id="category-news">
+    <hr/>
+    <!--start row first category and asking -->
+    <div class="row">
+        <div class="col-md-8 category-content" id="category-content">
+            <div class="row category-content-bg ">
+                <div data-scroll-reveal class="category-title">
+                    <h2>科技新闻</h2>
+                    <span><a href="list.html" target="_blank">查看更多>></a></span>
+                </div>
+                <foreach name="article" item="ar">
+                    <div data-scroll-reveal class="row category-items">
+                        <div class="col-md-4 category-thumb">
+                            <a class="news-img-hover" title="###" href="{:U('Index/detail',array('id'=>$ar['id']))}"
+                               target="_blank">
+                                <img src="{$ar['image']}"/>
+                                <span class="mod-hot">{$ar['Attr'][0]['name']}</span>
+                            </a>
+                        </div>
+                        <div class="col-md-8 category-detail">
+                            <h4>
+                                <a href="{:U('Index/detail',array('id'=>$ar['id']))}" target="_blank" title="{$ar.title}">{$ar.title}</a>
+                            </h4>
+                            <hr/>
+                            <div class="news-tags">
+                                <foreach name="ar['tags']" item="ta">
+                                    <a href="{:U('Index/detail',array('tags'=>$ta))}" target="_blank"
+                                       title="###">{$ta}</a>
+                                </foreach>
+
+                                <div class="clearfix"></div>
+                            </div>
+                            <div class="news-description">
+                                <p><span>{$ar.hot}</span>{$ar.content}<a href="">查看全文>></a></p>
+
+                            </div>
+                            <div class="time-and-comment">
+
+                                <a href="list.html" target="_blank">
+                                    <i class="icon-thumbs-up"></i>赞(65+)
+                                </a>
+                                <span>
+                                    <i class="icon-comments-alt"></i>阅 ({$ar.click}+)
+                                </span>
+
+                            </div>
+
+                        </div>
+                        <span class="news-time">{$ar.createtime}</span>
+                    </div>
+
+                </foreach>
+                <div data-scroll-reveal class="row get-more-items">
+                    <a id="get-more-article">加载更多</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 category-content" id="asking-content">
+            <div class="category-content-bg">
+                <div data-scroll-reveal class="category-title ask-title">
+                    <h2>问君情</h2>
+                    <span><a href="list.html" target="_blank">全部>></a></span>
+                </div>
+                <div data-scroll-reveal class="asking-items">
+                    <div class="short-title">
+                        <p class="title-toggle"><i class="icon icon-angle-down icon-fade"></i>暴雪自曝猛料：猎空原来真是同性恋</p>
+                    </div>
+                    <div class="asking-detail">
+                        <p class="fade-detail">
+                            在周二暴雪公布的《守望先锋》漫画特辑中，暴雪公布了一个惊人的猛料：深受欢迎的角色猎空（Tracer）原来是同性恋，其同性伴侣为Emily。成为了该系列中首个公开的LGBT角色，进一步增加了游戏系列人设的多元性。
+                        </p>
+                        <span class="time-show">1天前</span>
+                        <span class="zan-num"><i class="icon icon-thumbs-up"></i>&nbsp;5</span>
+                    </div>
+                    <div class="date-toggle" style="display: none">
+                        <span class="time-show">1天前</span>
+                        <span class="zan-num"><i class="icon icon-thumbs-up"></i>&nbsp;5</span>
+                    </div>
+
+                </div>
+                <div data-scroll-reveal class="asking-items">
+                    <div class="short-title">
+                        <p class="title-toggle"><i class="icon icon-angle-down icon-fade"></i>暴雪自曝猛料：猎空原来真是同性恋</p>
+                    </div>
+                    <div class="asking-detail">
+                        <p class="fade-detail">
+                            在周二暴雪公布的《守望先锋》漫画特辑中，暴雪公布了一个惊人的猛料：深受欢迎的角色猎空（Tracer）原来是同性恋，其同性伴侣为Emily。成为了该系列中首个公开的LGBT角色，进一步增加了游戏系列人设的多元性。
+                        </p>
+                        <span class="time-show">1天前</span>
+                        <span class="zan-num"><i class="icon icon-thumbs-up"></i>&nbsp;5</span>
+                    </div>
+                    <div class="date-toggle" style="display: none">
+                        <span class="time-show">1天前</span>
+                        <span class="zan-num"><i class="icon icon-thumbs-up"></i>&nbsp;5</span>
+                    </div>
+
+                </div>
+                <div data-scroll-reveal class="asking-items">
+                    <div class="short-title">
+                        <p class="title-toggle"><i class="icon icon-angle-down icon-fade"></i>暴雪自曝猛料：猎空原来真是同性恋</p>
+                    </div>
+                    <div class="asking-detail">
+                        <p class="fade-detail">
+                            在周二暴雪公布的《守望先锋》漫画特辑中，暴雪公布了一个惊人的猛料：深受欢迎的角色猎空（Tracer）原来是同性恋，其同性伴侣为Emily。成为了该系列中首个公开的LGBT角色，进一步增加了游戏系列人设的多元性。
+                        </p>
+                        <span class="time-show">1天前</span>
+                        <span class="zan-num"><i class="icon icon-thumbs-up"></i>&nbsp;5</span>
+                    </div>
+                    <div class="date-toggle" style="display: none">
+                        <span class="time-show">1天前</span>
+                        <span class="zan-num"><i class="icon icon-thumbs-up"></i>&nbsp;5</span>
+                    </div>
+
+                </div>
+            </div>
+            <div class="category-content-bg" id="list-hot-news">
+                <div class="title-for-hot">
+                    <h3>热文</h3>
+                    <span class="span-mark"></span>
+                </div>
+                <div class="list-for-hot">
+                    <ul>
+                        <foreach name="hotArticle" item="ho">
+                            <li data-scroll-reveal>
+                                <div class="list-article-img">
+                                    <a href="{:U('Index/detail',array('id'=>$ho['id']))}" title="" target="_blank">
+                                        <img src="{$ho.image}">
+                                    </a>
+                                </div>
+                                <a class="list-title" href="{:U('Index/detail',array('id'=>$ho['id']))}" target="_blank" title="{$ho.title}">
+                                    {$ho.title}
+                                </a>
+                            </li>
+
+                        </foreach>
+
+                    </ul>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--end row first category and asking -->
+    <div class="clearfix"></div>
+</div>
+<div class="clearfix"></div>
+<!--end category news-->
+
+
+<!--start footer  -->
+<div class="container-fluid footer" data-scroll-reveal>
+    <div class="container">
+        <div class="row footer-content">
+            <div class="col-md-4 img-footer">
+                <img src="__UPLOAD__/{$system.image}"/>
+            </div>
+            <div class="col-md-4 friend_link">
+                <p>友情链接：</p>
+                <foreach name="link" item="li">
+                    <a href="{$li.url}" target="_blank" title="{$li.name}">{$li.name}</a>
+                </foreach>
+                <div class="clearfix"></div>
+            </div>
+            <div class="col-md-4 copyright">
+                <p>关于我们 | jechorn@163.com 版权所有 </p>
+                <P>备案号： {$system.icp} </p>
+                <p>Powered by jechorn</p>
+                <p> {$system.copyright}</P>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<!--end footer  -->
+<div id="top" style="display: none">
+    <div id="izl_rmenu" class="izl-rmenu"><a href="" class="btn btn-qq"></a>
+        <div class="btn btn-wx">
+            <i class="icon-mobile-phone"></i>
+            <span>手机访问</span>
+            <div id="qrcode" class="pic" onclick="window.location.href=''"></div>
+        </div>
+        <div class="btn btn-phone">
+            <i class="icon-envelope-alt"></i>
+            <span>Email</span>
+            <div class="phone">jechorn@163.com</div>
+        </div>
+        <div class="btn btn-top">
+            <i class="icon-angle-up"></i>
+            <span>返回顶部</span>
+        </div>
+    </div>
+</div>
+
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="http://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="__PUBLIC__/bootstrap/js/bootstrap.min.js"></script>
+<script src="http://cdn.bootcss.com/jquery.touchswipe/1.6.18/jquery.touchSwipe.min.js"></script>
+<script src="__PUBLIC__/js/vender/bootstrap-touch-slider.js"></script>
+
+<script src="__PUBLIC__/js/vender/scrollreveal.js"></script>
+<script src="__PUBLIC__/js/scrolltotop.js"></script>
+<script src="__PUBLIC__/js/vender/qrcode.js"></script>
+<script src="__PUBLIC__/js/vender/jquery.qrcode.js"></script>
+<script src="__PUBLIC__/js/common.js"></script>
+<script src="__PUBLIC__/js/index.js"></script>
+
+
+<script type="text/javascript">
+    $('#bootstrap-touch-slider').bsTouchSlider();
+    $('.carousel-inner .item:eq(0)').addClass('active');
+    var arr = ['slide_style_left', 'slide_style_center', 'slide_style_right'];
+
+    $('.slide-text').each(function () {
+        var slideClass = arr[Math.floor(Math.random() * arr.length)];
+        $(this).addClass(slideClass);
+    });
+    var pageNum = 2;
+    $(document).on('click','#get-more-article',function () {
+        var _this = $(this);
+        if(pageNum > {$totalPage}){
+            _this.text('已经加载完全部数据');
+            return false;
+
+        }
+        $.ajax({
+            type: 'post',
+            url: '{:U("Index/getMore")}',
+            data: {pageNum: pageNum},
+            dataType: 'json',
+            beforeSend: function () {
+                _this.text('正在加载数据....');
+            },
+            success: function (res) {
+
+                if (res.state == 1) {
+                    pageNum += 1;
+                    var html ='';
+                    $.each(res.moreArticle,function (index,value) {
+                        var url = '{:U("Index/detail")}'+'?id='+value.id;
+
+                        html += '<div data-scroll-reveal class="row category-items">' ;
+                        html += '<div class="col-md-4 category-thumb">' ;
+                        html +='<a class="news-img-hover" title="'+value.title+'" href="'+url+'" target="_blank">';
+                        html +='<img src="'+value.image+'"/>' ;
+                        var hotName = '';
+                        if(value.Attr.length >0){
+                            hotName = value.Attr[0].name;
+                        }
+                        html +='<span class="mod-hot">'+hotName+'</span>' ;
+                        html +='</a>' ;
+                        html +='</div>' ;
+                        html +='<div class="col-md-8 category-detail">' ;
+                        html +='<h4>' ;
+                        html +='<a href="'+url+'" target="_blank" title="value.title">'+value.title+'</a>' ;
+                        html +='</h4>' ;
+                        html +='<hr/>' ;
+                        html +='<div class="news-tags">';
+                        $.each(value.tags,function (key,item) {
+                            var tagsUrl = '{:U("Index/searchTags")}'+'?tags='+item;
+                            html +='<a href="'+tagsUrl+'" target="_blank" title="item">'+item+'</a>'
+                        });
+
+                        html +='<div class="clearfix"></div>' ;
+                        html +='</div>' ;
+                        html +='<div class="news-description">' ;
+                        var hot = '';
+                        if(!(value.hot === undefined)){
+                            hot = value.hot;
+                        }
+                        html +='<p><span>'+hot+'</span>'+value.content+'<a href="'+url+'">查看全文>></a></p>' ;
+                        html +='</div>' ;
+                        html +='<div class="time-and-comment">' ;
+                        html +='<a href="list.html" target="_blank">' ;
+                        html +='<i class="icon-thumbs-up"></i>赞(65+)' ;
+                        html +='</a>' ;
+                        html +='<span><i class="icon-comments-alt"></i>阅 ('+value.click+'\+)</span>' ;
+                        html +='</div>' ;
+                        html +='</div>' ;
+                        html +='<span class="news-time">'+value.createtime+'</span>';
+                        html +='</div>';
+
+
+                    });
+                    $('.get-more-items').before(html);
+                    setImgWidth();
+                    checkNull();
+
+                } else if(res.state == 2){
+                    pageNum = pageNum;
+                    _this.text('数据加载失败，请重新加载。');
+
+                }else{
+                    pageNum = pageNum;
+                    _this.text('已经加载完全部数据');
+                }
+
+            },
+            error: function () {
+
+                pageNum = pageNum;
+                _this.text('数据加载失败，请重新加载。');
+
+
+            },
+            complete: function () {
+                if(!(_this.text()=='已经加载完全部数据')){
+                    setTimeout(function () {
+                        _this.text('加载更多');
+                    },1500);
+                }
+
+
+            }
+
+
+        });
+        return false;
+
+    });
+
+</script>
+
+
+
+</body>
+</html>

@@ -1,0 +1,226 @@
+/**===============================================================
+| Author     :  "王志传"
+| Author URL :  http://www.jechorn.cn
+|
+| Email      : <jechorn@163.com>
+| Description:
+| CreateTime : 2016/12/27-3:11
+|
+| Copyright (c) 2016-2019, www.jechorn.cn. All Rights Reserved.
+ ================================================================== */
+
+@charset "utf-8";
+/*start search keyword*/
+/*====================================================
+	关键词搜索
+====================================================*/
+.left-sidebar {
+    background-color: rgb(250,250,250);
+    border: 1px #eee solid;
+}
+
+.search-keyword {
+    padding-top:15px;
+    position: relative;
+}
+
+.keyword-search {
+    background-color: #ffffff;
+    border: 1px #eee solid;
+    padding: 10px;
+    border-radius: 0px;
+    font-family: "Microsoft Yahei", "冬青黑体简体中文 w3";
+    color: #252525;
+
+}
+
+.submit-btn {
+    display: block;
+    background: #d6623d url(../images/search.png) no-repeat 3px 2px;
+    height: 34px;
+    width: 34px;
+    border: none;
+    cursor: pointer;
+    position: absolute;
+    top: 15px;
+    right: 0px;
+}
+
+/*end search keyword*/
+
+/*start rand-hot-news*/
+/*====================================================
+	随机热文
+====================================================*/
+.rand-hot-news h4 {
+    font-weight: 500;
+    font-size: 16px;
+    color: #ffffff;
+    background-color: #d6623d;
+    display: block;
+    padding: 8px;
+    margin-left: -15px;
+}
+.rand-hot-news .change-item{
+    cursor: pointer;
+    display: block;
+    float: right;
+    position: relative;
+    top: 10px;
+    right: 10px;
+    color: #ffffff;
+    font-size: 12px;
+
+}
+.rand-hot-news .change-item:hover{
+    color: #39bcff;
+}
+.rand-hot-news .change-item .fa-refresh {
+    display: inline-block;
+    position: relative;
+    top: 2px;
+    right: 0px;
+    margin-left: 4px;
+    color: #ffffff;
+
+}
+
+.rand-items {
+    list-style-type: none;
+    padding: 5px 0px;
+}
+
+.rand-items .rand-news-list {
+    border-bottom: 1px dashed #d8f2d2;
+    padding:12px 0;
+    line-height: 22px;
+    font-size: 14px;
+
+}
+.rand-items .rand-news-list a{
+    color: #656565;
+    text-decoration: none;
+    font-size: 14px;
+
+}
+.rand-items .rand-news-list a:hover{
+    color: #d6623d;
+}
+.rand-items .rand-news-list a span{
+    margin-right: 8px;
+    background: #39bcff;
+    color: #fff;
+    text-align: center;
+    font-weight: 400;
+    font-size: 1.2em;
+    padding: 0px 5px;
+}
+
+
+
+/*end rand-hot-news*/
+
+
+/*start hot-tags*/
+/*====================================================
+	图文热文 start
+====================================================*/
+
+
+/*end hot-tags*/
+.hot-tags{
+    display: block;
+}
+.hot-tags h4 {
+    font-weight: 500;
+    font-size: 16px;
+    color: #ffffff;
+    background-color: #d6623d;
+    display: block;
+    padding: 8px;
+    margin-left: -15px;
+}
+#tags-name{
+    padding: 10px 0;
+}
+#tags-name a{
+    text-align: center;
+    display: block;
+    border: 1px #eee solid;
+    border-radius: 16px;
+    padding:8px 15px;
+    float: left;
+    color: #a2a2a2;
+    text-decoration: none;
+    margin-bottom: 20px;
+    font-size: 15px;
+}
+#tags-name a:hover{
+    color: #d6623d;
+    border: 1px #d6623d solid;
+}
+
+.list-for-hot li {
+    border-bottom: 1px solid #eee;
+    display: block;
+}
+
+.list-for-hot ul li:hover {
+    box-shadow: 0px 0px 1.5px #888888;
+    -moz-box-shadow: 0px 0px 1.5px #888888;
+    -o-box-shadow: 0px 0px 1.5px #888888;
+    -webkit-box-shadow:0px 0px 1.5px #888888;
+    cursor: pointer;
+}
+
+.list-for-hot ul li {
+    list-style-type: none;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.list-for-hot ul li .list-article-img a {
+    text-align: center;
+    display: block;
+}
+
+.list-for-hot ul li .list-article-img a img {
+    transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -webkit-transition: all 0.5s ease;
+    width: 90%;
+
+}
+
+.list-for-hot ul li .list-article-img a img:hover {
+    transform: scale(1.05);
+    -o-transform: scale(1.05);
+    -moz-transform: scale(1.05);
+    -webkit-transform: scale(1.05);
+
+}
+
+.list-title {
+    display: block;
+    padding-top: 15px;
+    color: #333;
+    font-size: 14px;
+    line-height: 26px;
+    padding-bottom: 15px;
+}
+
+.list-title:hover {
+    text-decoration: none;
+    color: #3ca5f6;
+}
+/*====================================================
+	图文热文 end
+====================================================*/
+
+@media (max-width: 767px){
+    .rand-hot-news h4,.hot-tags h4{
+        margin-left: 0;
+    }
+
+}

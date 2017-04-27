@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>轮播图设置</title>
+
+    <link href="__PUBLIC__/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="__PUBLIC__/css/admin/styles.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if Viewview the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="http://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                    data-target="#sidebar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#"><span>后台</span>管理系统</a>
+            <ul class="user-menu">
+                <li class="dropdown pull-right">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span
+                            class="glyphicon glyphicon-user"></span>管理员<span class="caret"></span></a>
+                    <ul class="dropdown-menu" role="menu">
+                        <li><a href="#"><span class="glyphicon glyphicon-user"></span>属性</a></li>
+                        <li><a href="#"><span class="glyphicon glyphicon-cog"></span>设置</a></li>
+                        <li><a href="#"><span class="glyphicon glyphicon-log-out"></span>登出</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div><!-- /.container-fluid -->
+</nav>
+
+<div id="sidebar-collapse" class="col-sm-3 col-lg-2 sidebar">
+    <form role="search">
+        <div class="form-group">
+            <input type="text" class="form-control" placeholder="搜索">
+        </div>
+    </form>
+    <ul class="nav menu">
+        <li class="active"><a href="{:U('Index/index')}"><span class="glyphicon glyphicon-dashboard"></span>控制板</a></li>
+        <li><a href="{:U('System/add')}"><span class="glyphicon glyphicon-th"></span>系统设置</a></li>
+        <li class="parent ">
+            <a href="#">
+                <span class="glyphicon glyphicon-list"></span>轮播图设置<span data-toggle="collapse" href="#sub-item-2"
+                                                                         class="icon pull-right"><em
+                    class="glyphicon glyphicon-s glyphicon-plus"></em></span>
+            </a>
+            <ul class="children collapse" id="sub-item-2">
+                <li class="active">
+                    <a class="" href="{:U('Carousel/add')}">
+                        <span class="glyphicon glyphicon-share-alt"></span>轮播图添加
+                    </a>
+                </li>
+                <li>
+                    <a class="" href="{:U('Carousel/index')}">
+                        <span class="glyphicon glyphicon-share-alt"></span>轮播图列表
+                    </a>
+                </li>
+                <li>
+                    <a class="" href="{:U('Carousel/update')}">
+                        <span class="glyphicon glyphicon-share-alt"></span>轮播图修改
+                    </a>
+                </li>
+            </ul>
+        </li>
+        <li><a href="{:U('Link/add')}"><span class="glyphicon glyphicon-list-alt"></span>友情链接</a></li>
+        <li class="parent ">
+            <a href="#">
+                <span class="glyphicon glyphicon-list"></span>分类管理<span data-toggle="collapse" href="#sub-item-3"
+                                                                        class="icon pull-right"><em
+                    class="glyphicon glyphicon-s glyphicon-plus"></em></span>
+            </a>
+            <ul class="children collapse" id="sub-item-3">
+                <li class="active">
+                    <a class="" href="{:U('Category/add')}">
+                        <span class="glyphicon glyphicon-share-alt"></span>添加分类
+                    </a>
+                </li>
+                <li>
+                    <a class="" href="{:U('Category/index')}">
+                        <span class="glyphicon glyphicon-share-alt"></span>分类列表
+                    </a>
+                </li>
+            </ul>
+        </li>
+        <li><a href="comment.html"><span class="glyphicon glyphicon-info-sign"></span>评论列表</a></li>
+        <li class="parent ">
+            <a href="#">
+                <span class="glyphicon glyphicon-list"></span>文章管理<span data-toggle="collapse" href="#sub-item-1"
+                                                                        class="icon pull-right"><em
+                    class="glyphicon glyphicon-s glyphicon-plus"></em></span>
+            </a>
+            <ul class="children collapse" id="sub-item-1">
+                <li>
+                    <a class="" href="{:U('Article/add')}">
+                        <span class="glyphicon glyphicon-share-alt"></span>添加文章
+                    </a>
+                </li>
+                <li>
+                    <a class="" href="{:U('Article/add')}">
+                        <span class="glyphicon glyphicon-share-alt"></span>文章列表
+                    </a>
+                </li>
+                <li>
+                    <a class="" href="{:U('Article/add')}">
+                        <span class="glyphicon glyphicon-share-alt"></span>文章管理
+                    </a>
+                </li>
+            </ul>
+        </li>
+        <li role="presentation" class="divider"></li>
+        <li><a href="login.html"><span class="glyphicon glyphicon-user"></span>会员管理</a></li>
+    </ul>
+</div><!--/.sidebar-->
+
+<div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main">
+    <div class="row">
+        <ol class="breadcrumb">
+            <li><a href="#"><span class="glyphicon glyphicon-home"></span></a></li>
+            <li class="active">轮播图设置</li>
+        </ol>
+    </div><!--/.row-->
+
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="page-header">轮播图设置</h1>
+        </div>
+    </div><!--/.row-->
+
+
+    <div class="row">
+
+        <div class="col-lg-12">
+            <div class="panel panel-default">
+                <div class="panel-heading">轮播图列表</div>
+                <div class="panel-body">
+                    <form role="form">
+                        <div class="col-md-12">
+                            <div class="table-responsive">
+                                <table class="table table-carousel table-bordered">
+                                    <tr>
+                                        <th>编号</th>
+                                        <th>轮播图名称</th>
+                                        <th>状态</th>
+                                        <th>图片</th>
+                                        <th>操作</th>
+                                    </tr>
+                                    <empty name="list">
+                                        <tr>
+                                            <td colspan="5">
+                                                <h4>尚没有设置轮播图<a href="{:U('Carousel/add')}">点击此处添加轮播图</a></h4>
+                                            </td>
+
+                                        </tr>
+                                        <else/>
+                                        <foreach name="list" item="v">
+                                            <tr class="tr-carousel">
+                                                <td>{$v.id}</td>
+                                                <td><a href="{$v.link}" target="_blank">{$v.name}</a></td>
+                                                <td>
+                                                    <if condition="$v.status == 0">关闭
+                                                        <else/>开启
+                                                    </if>
+                                                </td>
+                                                <td class="image-td">
+                                                    <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#Modal-{$v.id}">
+                                                        显示图片
+                                                    </button>
+                                                </td>
+
+                                                <!--模态框 start-->
+
+                                                <!-- Modal -->
+                                                <div class="modal fade" id="Modal-{$v.id}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                                                    <div class="modal-dialog">
+                                                        <div class="modal-content">
+                                                            <div class="modal-header">
+                                                                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">关闭</span></button>
+                                                                <h4 class="modal-title" id="myModalLabel">轮播图照片</h4>
+                                                            </div>
+                                                            <div class="modal-body">
+                                                                <img class="image-show" src="__UPLOAD__/{$v.url}"/>
+                                                            </div>
+                                                            <div class="modal-footer">
+                                                                <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!--模态框 end-->
+                                                <td cid="{$v.id}" status="{$v.status}">
+                                                    <button  type="button" class="btn btn-primary btn-update"><span
+                                                            class="glyphicon glyphicon-edit"></span>
+                                                        <if condition="$v['status']== 0">开启
+                                                            <else/>关闭
+                                                        </if>
+                                                    </button>
+                                                    <button type="button" class="btn btn-danger btn-delete"><span
+                                                            class="glyphicon glyphicon-trash"></span>删除
+                                                    </button>
+                                                </td>
+                                            </tr>
+                                        </foreach>
+
+                                    </empty>
+                                </table>
+                                <div style="padding: 20px"></div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div><!-- /.col-->
+        </div><!-- /.row -->
+
+    </div><!--/.main-->
+</div>
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="http://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="__PUBLIC__/bootstrap/js/bootstrap.min.js"></script>
+<script src="//cdn.bootcss.com/angular.js/1.4.8/angular.js"></script>
+
+<script>
+    !function ($) {
+        $(document).on("click", "ul.nav li.parent > a > span.icon", function () {
+            $(this).find('em:first').toggleClass("glyphicon-minus");
+        });
+        $(".sidebar span.icon").find('em:first').addClass("glyphicon-plus");
+    }(window.jQuery);
+
+    $(window).on('resize', function () {
+        if ($(window).width() > 768) $('#sidebar-collapse').collapse('show')
+    })
+    $(window).on('resize', function () {
+        if ($(window).width() <= 767) $('#sidebar-collapse').collapse('hide')
+    });
+    var updateStatus = "{:U('Carousel/updateStatus')}";
+    var deleteCarousel ="{:U('Carousel/deleteCarousel')}";
+
+</script>
+<script src="__PUBLIC__/js/admin/carousel.list.js"></script>
+
+
+
+</body>
+
+</html>

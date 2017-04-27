@@ -1,0 +1,408 @@
+<extend name="./Application/Home/View/base.html"/>
+<block name="style">
+    <link href="http://cdn.bootcss.com/animate.css/3.5.2/animate.min.css" rel="stylesheet" media="all">
+    <link href="__PUBLIC__/css/vender/bootstrap-touch-slider.css" rel="stylesheet" media="all">
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/index.css">
+
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/vender/smooth-scrollbar.css">
+
+</block>
+<block name="content">
+    <!--start Picture Carousel  PS:图片轮播-->
+    <div id="bootstrap-touch-slider" class="carousel bs-slider fade  control-round indicators-line" data-ride="carousel"
+         data-pause="hover" data-interval="5000">
+
+        <!-- Indicators -->
+        <ol class="carousel-indicators">
+            <li data-target="#bootstrap-touch-slider" data-slide-to="0" class="active"></li>
+            <li data-target="#bootstrap-touch-slider" data-slide-to="1"></li>
+            <li data-target="#bootstrap-touch-slider" data-slide-to="2"></li>
+        </ol>
+
+        <!-- Wrapper For Slides -->
+        <div class="carousel-inner" role="listbox">
+
+            <!-- start Slide -->
+            <foreach name="carousel" item="ca">
+                <div class="item">
+                    <!-- Slide Background -->
+                    <img src="__UPLOAD__/{$ca.url}" alt="{$ca.description}" class="slide-image"/>
+                    <div class="bs-slider-overlay"></div>
+
+                    <div class="container">
+                        <div class="row">
+                            <!-- Slide Text Layer -->
+                            <div class="slide-text">
+                                <h1 data-animation="animated zoomInRight">{$ca.name}</h1>
+                                <p data-animation="animated fadeInLeft">{$ca.description}</p>
+                                <a href="{$ca.link}" target="_blank" class="btn btn-default"
+                                   data-animation="animated fadeInLeft">查看</a>
+                                <a href="{$ca.link}" target="_blank" class="btn btn-primary"
+                                   data-animation="animated fadeInRight">查看</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </foreach>
+            <!-- End of Slide -->
+
+
+        </div><!-- End of Wrapper For Slides -->
+
+        <!-- Left Control -->
+        <a class="left carousel-control" href="#bootstrap-touch-slider" role="button" data-slide="prev">
+            <span class="fa fa-angle-left" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+
+        <!-- Right Control -->
+        <a class="right carousel-control" href="#bootstrap-touch-slider" role="button" data-slide="next">
+            <span class="fa fa-angle-right" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div> <!-- End  bootstrap-touch-slider Slider -->
+
+    <!--end Picture Carousel-->
+    <div class="container split-line">
+        <div class="row">
+            <div class="col-md-12">
+                <hr>
+            </div>
+        </div>
+    </div>
+
+    <!--start hot news-->
+    <div class="container" id="hot-news">
+        <div class="row">
+            <volist name="HotComment" id="hotC" key="hotId" offset="0" length='4'>
+
+                <div data-scroll-reveal class="col-md-3 hot-news-list">
+                    <section class="list-news">
+                        <div class="content-title">
+                            <h1><em>HOT--{$hotId}</em></h1>
+                        </div>
+
+                        <div class="content-description">
+                            <span>{$hotC.title}</span>
+                            <hr/>
+                            <p>{$hotC.content|mb_substr=###,0,60,'utf-8'}</p>
+                            <span class="click-for-detail"><a href="{$hotC.href}" target="_blank">点击查看详情</a></span>
+                        </div>
+                    </section>
+                </div>
+
+            </volist>
+        </div>
+        <div class="row">
+            <volist name="HotComment" id="hotC" key="hotId" offset="4" length='4'>
+                <div data-scroll-reveal class="col-md-3 hot-news-list">
+                    <section class="list-news">
+                        <div class="content-title">
+                            <h1><em>HOT--{$hotId+4}</em></h1>
+                        </div>
+
+                        <div class="content-description">
+                            <span>{$hotC.title}</span>
+                            <hr/>
+                            <p>{$hotC.content|mb_substr=###,0,60,'utf-8'}</p>
+                            <span class="click-for-detail"><a href="{$hotC.href}" target="_blank">点击查看详情</a></span>
+                        </div>
+                    </section>
+                </div>
+
+            </volist>
+        </div>
+    </div>
+    <!-- end hot news -->
+    <div class="clearfix"></div>
+
+    <!--start category news-->
+    <div class="container" id="category-news">
+        <hr/>
+        <!--start row first category and asking -->
+        <div class="row">
+            <div class="col-md-8 category-content" id="category-content">
+                <div class="row category-content-bg ">
+                    <div data-scroll-reveal class="category-title">
+                        <h2>最新消息</h2>
+                        <span><a href="{:U('Cate/index')}" target="_blank">查看更多>></a></span>
+                    </div>
+
+                    <foreach name="article" item="ar">
+                        <div data-scroll-reveal class="row category-items">
+                            <div class="col-md-4 category-thumb">
+                                <a class="news-img-hover" title="{$ar.title}"
+                                   href="{:U('Details/detail',array('id'=>$ar['id']))}"
+                                   target="_blank">
+                                    <img src="{$ar['image']}"/>
+                                    <span class="mod-hot">{$ar['Attr'][0]['name']}</span>
+                                </a>
+                            </div>
+                            <div class="col-md-8 category-detail">
+                                <h4>
+                                    <a href="{:U('Details/detail',array('id'=>$ar['id']))}" target="_blank"
+                                       title="{$ar.title}">{$ar.title}</a>
+                                </h4>
+                                <hr/>
+                                <div class="news-tags">
+                                    <foreach name="ar['tags']" item="ta">
+                                        <a href="{:U('Index/tags',array('tags'=>urlencode($ta)))}" target="_blank"
+                                           title="{$ta}">{$ta}</a>
+                                    </foreach>
+
+                                    <div class="clearfix"></div>
+                                </div>
+                                <div class="news-description">
+                                    <p><span>{$ar.hot}</span>{$ar.content}<a
+                                            href="{:U('Details/detail',array('id'=>$ar['id']))}">查看全文>></a></p>
+
+                                </div>
+                                <div class="time-and-comment">
+
+                                    <span>
+                                        <i class="icon-thumbs-up"></i>赞({$ar.favorite}+)
+                                    </span>
+                                    <span>
+                                        <i class="icon-comments-alt"></i>阅 ({$ar.click}+)
+                                    </span>
+
+                                </div>
+
+                            </div>
+                            <span class="news-time">{$ar.createtime}</span>
+                        </div>
+
+                    </foreach>
+                    <div data-scroll-reveal class="row get-more-items">
+                        <a id="get-more-article">加载更多</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 category-content" id="asking-content">
+                <div class="category-content-bg">
+                    <div data-scroll-reveal class="category-title ask-title">
+                        <h2>24快报</h2>
+                        <span><a href="list.html" target="_blank">全部>></a></span>
+                    </div>
+                    <section data-scrollbar id="fast-scroll">
+                        <foreach name="fast" item="fa">
+                            <div class="asking-items">
+                                <div class="short-title">
+                                    <p class="title-toggle"><i class="icon icon-angle-down icon-fade"></i>{$fa.title}
+                                    </p>
+                                </div>
+                                <div class="asking-detail">
+                                    <p class="fade-detail">
+                                        {$fa.content}
+                                    </p>
+                                    <span class="time-show">{$fa['time']|diffTime=###}</span>
+                                    <span class="zan-num" data-id="{$fa.id}"><i class="fa fa-thumbs-up"></i><span
+                                            class="favorite-num">{$fa.favorite}</span></span>
+                                </div>
+                                <div class="date-toggle" style="display: none">
+                                    <span class="time-show">{$fa['time']|diffTime=###}</span>
+                                    <span class="zan-num"><i class="icon icon-thumbs-up"></i><span class="favorite-num">{$fa.favorite}</span></span>
+                                </div>
+
+                            </div>
+
+                        </foreach>
+                    </section>
+
+
+                </div>
+                <div class="category-content-bg" id="list-hot-news">
+                    <div class="title-for-hot">
+                        <h3>热文</h3>
+                        <span class="span-mark"></span>
+                    </div>
+                    <div class="list-for-hot">
+                        <ul>
+                            <foreach name="hotArticle" item="ho">
+                                <li data-scroll-reveal>
+                                    <div class="list-article-img">
+                                        <a href="{:U('Details/detail',array('id'=>$ho['id']))}" title=""
+                                           target="_blank">
+                                            <img src="{$ho.image}">
+                                        </a>
+                                    </div>
+                                    <a class="list-title" href="{:U('Details/detail',array('id'=>$ho['id']))}"
+                                       target="_blank" title="{$ho.title}">
+                                        {$ho.title}
+                                    </a>
+                                </li>
+
+                            </foreach>
+                        </ul>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--end row first category and asking -->
+        <div class="clearfix"></div>
+    </div>
+    <div class="clearfix"></div>
+    <!--end category news-->
+
+</block>
+
+<block name="js-first">
+    <script src="http://cdn.bootcss.com/jquery.touchswipe/1.6.18/jquery.touchSwipe.min.js"></script>
+    <script src="__PUBLIC__/js/vender/bootstrap-touch-slider.js"></script>
+    <script src="__PUBLIC__/js/vender/smooth-scrollbar.js"></script>
+</block>
+<block name="js-second">
+    <script src="__PUBLIC__/js/index.js"></script>
+    <script>
+        $(window).resize(function () {
+            if($(window).width() <768){
+                Scrollbar.destroyAll();
+                $('#fast-scroll').css('max-height','100%');
+            }else{
+                $('#fast-scroll').css('max-height','700px');
+                Scrollbar.initAll({
+                    speed: 1,
+                    overscrollEffect: 'bounce',
+                    overscrollEffectColor: '#d2527f'
+                });
+            }
+        });
+        $(function () {
+            //24快报滚动条
+            if($(window).width() <768){
+                Scrollbar.destroyAll();
+                $('#fast-scroll').css('max-height','100%');
+            }else{
+                Scrollbar.initAll({
+                    speed: 1,
+                    overscrollEffect: 'bounce',
+                    overscrollEffectColor: '#d2527f'
+                });
+            }
+
+            $('.zan-num').on('click', function () {
+                var _this = $(this);
+                var id = $(this).attr('data-id');
+                if (undefined === id || id == '' || id == null) return false;
+                $.ajax({
+                    type: 'post',
+                    data: {id: id},
+                    url: '{:U("Index/addLike")}',
+                    dataType: 'json',
+                    cache: false,
+                    success: function (res) {
+                        if (res.state == 1) {
+                            _this.parent().parent('.asking-items').find('.zan-num .favorite-num').text(res.fastNum);
+                        }
+                    },
+                    error: function () {
+
+                    }
+                });
+            });
+
+        });
+
+    </script>
+    <script type="text/javascript">
+        $('#bootstrap-touch-slider').bsTouchSlider();
+        $('.carousel-inner .item:eq(0)').addClass('active');
+        var arr = ['slide_style_left', 'slide_style_center', 'slide_style_right'];
+        $('.slide-text').each(function () {
+            var slideClass = arr[Math.floor(Math.random() * arr.length)];
+            $(this).addClass(slideClass);
+        });
+        var pageNum = 2;
+        $(document).on('click', '#get-more-article', function () {
+            var _this = $(this);
+            if (pageNum > {$totalPage}) {
+                _this.text('已经加载完全部数据');
+                return false;
+            }
+            $.ajax({
+                type: 'post',
+                url: '{:U("Index/getMore")}',
+                data: {pageNum: pageNum},
+                dataType: 'json',
+                beforeSend: function () {
+                    _this.text('正在加载数据....');
+                },
+                success: function (res) {
+                    if (res.state == 1) {
+                        pageNum += 1;
+                        var html = '';
+                        $.each(res.moreArticle, function (index, value) {
+                            var url = '{:U("Details/detail")}' + '?id=' + value.id;
+
+                            html += '<div data-scroll-reveal class="row category-items">';
+                            html += '<div class="col-md-4 category-thumb">';
+                            html += '<a class="news-img-hover" title="' + value.title + '" href="' + url + '" target="_blank">';
+                            html += '<img src="' + value.image + '"/>';
+                            var hotName = '';
+                            if (value.Attr.length > 0) {
+                                hotName = value.Attr[0].name;
+                            }
+                            html += '<span class="mod-hot">' + hotName + '</span>';
+                            html += '</a>';
+                            html += '</div>';
+                            html += '<div class="col-md-8 category-detail">';
+                            html += '<h4>';
+                            html += '<a href="' + url + '" target="_blank" title="value.title">' + value.title + '</a>';
+                            html += '</h4>';
+                            html += '<hr/>';
+                            html += '<div class="news-tags">';
+                            $.each(value.tags, function (key, item) {
+                                var tagsUrl = '{:U("Index/tags")}' + '?tags=' + item;
+                                html += '<a href="' + tagsUrl + '" target="_blank" title="item">' + item + '</a>'
+                            });
+
+                            html += '<div class="clearfix"></div>';
+                            html += '</div>';
+                            html += '<div class="news-description">';
+                            var hot = '';
+                            if (!(value.hot === undefined)) {
+                                hot = value.hot;
+                            }
+                            html += '<p><span>' + hot + '</span>' + value.content + '<a href="' + url + '">查看全文>></a></p>';
+                            html += '</div>';
+                            html += '<div class="time-and-comment">';
+                            html += '<a href="list.html" target="_blank">';
+                            html += '<i class="icon-thumbs-up"></i>赞(65+)';
+                            html += '</a>';
+                            html += '<span><i class="icon-comments-alt"></i>阅 (' + value.click + '\+)</span>';
+                            html += '</div>';
+                            html += '</div>';
+                            html += '<span class="news-time">' + value.createtime + '</span>';
+                            html += '</div>';
+                        });
+                        $('.get-more-items').before(html);
+                        setImgWidth();
+                        checkNull();
+
+                    } else if (res.state == 2) {
+                        pageNum = pageNum;
+                        _this.text('数据加载失败，请重新加载。');
+                    } else {
+                        pageNum = pageNum;
+                        _this.text('已经加载完全部数据');
+                    }
+                },
+                error: function () {
+                    pageNum = pageNum;
+                    _this.text('数据加载失败，请重新加载。');
+                },
+                complete: function () {
+                    if (!(_this.text() == '已经加载完全部数据')) {
+                        setTimeout(function () {
+                            _this.text('加载更多');
+                        }, 1500);
+                    }
+                }
+            });
+            return false;
+        });
+
+    </script>
+</block>

@@ -1,0 +1,136 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+    <link rel="stylesheet" href="__PUBLIC__/404/css/main.css" type="text/css" media="screen, projection" /> <!-- main stylesheet -->
+    <link rel="stylesheet" type="text/css" media="all" href="__PUBLIC__/404/css/tipsy.css" /> <!-- Tipsy implementation -->
+
+    <!--[if lt IE 9]>
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/404/css/ie8.css" />
+    <![endif]-->
+
+    <script src="http://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
+    <script type="text/javascript" src="__PUBLIC__/404/scripts/custom-scripts.js"></script>
+    <script type="text/javascript" src="__PUBLIC__/404/scripts/jquery.tipsy.js"></script> <!-- Tipsy -->
+
+    <script type="text/javascript">
+
+        $(document).ready(function(){
+
+            universalPreloader();
+
+        });
+
+        $(window).load(function(){
+
+            //remove Universal Preloader
+            universalPreloaderRemove();
+
+            rotate();
+            dogRun();
+            dogTalk();
+
+            //Tipsy implementation
+            $('.with-tooltip').tipsy({gravity: $.fn.tipsy.autoNS});
+
+        });
+
+    </script>
+
+    <title>404 - 页面没找到</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /></head>
+
+<body>
+
+<!-- Universal preloader -->
+<div id="universal-preloader">
+    <div class="preloader">
+        <img src="__PUBLIC__/404/images/universal-preloader.gif" alt="universal-preloader" class="universal-preloader-preloader" />
+    </div>
+</div>
+<!-- Universal preloader -->
+
+<div id="wrapper">
+    <!-- 404 graphic -->
+    <div class="graphic"></div>
+    <!-- 404 graphic -->
+    <!-- Not found text -->
+    <div class="not-found-text">
+        <h1 class="not-found-text">页面不存在！</h1>
+    </div>
+    <!-- Not found text -->
+
+    <!-- search form -->
+    <div class="search">
+        <form name="search" method="get" action="#" />
+        <input type="text" name="search" value="搜索...." />
+        <input class="with-tooltip" title="搜索...." type="submit" name="submit" value="" />
+        </form>
+    </div>
+    <!-- search form -->
+
+    <!-- top menu -->
+    <div class="top-menu">
+        <a href="{:U('Index/index')}" class="with-tooltip" title="返回首页">首页</a> | <a href="#" class="with-tooltip" title="帮助">帮助</a>
+    </div>
+    <!-- top menu -->
+
+    <div class="dog-wrapper">
+        <!-- dog running -->
+        <div class="dog"></div>
+        <!-- dog running -->
+
+        <!-- dog bubble talking -->
+        <div class="dog-bubble">
+
+        </div>
+
+        <!-- The dog bubble rotates these -->
+        <div class="bubble-options">
+            <p class="dog-bubble">
+                你迷路了吗？朋友,别担心，我可是一个好向导。
+
+            </p>
+            <p class="dog-bubble">
+                <br />
+                哈！哈！
+            </p>
+            <p class="dog-bubble">
+                <br />
+                别着急，我已经在路上了。
+            </p>
+            <p class="dog-bubble">
+                我多希望能有一块<br /><img style="margin-top:8px" src="__PUBLIC__/404/images/cookie.png" alt="cookie" />
+            </p>
+            <p class="dog-bubble">
+                <br />
+                啊哦，真是有点无聊了
+            </p>
+            <p class="dog-bubble">
+                <br />
+                快到了吧？
+            </p>
+            <p class="dog-bubble">
+                怎么感觉我在绕圈呢？
+            </p>
+            <p class="dog-bubble">
+                <br />
+                我肯定是迷路了。
+            </p>
+            <p class="dog-bubble">
+                我想我看到一只<br /><img style="margin-top:8px" src="__PUBLIC__/404/images/cat.png" alt="cat" />
+            </p>
+            <p class="dog-bubble">
+                我到底在干什么呢？
+            </p>
+        </div>
+        <!-- The dog bubble rotates these -->
+        <!-- dog bubble talking -->
+    </div>
+
+    <!-- planet at the bottom -->
+    <div class="planet"></div>
+    <!-- planet at the bottom -->
+</div>
+</body>
+</html>

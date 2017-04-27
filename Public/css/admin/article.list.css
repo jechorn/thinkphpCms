@@ -1,0 +1,41 @@
+/**===============================================================
+| Author     :  "王志传"
+| Author URL :  http://www.jechorn.cn
+|
+| Email      : <jechorn@163.com>
+| Description:
+| CreateTime : 2017/3/14-19:09
+|
+| Copyright (c) 2016-2019, www.jechorn.cn. All Rights Reserved.
+ ================================================================== */
+
+@charset "utf-8";
+
+/*start 备注*/
+/*====================================================
+	备注
+====================================================*/
+.article-list tr th ,.article-list tr td{
+    text-align: center;
+    vertical-align: middle !important;
+
+
+}
+.article-title{
+    color: #5f6468;;
+}
+
+.article-title:hover{
+    cursor: pointer;
+    text-decoration: none;
+    color: #d6623d;;
+
+}
+.btn-margin{
+
+    margin-right:2px;
+    margin-bottom: 2px;
+}
+
+
+

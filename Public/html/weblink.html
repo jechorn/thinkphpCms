@@ -1,0 +1,49 @@
+
+<div class="col-md-4">
+    <div class="panel panel-default">
+        <div class="panel-heading">友情链接添加</div>
+        <div class="panel-body">
+                <div class="col-md-12 input-data">
+                    <div class="input-msg">
+                        <div class="input-group carousel-attr">
+                            <label class="input-group-addon" for="carousel_name_{{k+1}}">名称：</label>
+                            <input class="form-control input-name" id="carousel_name_{{k+1}}" name="carousel_name_{{k+1}}" type="text"
+                                   placeholder="友情链接名称" ng-model="name" ng-blur="change=true" ng-focus="change=false" required ng-maxlength="5" ng-minlength="2"/>
+                            <!--<span class="alert-msg"></span>-->
+                            <span class="glyphicon glyphicon-ok form-control-feedback"
+                                  ng-show="link_info.carousel_name_{{k+1}}.$dirty && link_info.carousel_name_{{k+1}}.$valid "></span>
+                            <!--
+                            <div class="alert-msg" ng-show="link_info.carousel_name_{{k+1}}.$error.required && change">
+                                <div class="up"></div>
+                                <div class="msg-show">不能为空</div>
+                            </div>
+                            -->
+                        </div>
+
+                    </div>
+                    <div class="input-msg">
+                        <div class="input-group carousel-attr">
+                            <label class="input-group-addon" for="link_url_{{v}}">地址：</label>
+                            <input class="form-control input-url" id="link_url_{{v}}" name="link_url_{{k+1}}"
+                                   type="url" placeholder="友情链接地址" ng-model="url" ng-blur="bechange=true" ng-focus="bechange=false"  required/>
+                            <span class="glyphicon glyphicon-ok form-control-feedback"
+                                  ng-show="link_info.link_url_{{k+1}}.$dirty && link_info.link_url_{{k+1}}.$valid"></span>
+
+                         <!--
+                            <div class="alert-msg" ng-show="link_info.link_url_{{k+1}}.$error.required && bechange">
+                                <div class="up"></div>
+                                <div class="msg-show">不能为空</div>
+                            </div>
+                            <div class="alert-msg" ng-show="link_info.link_url_{{k+1}}.$invalid &&( undefined ==link_info.link_url_{{k+1}}.$error.required) && bechange">
+                                <div class="up"></div>
+                                <div class="msg-show">url地址不合法</div>
+                            </div>
+                            -->
+
+                        </div>
+                    </div>
+                </div>
+            <hr/>
+        </div>
+    </div><!-- /.col-->
+</div>

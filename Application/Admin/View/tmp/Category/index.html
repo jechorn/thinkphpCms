@@ -1,0 +1,304 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>分类列表</title>
+
+    <link href="__PUBLIC__/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="__PUBLIC__/css/admin/styles.css" rel="stylesheet">
+    <link href="__PUBLIC__/css/admin/cate.list.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if Viewview the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="http://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                    data-target="#sidebar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#"><span>后台</span>管理系统</a>
+            <ul class="user-menu">
+                <li class="dropdown pull-right">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span
+                            class="glyphicon glyphicon-user"></span>管理员<span class="caret"></span></a>
+                    <ul class="dropdown-menu" role="menu">
+                        <li><a href="#"><span class="glyphicon glyphicon-user"></span>属性</a></li>
+                        <li><a href="#"><span class="glyphicon glyphicon-cog"></span>设置</a></li>
+                        <li><a href="#"><span class="glyphicon glyphicon-log-out"></span>登出</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div><!-- /.container-fluid -->
+</nav>
+
+<div id="sidebar-collapse" class="col-sm-3 col-lg-2 sidebar">
+    <form role="search">
+        <div class="form-group">
+            <input type="text" class="form-control" placeholder="搜索">
+        </div>
+    </form>
+    <ul class="nav menu">
+        <li class="active"><a href="{:U('Index/index')}"><span class="glyphicon glyphicon-dashboard"></span>控制板</a></li>
+        <li><a href="{:U('System/add')}"><span class="glyphicon glyphicon-th"></span>系统设置</a></li>
+        <li class="parent ">
+            <a href="#">
+                <span class="glyphicon glyphicon-list"></span>轮播图设置<span data-toggle="collapse" href="#sub-item-2"
+                                                                         class="icon pull-right"><em
+                    class="glyphicon glyphicon-s glyphicon-plus"></em></span>
+            </a>
+            <ul class="children collapse" id="sub-item-2">
+                <li class="active">
+                    <a class="" href="{:U('Carousel/add')}">
+                        <span class="glyphicon glyphicon-share-alt"></span>轮播图添加
+                    </a>
+                </li>
+                <li>
+                    <a class="" href="{:U('Carousel/index')}">
+                        <span class="glyphicon glyphicon-share-alt"></span>轮播图列表
+                    </a>
+                </li>
+                <li>
+                    <a class="" href="{:U('Carousel/update')}">
+                        <span class="glyphicon glyphicon-share-alt"></span>轮播图修改
+                    </a>
+                </li>
+            </ul>
+        </li>
+        <li><a href="{:U('Link/add')}"><span class="glyphicon glyphicon-list-alt"></span>友情链接</a></li>
+        <li class="parent ">
+            <a href="#">
+                <span class="glyphicon glyphicon-list"></span>分类管理<span data-toggle="collapse" href="#sub-item-3"
+                                                                        class="icon pull-right"><em
+                    class="glyphicon glyphicon-s glyphicon-plus"></em></span>
+            </a>
+            <ul class="children collapse" id="sub-item-3">
+                <li class="active">
+                    <a class="" href="{:U('Category/add')}">
+                        <span class="glyphicon glyphicon-share-alt"></span>添加分类
+                    </a>
+                </li>
+                <li>
+                    <a class="" href="{:U('Category/index')}">
+                        <span class="glyphicon glyphicon-share-alt"></span>分类列表
+                    </a>
+                </li>
+            </ul>
+        </li>
+        <li><a href="comment.html"><span class="glyphicon glyphicon-info-sign"></span>评论列表</a></li>
+        <li class="parent ">
+            <a href="#">
+                <span class="glyphicon glyphicon-list"></span>文章管理<span data-toggle="collapse" href="#sub-item-1"
+                                                                        class="icon pull-right"><em
+                    class="glyphicon glyphicon-s glyphicon-plus"></em></span>
+            </a>
+            <ul class="children collapse" id="sub-item-1">
+                <li>
+                    <a class="" href="{:U('Article/add')}">
+                        <span class="glyphicon glyphicon-share-alt"></span>添加文章
+                    </a>
+                </li>
+                <li>
+                    <a class="" href="{:U('Article/add')}">
+                        <span class="glyphicon glyphicon-share-alt"></span>文章列表
+                    </a>
+                </li>
+                <li>
+                    <a class="" href="{:U('Article/add')}">
+                        <span class="glyphicon glyphicon-share-alt"></span>文章管理
+                    </a>
+                </li>
+            </ul>
+        </li>
+        <li role="presentation" class="divider"></li>
+        <li><a href="login.html"><span class="glyphicon glyphicon-user"></span>会员管理</a></li>
+    </ul>
+</div><!--/.sidebar-->
+
+<div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main">
+    <div class="row">
+        <ol class="breadcrumb">
+            <li><a href="#"><span class="glyphicon glyphicon-home"></span></a></li>
+            <li class="active">分类列表</li>
+        </ol>
+    </div><!--/.row-->
+
+    <div class="row">
+        <div class="col-md-12">
+            <h1 class="page-header">分类列表</h1>
+        </div>
+    </div><!--/.row-->
+
+    <div class="row">
+        <div class="col-md-12">
+            <div class="panel panel-default">
+                <div class="panel-heading">分类列表 <a class="back-list" href="{:U('Category/add')}">[添加分类]</a></div>
+                <div class="panel-body">
+                    <div class="table-responsive cate-list">
+                        <table class="table table-bordered cate-table">
+                            <tr pid="0">
+                                <th>
+                                    <span class="glyphicon glyphicon-plus"></span>
+                                </th>
+                                <th>分类名称</th>
+                                <th>排序</th>
+                                <th>操作</th>
+
+                            </tr>
+                            <?php
+                            showCate($cate);
+                            function showCate($arr){
+                                if (empty($arr)) {
+                                    return;
+                                }
+                                echo '<tr>';
+                            foreach ($arr as $v) {
+                            echo '<tr cid="'.$v['id'].'" pid="'.$v['pid'].'">';
+                            echo '<td><span class="show-cate glyphicon glyphicon-plus"></span></td>';
+                            echo '<td class="cate-name">'.$v['html'].$v['name'].'</td>';
+                            echo '<td>'.$v['sort'].'</td>';
+                            echo '<td><a href="'.U('Category/add',array('id'=>$v['id'],'pid'=>$v['pid'])).'" class="btn btn-success btn-sm">添加子分类</a><a href="'.U('Category/update',array('id'=>$v['id'],'pid'=>$v['pid'])).'" class="btn btn-success btn-sm">修改</a><button class="btn btn-danger btn-sm" onclick="deleteBtn('.$v[id].')">删除</button></td>';
+                            showCate($v['child']);
+                            }
+                            echo '</tr>';
+                            }
+
+                            ?>
+
+                        </table>
+                    </div>
+
+                </div>
+            </div><!-- /.col-->
+        </div>
+        <!-- /.row -->
+    </div><!--/.main-->
+</div>
+
+<!--模态框 start-->
+<div class="modal fade" id="submit-msg">
+    <div class="modal-dialog  modal-sm">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">关闭</span></button>
+                <h3 class="modal-title">删除信息提示</h3>
+            </div>
+            <div class="modal-body">
+                <div class="response-msg"></div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-confirm">确定</button>
+                <button type="button" class="btn btn-cancel" data-dismiss="modal">取消</button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+<!--模态框 end-->
+
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="http://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="__PUBLIC__/bootstrap/js/bootstrap.min.js"></script>
+<script src="//cdn.bootcss.com/angular.js/1.4.8/angular.js"></script>
+
+
+<script>
+    !function ($) {
+        $(document).on("click", "ul.nav li.parent > a > span.icon", function () {
+            $(this).find('em:first').toggleClass("glyphicon-minus");
+        });
+        $(".sidebar span.icon").find('em:first').addClass("glyphicon-plus");
+    }(window.jQuery);
+
+    $(window).on('resize', function () {
+        if ($(window).width() > 768) $('#sidebar-collapse').collapse('show')
+    })
+    $(window).on('resize', function () {
+        if ($(window).width() <= 767) $('#sidebar-collapse').collapse('hide')
+    });
+
+</script>
+<script>
+    $(function () {
+        $('.cate-table tr td.cate-name').css({
+            'text-align' : 'left',
+            'padding-left' : '80px'
+        });
+        $('tr[pid !=0]').hide();
+        $('.show-cate').click(function () {
+            if($(this).hasClass('glyphicon-plus')){
+                $(this).removeClass('glyphicon-plus').addClass('glyphicon-minus');
+                var pid = $(this). parent().parent().attr('pid');
+                var cid = $(this). parent().parent().attr('cid');
+                $('tr[pid='+cid+']').toggle();
+
+            }else{
+                $(this).removeClass('glyphicon-minus').addClass('glyphicon-plus');
+                var pid = $(this). parent().parent().attr('pid');
+                var cid = $(this). parent().parent().attr('cid');
+                $('tr[pid='+cid+']').toggle();
+            }
+
+        });
+    }) ;
+
+    var deleteUrl = "{:U('Category/delete')}";
+    function deleteBtn(id) {
+        if($.isNumeric(id)){
+            $('#submit-msg .response-msg').html('<span class="glyphicon glyphicon-remove"></span><h4>你确定要删除这个分类吗？删除该分类下的子分类会被一起删除。</h4>');
+            $('#submit-msg').modal({
+                backdrop: 'static',
+                keyboard: false
+            });
+            //$('#submit-msg').modal('show');
+
+        }
+
+        $('.btn-confirm').unbind('click').click(function () {
+            $('#submit-msg').modal('hide');
+            var data = {id:id};
+            $.ajax({
+                url:deleteUrl,
+                dataType:'json',
+                type:'post',
+                data:data,
+                success:function (response) {
+                    $('.btn-confirm').remove();
+                    $('.btn-cancel').text('确定');
+                    $('#submit-msg').modal('show');
+                    $('#submit-msg .response-msg').html('<span class="glyphicon glyphicon-ok"></span><h4>'+response.msg +'</h4>');
+                    setTimeout(function () {
+                        location.reload();
+                    },2000);
+
+
+                },
+
+            });
+            return false;
+        });
+
+
+    }
+
+
+</script>
+</body>
+
+</html>

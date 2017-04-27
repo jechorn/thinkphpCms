@@ -1,0 +1,164 @@
+<extend name="./Application/Admin/View/base.html" />
+<block name="title">
+    <title>分类列表</title>
+</block>
+<block name="extends-style">
+    <link href="__PUBLIC__/css/admin/cate.list.css" rel="stylesheet">
+</block>
+<block name="content">
+    <!--分类列表框 start-->
+    <div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main">
+        <div class="row">
+            <ol class="breadcrumb">
+                <li><a href="#"><span class="glyphicon glyphicon-home"></span></a></li>
+                <li class="active">分类列表</li>
+            </ol>
+        </div><!--/.row-->
+
+        <div class="row">
+            <div class="col-md-12">
+                <h1 class="page-header">分类列表</h1>
+            </div>
+        </div><!--/.row-->
+
+        <div class="row">
+            <div class="col-md-12">
+                <div class="panel panel-default">
+                    <div class="panel-heading">分类列表 <a class="back-list" href="{:U('Category/add')}">[添加分类]</a></div>
+                    <div class="panel-body">
+                        <div class="table-responsive cate-list">
+                            <table class="table table-bordered cate-table">
+                                <tr pid="0">
+                                    <th>
+                                        <span class="glyphicon glyphicon-plus"></span>
+                                    </th>
+                                    <th>分类名称</th>
+                                    <th>排序</th>
+                                    <th>操作</th>
+
+                                </tr>
+                                <?php
+                            showCate($cate);
+                            function showCate($arr){
+                                if (empty($arr)) {
+                                    return;
+                                }
+                                echo '<tr>';
+                                foreach ($arr as $v) {
+                                echo '<tr cid="'.$v['id'].'" pid="'.$v['pid'].'">';
+                                echo '<td><span class="show-cate glyphicon glyphicon-plus"></span></td>';
+                                echo '<td class="cate-name">'.$v['html'].$v['name'].'</td>';
+                                echo '<td>'.$v['sort'].'</td>';
+                                echo '<td><a href="'.U('Category/add',array('id'=>$v['id'],'pid'=>$v['pid'])).'" class="btn btn-success btn-sm">添加子分类</a><a href="'.U('Category/update',array('id'=>$v['id'],'pid'=>$v['pid'])).'" class="btn btn-success btn-sm">修改</a><button class="btn btn-danger btn-sm" onclick="deleteBtn('.$v[id].')">删除</button></td>';
+                                showCate($v['child']);
+                                }
+                                echo '</tr>';
+                                }
+
+                                ?>
+
+                            </table>
+                        </div>
+
+                    </div>
+                </div><!-- /.col-->
+            </div>
+            <!-- /.row -->
+        </div><!--/.main-->
+    </div>
+    <!--分类列表框 end-->
+
+</block>
+<block name="js">
+    <script>
+        $(function () {
+            $('.cate-table tr td.cate-name').css({
+                'text-align' : 'left',
+                'padding-left' : '80px'
+            });
+            $('tr[pid !=0]').hide();
+            $('.show-cate').click(function () {
+                if($(this).hasClass('glyphicon-plus')){
+                    $(this).removeClass('glyphicon-plus').addClass('glyphicon-minus');
+                    var pid = $(this). parent().parent().attr('pid');
+                    var cid = $(this). parent().parent().attr('cid');
+                    $('tr[pid='+cid+']').toggle();
+
+                }else{
+                    $(this).removeClass('glyphicon-minus').addClass('glyphicon-plus');
+                    var pid = $(this). parent().parent().attr('pid');
+                    var cid = $(this). parent().parent().attr('cid');
+                    $('tr[pid='+cid+']').toggle();
+                }
+
+            });
+        }) ;
+
+        var deleteUrl = "{:U('Category/delete')}";
+
+        function deleteBtn(id) {
+            if($.isNumeric(id)){
+                var data = {id:id};
+                x0p({
+                    title: '你确定要删除这个分类吗？',
+                    text: null,
+                    icon: 'info',
+                    animationType: 'pop',
+                    buttons: [
+                        {
+                            type: 'cancel',
+                            text: '取消'
+                        },
+                        {
+                            type: 'info',
+                            text: '确定',
+                            showLoading: true
+                        }
+                    ]
+                }, function(button) {
+                    if(button == 'info') {
+
+                        $.ajax({
+                            url:deleteUrl,
+                            type:'post',
+                            dataType:'json',
+                            data:data,
+                            cache: false,
+                            beforeSend:function () {
+
+                            },
+                            success:function (res) {
+
+                                if(res.status == 1){
+                                    x0p(res.msg, null, 'ok', false);
+                                    $('#x0p-button-0').click(function () {
+
+                                        location.reload();
+
+                                    });
+
+
+                                }else {
+                                    x0p(res.msg, null, 'error', false);
+                                }
+
+
+                            },
+                            error:function (res) {
+
+                                x0p('数据连接失败，请重新刷新', null, 'error', false);
+                            }
+
+                        });
+
+                    }
+                });
+
+
+            }
+
+        }
+
+
+    </script>
+</block>

@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>首页</title>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/FontAwesome-3.2.1/css/font-awesome.min.css">
+    <!--[if IE 7]>
+    <link rel="stylesheet" href="__PUBLIC__/FontAwesome-3.2.1/css/font-awesome-ie7.min.css">
+    <![endif]-->
+    <link href="http://cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" media="all">
+
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/base.css">
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/list.css">
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/sidebar.css">
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/pagination.css">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if Viewview the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="http://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+<!-- start header -->
+<header class="main-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 logo-image">
+                <h1 id="logo-title">{$system.webname}</h1>
+                <hr/>
+            </div>
+            <div class="col-md-12 logo-description">
+                <p class="logo-description">{$system.description}</p>
+
+            </div>
+        </div>
+
+    </div>
+
+</header>
+<!-- end header -->
+<!-- start nav -->
+<nav class="navbar navbar-default main-navigation">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                            data-target="#main-menu">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                </div>
+                <div class="collapse navbar-collapse" id="main-menu">
+                    <ul class="nav-justified menu" role="tablist">
+                        <li class="nav-current" role="presentation"><a href="#" target="_self">首页</a></li>
+                        <foreach name="nav" item="na">
+                            <li role="presentation"><a href="#" target="_self">{$na.name}</a></li>
+                        </foreach>
+
+
+                    </ul>
+
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+</nav>
+<!--end nav-->
+
+<!-- start container content-->
+<div class="container">
+    <div class="row">
+        <div class="col-md-8">
+            <div class="list-margin" style="margin-left: 15px;margin-right: 15px">
+                <div id="cate-show">
+                    <empty name="cateArticle">
+                        <div data-scroll-reveal class="row list-items">
+                            <h4 style="text-align: center">没有找到相应的文章</h4>
+                            <p style="text-align: center;margin-top: 15px">点击这里返回<a href="{:U('Index/index')}">首页</a></p>
+                        </div>
+
+                        <else/>
+                        <foreach name="cateArticle" item="ca">
+                            <div data-scroll-reveal class="row list-items">
+                                <div class="col-md-4 list-thumb">
+                                    <a class="news-img-hover" title="{$ca.title}" href="{:U('Index/detail',array('id'=>$ca['id']))}" target="_blank">
+                                        <img src="{$ca.image}"/>
+                                        <span class="mod-hot">{$ca['Attr'][0]['name']}</span>
+                                    </a>
+                                </div>
+                                <div class="col-md-8 list-detail">
+                                    <h4>
+                                        <a href="{:U('Index/detail',array('id'=>$ca['id']))}" target="_blank" title="{$ca.title}">{$ca.title}</a>
+                                    </h4>
+                                    <div class="news-tags-and-time">
+                                        <span class="news-time">{$ca.createtime}</span>
+                                        <foreach name="ca['tags']" item="tags">
+                                            <a href="##" target="_blank" title="{$tags}">{$tags}</a>
+                                        </foreach>
+
+                                        <span class="news-time">阅 {$ca.click}</span>
+
+                                        <div class="clearfix"></div>
+                                    </div>
+                                    <div class="list-description">
+                                        <p>{$ca.content}<a href="{:U('Index/detail',array('id'=>$ca['id']))}">查看全文>></a></p>
+                                    </div>
+
+
+                                </div>
+
+                            </div>
+
+                        </foreach>
+
+
+                    </empty>
+                </div>
+
+
+                <!--start分页-->
+                <div class="page row">
+                    <div class="M-box col-md-12">
+                        <span id="cate-cid" cid="{$cid}" style="display: none"></span>
+                        <!--<div class="clearfix"></div>-->
+                    </div>
+                </div>
+                <!--end分页-->
+
+            </div>
+
+        </div>
+
+        <div class="col-md-4">
+            <div class="list-margin" style="padding-right: 10px;padding-left: 10px;background: #ffffff">
+                <div data-scroll-reveal class="search-keyword">
+                    <form action="" method="post">
+                        <input class="keyword-search form-control" name="keyword" type="text" value=""
+                               placeholder="请输入关键词"/>
+                        <input class="submit-btn" type="submit" value=""/>
+                    </form>
+                </div>
+                <hr/>
+                <div data-scroll-reveal class="rand-hot-news">
+                    <span class="change-item"><i class="fa fa-refresh" aria-hidden="true"  style="float:right;"></i>换一批</span>
+                    <h4>随机热文</h4>
+                    <ul class="rand-items">
+
+                        <foreach name="randArticle" item="ra" key="index">
+                            <li class="rand-news-list">
+                                <a href="{:U('Index/detail',array('id'=>$ra['id']))}" target="_blank"
+                                   title="{$ra.title}"><span>{$index+1}</span>{$ra.title}</a>
+                            </li>
+
+                        </foreach>
+
+                    </ul>
+                </div>
+                <div data-scroll-reveal class="hot-tags">
+                    <h4>热门标签</h4>
+                    <div id="tags-name">
+                        <a href="" target="_blank" title="">数据分析</a>
+                        <a href="" target="_blank" title="">成长</a>
+                        <a href="" target="_blank" title="">成长</a>
+                        <a href="" target="_blank" title="">成长</a>
+                        <a href="" target="_blank" title="">成长</a>
+                        <a href="" target="_blank" title="">成长</a>
+                        <a href="" target="_blank" title="">成长</a>
+                        <a href="" target="_blank" title="">成长</a>
+                        <a href="" target="_blank" title="">成长</a>
+                        <a href="" target="_blank" title="">成长</a>
+                        <div class="clearfix"></div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+<!--end container content-->
+
+
+<!--start footer  -->
+<div class="container-fluid footer" data-scroll-reveal>
+    <div class="container">
+        <div class="row footer-content">
+            <div class="col-md-4 img-footer">
+                <img src="__UPLOAD__/{$system.image}"/>
+            </div>
+            <div class="col-md-4 friend_link">
+                <p>友情链接：</p>
+                <foreach name="link" item="li">
+                    <a href="{$li.url}" target="_blank" title="{$li.name}">{$li.name}</a>
+                </foreach>
+                <div class="clearfix"></div>
+            </div>
+            <div class="col-md-4 copyright">
+                <p>关于我们 | jechorn@163.com 版权所有 </p>
+                <P>备案号： {$system.icp} </p>
+                <p>Powered by jechorn</p>
+                <p> {$system.copyright}</P>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<!--end footer  -->
+<div id="top" style="display: none">
+    <div id="izl_rmenu" class="izl-rmenu"><a href="" class="btn btn-qq"></a>
+        <div class="btn btn-wx">
+            <i class="icon-mobile-phone"></i>
+            <span>手机访问</span>
+            <div id="qrcode" class="pic" onclick="window.location.href=''"></div>
+        </div>
+        <div class="btn btn-phone">
+            <i class="icon-envelope-alt"></i>
+            <span>Email</span>
+            <div class="phone">jechorn@163.com</div>
+        </div>
+        <div class="btn btn-top">
+            <i class="icon-angle-up"></i>
+            <span>返回顶部</span>
+        </div>
+    </div>
+</div>
+
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="http://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="__PUBLIC__/bootstrap/js/bootstrap.min.js"></script>
+
+<script src="__PUBLIC__/js/vender/scrollreveal.js"></script>
+<script src="__PUBLIC__/js/scrolltotop.js"></script>
+
+<script src="__PUBLIC__/js/vender/qrcode.js"></script>
+<script src="__PUBLIC__/js/vender/jquery.qrcode.js"></script>
+<script src="__PUBLIC__/js/vender/jquery.pagination.js"></script>
+<script src="__PUBLIC__/js/common.js"></script>
+<script>
+
+    $('.M-box').pagination({
+        pageCount: {$pagenumber},
+        jump: true,
+        coping: true,
+        homePage: '首页',
+        endPage: '末页',
+        prevContent: '上页',
+        nextContent: '下页',
+        callback: function (api) {
+            var pageNum = api.getCurrent();
+            var cid =$('#cate-cid').text();
+            var pageTotal = api.getTotalPage();
+            $.ajax({
+                type :"POST",
+                data :{currey:pageNum,cid:cid},
+                dataType:"json",
+                url:"{:U('Index/ajaxHandle')}",
+                success:function (res) {
+                    var html = '';
+                    $.each(res,function (index,list) {
+                        var url ="{:U('Index/detail')}"+"?id="+list.id;
+                        html +='<div data-scroll-reveal class="row list-items">';
+                        html += '<div class="col-md-4 list-thumb">';
+                        html += '<a class="news-img-hover" title="" href="'+url+'" target="_blank">';
+                        html += '<img src="'+list.image+'"/>';
+                        var attrName = '';
+                        if(list.Attr.length >0){
+                            attrName = list.Attr[0].name;
+                            console.log(attrName);
+                        }
+                        html += '<span class="mod-hot">'+attrName+'</span>';
+                        html += '</a>';
+                        html += '</div>';
+                        html += '<div class="col-md-8 list-detail">';
+                        html += '<h4>';
+                        html += '<a href="'+url+'" target="_blank" title="'+list.title+'">'+list.title+'</a>';
+                        html += '</h4>';
+                        html += '<div class="news-tags-and-time">';
+                        html += '<span class="news-time">'+list.createtime+'</span>';
+                        $.each(list.tags,function (key,value) {
+                            html += '<a href="##" target="_blank" title="'+value+'">'+value+'</a>';
+                        });
+                        html += '<span class="news-time">阅 '+list.click+'</span>';
+                        html += '<div class="clearfix"></div>';
+                        html += '</div>';
+                        html += '<div class="list-description">';
+                        html += '<p>'+list.content+'<a href="'+url+'">查看全文>></a></p>';
+                        html += '</div>';
+                        html += '</div>';
+                        html += '</div>';
+
+                    });
+                    $('#cate-show').empty().html(html);
+                    $('.list-thumb').removeClass('col-md-8').addClass('col-md-4');
+                    $('.news-img-hover img').css({
+                        'width' :'100%',
+                        'display':'block'
+                    });
+                    //setImgWidth();
+                    //checkNull();
+
+
+                }
+
+            });
+        }
+    });
+
+
+    $('#tags-name a').each(function () {
+        $(this).css({
+            "margin-right": Math.random() * 10
+        });
+
+    });
+    $('.list-thumb').removeClass('col-md-8').addClass('col-md-4');
+    $('.news-img-hover img').css({
+        'width' :'100%',
+        'display':'block'
+    });
+</script>
+<script>
+    $('.change-item').click(function () {
+        $.ajax({
+            type: 'POST',
+            url: '{:U("Index/randArticle")}',
+            dataType: 'json',
+            success: function (res) {
+                if(res.state ==1) {
+                    $('.rand-items').empty();
+                    var html = '' ;
+                    $.each(res.randArticle,function (index,value) {
+                        var url ='{:U("Index/detail")}'+'?id='+value.id;
+                        html += '<li class="rand-news-list">';
+                        html +=  '<a href="'+url+'" target="_blank" title="'+value.title+'"><span>'+(index+1)+'</span>'+value.title+'</a>';
+                        html += '</li>';
+
+                    });
+                    $('.rand-items').html(html);
+
+                }
+            }
+
+        });
+    });
+
+</script>
+
+
+
+</body>
+</html>

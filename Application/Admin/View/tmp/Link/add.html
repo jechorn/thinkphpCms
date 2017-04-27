@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>友情链接设置</title>
+
+    <link href="__PUBLIC__/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="__PUBLIC__/css/admin/styles.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if Viewview the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="http://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                    data-target="#sidebar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#"><span>后台</span>管理系统</a>
+            <ul class="user-menu">
+                <li class="dropdown pull-right">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span
+                            class="glyphicon glyphicon-user"></span>管理员<span class="caret"></span></a>
+                    <ul class="dropdown-menu" role="menu">
+                        <li><a href="#"><span class="glyphicon glyphicon-user"></span>属性</a></li>
+                        <li><a href="#"><span class="glyphicon glyphicon-cog"></span>设置</a></li>
+                        <li><a href="#"><span class="glyphicon glyphicon-log-out"></span>登出</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div><!-- /.container-fluid -->
+</nav>
+
+<div id="sidebar-collapse" class="col-sm-3 col-lg-2 sidebar">
+    <form role="search">
+        <div class="form-group">
+            <input type="text" class="form-control" placeholder="搜索">
+        </div>
+    </form>
+    <ul class="nav menu">
+        <li class="active"><a href="{:U('Index/index')}"><span class="glyphicon glyphicon-dashboard"></span>控制板</a></li>
+        <li><a href="{:U('System/add')}"><span class="glyphicon glyphicon-th"></span>系统设置</a></li>
+        <li class="parent ">
+            <a href="#">
+                <span class="glyphicon glyphicon-list"></span>轮播图设置<span data-toggle="collapse" href="#sub-item-2"
+                                                                         class="icon pull-right"><em
+                    class="glyphicon glyphicon-s glyphicon-plus"></em></span>
+            </a>
+            <ul class="children collapse" id="sub-item-2">
+                <li class="active">
+                    <a class="" href="{:U('Carousel/add')}">
+                        <span class="glyphicon glyphicon-share-alt"></span>轮播图添加
+                    </a>
+                </li>
+                <li>
+                    <a class="" href="{:U('Carousel/index')}">
+                        <span class="glyphicon glyphicon-share-alt"></span>轮播图列表
+                    </a>
+                </li>
+                <li>
+                    <a class="" href="{:U('Carousel/update')}">
+                        <span class="glyphicon glyphicon-share-alt"></span>轮播图修改
+                    </a>
+                </li>
+            </ul>
+        </li>
+        <li><a href="{:U('Link/add')}"><span class="glyphicon glyphicon-list-alt"></span>友情链接</a></li>
+        <li class="parent ">
+            <a href="#">
+                <span class="glyphicon glyphicon-list"></span>分类管理<span data-toggle="collapse" href="#sub-item-3"
+                                                                        class="icon pull-right"><em
+                    class="glyphicon glyphicon-s glyphicon-plus"></em></span>
+            </a>
+            <ul class="children collapse" id="sub-item-3">
+                <li class="active">
+                    <a class="" href="{:U('Category/add')}">
+                        <span class="glyphicon glyphicon-share-alt"></span>添加分类
+                    </a>
+                </li>
+                <li>
+                    <a class="" href="{:U('Category/index')}">
+                        <span class="glyphicon glyphicon-share-alt"></span>分类列表
+                    </a>
+                </li>
+            </ul>
+        </li>
+        <li><a href="comment.html"><span class="glyphicon glyphicon-info-sign"></span>评论列表</a></li>
+        <li class="parent ">
+            <a href="#">
+                <span class="glyphicon glyphicon-list"></span>文章管理<span data-toggle="collapse" href="#sub-item-1"
+                                                                        class="icon pull-right"><em
+                    class="glyphicon glyphicon-s glyphicon-plus"></em></span>
+            </a>
+            <ul class="children collapse" id="sub-item-1">
+                <li>
+                    <a class="" href="{:U('Article/add')}">
+                        <span class="glyphicon glyphicon-share-alt"></span>添加文章
+                    </a>
+                </li>
+                <li>
+                    <a class="" href="{:U('Article/add')}">
+                        <span class="glyphicon glyphicon-share-alt"></span>文章列表
+                    </a>
+                </li>
+                <li>
+                    <a class="" href="{:U('Article/add')}">
+                        <span class="glyphicon glyphicon-share-alt"></span>文章管理
+                    </a>
+                </li>
+            </ul>
+        </li>
+        <li role="presentation" class="divider"></li>
+        <li><a href="login.html"><span class="glyphicon glyphicon-user"></span>会员管理</a></li>
+    </ul>
+</div><!--/.sidebar-->
+
+<div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main" ng-app="link" ng-controller="submit">
+    <div class="row">
+        <ol class="breadcrumb">
+            <li><a href="#"><span class="glyphicon glyphicon-home"></span></a></li>
+            <li class="active">友情链接设置</li>
+        </ol>
+    </div><!--/.row-->
+
+    <div class="row">
+        <div class="col-md-12">
+            <h1 class="page-header">友情链接设置</h1>
+        </div>
+    </div><!--/.row-->
+
+
+    <div class="row">
+        <form name="link_info" novalidate ng-submit="linkBtn(link_info)" id="link_info" role="form">
+            <div class="repeat-input" link-url  ng-repeat="(k,v) in data"></div>
+            <div class="form-group form-btn">
+                <button id="btn-upload" type="submit" class="btn btn-success btn-block"
+                        style="width: 50%;margin-left:auto;margin-right:auto;">提交
+                </button>
+            </div>
+        </form>
+        <!-- /.row -->
+    </div><!--/.main-->
+
+    <!--模态框 start-->
+    <div class="modal fade" id="submit-msg">
+        <div class="modal-dialog  modal-sm">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">关闭</span></button>
+                    <h3 class="modal-title">信息提示</h3>
+                </div>
+                <div class="modal-body">
+                    <div class="response-msg"></div>
+                </div>
+                <!--  <div class="modal-footer">
+                      <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                  </div>-->
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+    <!--模态框 end-->
+
+</div>
+
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="http://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="__PUBLIC__/bootstrap/js/bootstrap.min.js"></script>
+<script src="//cdn.bootcss.com/angular.js/1.4.8/angular.js"></script>
+
+
+<script>
+    !function ($) {
+        $(document).on("click", "ul.nav li.parent > a > span.icon", function () {
+            $(this).find('em:first').toggleClass("glyphicon-minus");
+        });
+        $(".sidebar span.icon").find('em:first').addClass("glyphicon-plus");
+    }(window.jQuery);
+
+    $(window).on('resize', function () {
+        if ($(window).width() > 768) $('#sidebar-collapse').collapse('show')
+    })
+    $(window).on('resize', function () {
+        if ($(window).width() <= 767) $('#sidebar-collapse').collapse('hide')
+    });
+
+</script>
+<script>
+    var m = angular.module('link', []);
+
+    m.directive('linkUrl', [function () {
+        return {
+            restrict: 'EA',//a attr e element  c class
+            replace: false,
+            templateUrl: '__PUBLIC__/html/weblink.html',
+            scope: true,
+            controller: ['$scope',function ($scope) {
+
+
+            }]
+        }
+    }]);
+    m.controller('submit', ['$scope','$http','$timeout', function ($scope, $http,$timeout) {
+        $scope.data = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+        $scope.submitted = false;
+        $scope.linkBtn = function (link_info) {
+            var inputData;
+            var tmp={};
+
+            if(link_info.$valid){
+                $('.repeat-input').each(function (index) {
+                    var inputName =$(this).find('.input-name').val().trim();
+                    var inputUrl= $(this).find('.input-url').val().trim();
+                    tmp[index]={name:inputName,url:inputUrl};
+                });
+                inputData=JSON.stringify(tmp);
+
+
+                $scope.submitted = true;
+
+                $http({
+                    method:'post',
+                    url:"{:U('Link/addLink')}",
+                    data:inputData,
+                    //headers:{'Content-type':'application/x-www-form-urlencoded'}
+                }).then(function(res){
+                    console.log(res)
+                    if(res.data.status ==1 || res.data.status ==2){
+                        $('#submit-msg').modal('show');
+                        $('#btn-upload').text('提交');
+
+                        $('#submit-msg .response-msg').html('<span class="glyphicon glyphicon-ok"></span><h4>'+res.data.msg +'</h4>');
+                        if(res.data.msg !=='数据添加成功'){
+                            $('#submit-msg .response-msg span').removeClass('glyphicon-ok').addClass('glyphicon-remove');
+
+                        }else{
+                            setTimeout(function () {
+                                location.reload();
+                            },2000);
+                        }
+
+                    }
+                    $scope.submitted = false;
+
+                });
+
+            }else {
+                $scope.submitted = false;
+                $('#link_info input').each(function () {
+                    var _this =$(this);
+                    if(_this.val().trim()==''){
+
+                        $scope.showMsg(_this,'不能为空');
+                        return false;
+
+                    }else{
+                        if(_this.hasClass('input-name')){
+                            if(_this.val().trim().length <2 || $(this).val().trim().length > 5){
+                                $scope.showMsg(_this,'长度必须是2-5个字符！');
+                                return false;
+                            }
+
+                        } else if(_this.hasClass('input-url')){
+                            if(_this.next().hasClass('ng-hide')){
+                                $scope.showMsg(_this,'URL地址不合法！');
+                                return false;
+                            }
+
+                        }
+                    }
+                })
+
+            }
+            $timeout(function () {
+                $('.alert-msg').fadeOut(2000);
+            },3000);
+
+        };
+        $scope.showMsg = function (element,msg) {
+            $('.alert-msg').remove();
+            element.parent().append('<div class="alert-msg" style="display: none"><div class="up"></div><div class="msg-show">'+msg+'</div> </div>');
+            element.parent().find('.alert-msg').fadeIn(1000);
+
+        };
+
+
+
+    }]);
+
+</script>
+</body>
+
+</html>

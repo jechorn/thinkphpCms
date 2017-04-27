@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>首页</title>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/FontAwesome-3.2.1/css/font-awesome.min.css">
+    <!--[if IE 7]>
+    <link rel="stylesheet" href="__PUBLIC__/FontAwesome-3.2.1/css/font-awesome-ie7.min.css">
+    <![endif]-->
+    <link href="http://cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" media="all">
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/base.css">
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/detail.css">
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/sidebar.css">
+
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if Viewview the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="http://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+<!-- start header -->
+<header class="main-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 logo-image">
+                <h1 id="logo-title">{$system.webname}</h1>
+                <hr/>
+            </div>
+            <div class="col-md-12 logo-description">
+                <p class="logo-description">{$system.description}</p>
+
+            </div>
+        </div>
+
+    </div>
+
+</header>
+<!-- end header -->
+<!-- start nav -->
+<nav class="navbar navbar-default main-navigation">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                            data-target="#main-menu">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                </div>
+                <div class="collapse navbar-collapse" id="main-menu">
+                    <ul class="nav-justified menu" role="tablist">
+                        <li class="nav-current" role="presentation"><a href="#" target="_self">首页</a></li>
+                        <foreach name="nav" item="na">
+                            <li role="presentation"><a href="#" target="_self">{$na.name}</a></li>
+                        </foreach>
+
+
+                    </ul>
+
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+</nav>
+<!--end nav-->
+<!-- start container content-->
+<div class="container">
+    <div class="row">
+        <div class="col-md-8 article-content">
+            <div class="list-margin" style="padding-left:20px;padding-right:20px;background-color: #ffffff;">
+                <article class="content">
+                    <header class="content-title">
+                        <h1 class="mscc-title">
+                            <a href="" target="_blank">{$detail.title}</a>
+                        </h1>
+                        <div class="mscc-address ">
+                            <span>{$detail.createtime|date='Y-m-d H:i',###}</span>
+                            <span>阅{$detail.click}</span>
+                        </div>
+                    </header>
+                    <div class="content-text">
+                        {$detail.content}
+                    </div>
+                    <!--content_text-->
+                    <div class="post-like">
+                        <a href="javascript:;" data-action="ding" data-id="2644" class="favorite"><span class="count">
+            17</span>
+                        </a>
+                    </div>
+                    <div class="zhuan">
+                        <p>本文转载自其它网站</p>
+                        <p>如有再次转载，请加上转载地址。谢谢！</p>
+
+                    </div>
+
+                </article>
+                <div class="row xiangguan">
+                    <div class="xianguantitle">相关文章！</div>
+                    <div class="row" style="margin-left: 0px;margin-right: 0px">
+                        <volist name="matchArticle" id="ma" offset="0" length='3'>
+                            <div class="col-md-4 list-about">
+                                <a href="{:U('Index/detail',array('id'=>$ma['id']))}" target="_blank" title="{$ma.title}">
+                                    <img src="{$ma.image}"/>
+                                </a>
+                                <a href="{:U('Index/detail',array('id'=>$ma['id']))}" target="_blank" title="">{$ma.title}</a>
+                            </div>
+                        </volist>
+                    </div>
+                    <div class="row" style="margin-left: 0px;margin-right: 0px">
+                        <volist name="matchArticle" id="ma" offset="3" length='3'>
+                            <div class="col-md-4 list-about">
+                                <a href="{:U('Index/detail',array('id'=>$ma['id']))}" target="_blank" title="{$ma.title}">
+                                    <img src="{$ma.image}"/>
+                                </a>
+                                <a href="{:U('Index/detail',array('id'=>$ma['id']))}" target="_blank" title="">{$ma.title}</a>
+                            </div>
+                        </volist>
+                    </div>
+
+
+
+                </div>
+            </div>
+
+        </div>
+        <div class="col-md-4">
+            <div class="list-margin" style="padding-right: 10px;padding-left: 10px;background: #ffffff">
+                <div data-scroll-reveal class="search-keyword">
+                    <form action="" method="post">
+                        <input class="keyword-search form-control" name="keyword" type="text" value=""
+                               placeholder="请输入关键词"/>
+                        <input class="submit-btn" type="submit" value=""/>
+                    </form>
+                </div>
+                <hr/>
+                <div data-scroll-reveal class="rand-hot-news">
+                    <span class="change-item"><i class="fa fa-refresh" aria-hidden="true"  style="float:right;"></i>换一批</span>
+                    <h4>随机热文</h4>
+                    <ul class="rand-items">
+
+                        <foreach name="randArticle" item="ra" key="index">
+                            <li class="rand-news-list">
+                                <a href="{:U('Index/detail',array('id'=>$ra['id']))}" target="_blank"
+                                   title="{$ra.title}"><span>{$index+1}</span>{$ra.title}</a>
+                            </li>
+
+                        </foreach>
+
+                    </ul>
+                </div>
+                <div data-scroll-reveal class="hot-tags">
+                    <h4>热门标签</h4>
+                    <div id="tags-name">
+                        <a href="" target="_blank" title="">数据分析</a>
+                        <a href="" target="_blank" title="">成长</a>
+                        <a href="" target="_blank" title="">成长</a>
+                        <a href="" target="_blank" title="">成长</a>
+                        <a href="" target="_blank" title="">成长</a>
+                        <a href="" target="_blank" title="">成长</a>
+                        <a href="" target="_blank" title="">成长</a>
+                        <a href="" target="_blank" title="">成长</a>
+                        <a href="" target="_blank" title="">成长</a>
+                        <a href="" target="_blank" title="">成长</a>
+                        <div class="clearfix"></div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+</div>
+
+<!--end container content-->
+
+
+
+<!--start footer  -->
+<div class="container-fluid footer" data-scroll-reveal>
+    <div class="container">
+        <div class="row footer-content">
+            <div class="col-md-4 img-footer">
+                <img src="__UPLOAD__/{$system.image}"/>
+            </div>
+            <div class="col-md-4 friend_link">
+                <p>友情链接：</p>
+                <foreach name="link" item="li">
+                    <a href="{$li.url}" target="_blank" title="{$li.name}">{$li.name}</a>
+                </foreach>
+                <div class="clearfix"></div>
+            </div>
+            <div class="col-md-4 copyright">
+                <p>关于我们 | jechorn@163.com 版权所有 </p>
+                <P>备案号： {$system.icp} </p>
+                <p>Powered by jechorn</p>
+                <p> {$system.copyright}</P>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<!--end footer  -->
+<div id="top" style="display: none">
+    <div id="izl_rmenu" class="izl-rmenu"><a href="" class="btn btn-qq"></a>
+        <div class="btn btn-wx">
+            <i class="icon-mobile-phone"></i>
+            <span>手机访问</span>
+            <div id="qrcode" class="pic" onclick="window.location.href=''"></div>
+        </div>
+        <div class="btn btn-phone">
+            <i class="icon-envelope-alt"></i>
+            <span>Email</span>
+            <div class="phone">jechorn@163.com</div>
+        </div>
+        <div class="btn btn-top">
+            <i class="icon-angle-up"></i>
+            <span>返回顶部</span>
+        </div>
+    </div>
+</div>
+
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="http://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="__PUBLIC__/bootstrap/js/bootstrap.min.js"></script>
+
+<script src="__PUBLIC__/js/vender/scrollreveal.js"></script>
+<script src="__PUBLIC__/js/scrolltotop.js"></script>
+<script src="__PUBLIC__/js/vender/qrcode.js"></script>
+<script src="__PUBLIC__/js/vender/jquery.qrcode.js"></script>
+<script src="__PUBLIC__/js/common.js"></script>
+<script>
+
+    $('#tags-name a').each(function () {
+        $(this).css({
+            "margin-right":Math.random()*10
+        });
+
+    });
+</script>
+<script>
+    $('.change-item').click(function () {
+        $.ajax({
+            type: 'POST',
+            url: '{:U("Index/randArticle")}',
+            dataType: 'json',
+            success: function (res) {
+                if(res.state ==1) {
+                    $('.rand-items').empty();
+                    var html = '' ;
+                    $.each(res.randArticle,function (index,value) {
+                        var url ='{:U("Index/detail")}'+'?id='+value.id;
+                        html += '<li class="rand-news-list">';
+                        html +=  '<a href="'+url+'" target="_blank" title="'+value.title+'"><span>'+(index+1)+'</span>'+value.title+'</a>';
+                        html += '</li>';
+
+                    });
+                    $('.rand-items').html(html);
+
+                }
+            }
+
+        });
+    })
+</script>
+
+
+
+
+
+</body>
+</html>

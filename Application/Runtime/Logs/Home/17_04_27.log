@@ -1,0 +1,1525 @@
+[ 2017-04-27T06:28:04+08:00 ] ::1 /thinkphp/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000035s ]
+INFO: [ app_init ] --END-- [ RunTime:0.045993s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.018859s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.019403s ]
+SQL: SHOW COLUMNS FROM `category` [ RunTime:0.1097s ]
+SQL: SELECT `id`,`name`,`sort` FROM `category` WHERE `pid` = 0 ORDER BY sort DESC LIMIT 5   [ RunTime:0.0026s ]
+SQL: SHOW COLUMNS FROM `link` [ RunTime:0.0316s ]
+SQL: SELECT `id`,`name`,`url` FROM `link` ORDER BY id DESC LIMIT 10   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `system` [ RunTime:0.0225s ]
+SQL: SELECT * FROM `system` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `carousel` [ RunTime:0.0039s ]
+SQL: SELECT * FROM `carousel` WHERE `status` = 1 LIMIT 3   [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `article` [ RunTime:0.0167s ]
+SQL: SELECT `id`,`title`,`image`,`content`,`click`,`tags`,`createtime`,`favorite` FROM `article` WHERE `delete` = 0 ORDER BY createtime DESC LIMIT 0,10   [ RunTime:0.1408s ]
+SQL: SHOW COLUMNS FROM `attr` [ RunTime:0.0405s ]
+NOTIC: [8] Undefined index: mapping_order D:\wamp\www\thinkphp\ThinkPHP\Library\Think\Model\RelationModel.class.php 第 186 行.
+NOTIC: [8] Undefined index: mapping_limit D:\wamp\www\thinkphp\ThinkPHP\Library\Think\Model\RelationModel.class.php 第 187 行.
+SQL: SELECT b.* FROM article_attr AS a, attr AS b WHERE a.aid = b.id AND a. cid='880' [ RunTime:0.0568s ]
+NOTIC: [8] Undefined index: mapping_order D:\wamp\www\thinkphp\ThinkPHP\Library\Think\Model\RelationModel.class.php 第 186 行.
+NOTIC: [8] Undefined index: mapping_limit D:\wamp\www\thinkphp\ThinkPHP\Library\Think\Model\RelationModel.class.php 第 187 行.
+SQL: SELECT b.* FROM article_attr AS a, attr AS b WHERE a.aid = b.id AND a. cid='881' [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: mapping_order D:\wamp\www\thinkphp\ThinkPHP\Library\Think\Model\RelationModel.class.php 第 186 行.
+NOTIC: [8] Undefined index: mapping_limit D:\wamp\www\thinkphp\ThinkPHP\Library\Think\Model\RelationModel.class.php 第 187 行.
+SQL: SELECT b.* FROM article_attr AS a, attr AS b WHERE a.aid = b.id AND a. cid='882' [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: mapping_order D:\wamp\www\thinkphp\ThinkPHP\Library\Think\Model\RelationModel.class.php 第 186 行.
+NOTIC: [8] Undefined index: mapping_limit D:\wamp\www\thinkphp\ThinkPHP\Library\Think\Model\RelationModel.class.php 第 187 行.
+SQL: SELECT b.* FROM article_attr AS a, attr AS b WHERE a.aid = b.id AND a. cid='883' [ RunTime:0.0004s ]
+NOTIC: [8] Undefined index: mapping_order D:\wamp\www\thinkphp\ThinkPHP\Library\Think\Model\RelationModel.class.php 第 186 行.
+NOTIC: [8] Undefined index: mapping_limit D:\wamp\www\thinkphp\ThinkPHP\Library\Think\Model\RelationModel.class.php 第 187 行.
+SQL: SELECT b.* FROM article_attr AS a, attr AS b WHERE a.aid = b.id AND a. cid='884' [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: mapping_order D:\wamp\www\thinkphp\ThinkPHP\Library\Think\Model\RelationModel.class.php 第 186 行.
+NOTIC: [8] Undefined index: mapping_limit D:\wamp\www\thinkphp\ThinkPHP\Library\Think\Model\RelationModel.class.php 第 187 行.
+SQL: SELECT b.* FROM article_attr AS a, attr AS b WHERE a.aid = b.id AND a. cid='885' [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: mapping_order D:\wamp\www\thinkphp\ThinkPHP\Library\Think\Model\RelationModel.class.php 第 186 行.
+NOTIC: [8] Undefined index: mapping_limit D:\wamp\www\thinkphp\ThinkPHP\Library\Think\Model\RelationModel.class.php 第 187 行.
+SQL: SELECT b.* FROM article_attr AS a, attr AS b WHERE a.aid = b.id AND a. cid='886' [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: mapping_order D:\wamp\www\thinkphp\ThinkPHP\Library\Think\Model\RelationModel.class.php 第 186 行.
+NOTIC: [8] Undefined index: mapping_limit D:\wamp\www\thinkphp\ThinkPHP\Library\Think\Model\RelationModel.class.php 第 187 行.
+SQL: SELECT b.* FROM article_attr AS a, attr AS b WHERE a.aid = b.id AND a. cid='887' [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: mapping_order D:\wamp\www\thinkphp\ThinkPHP\Library\Think\Model\RelationModel.class.php 第 186 行.
+NOTIC: [8] Undefined index: mapping_limit D:\wamp\www\thinkphp\ThinkPHP\Library\Think\Model\RelationModel.class.php 第 187 行.
+SQL: SELECT b.* FROM article_attr AS a, attr AS b WHERE a.aid = b.id AND a. cid='879' [ RunTime:0.0006s ]
+NOTIC: [8] Undefined index: mapping_order D:\wamp\www\thinkphp\ThinkPHP\Library\Think\Model\RelationModel.class.php 第 186 行.
+NOTIC: [8] Undefined index: mapping_limit D:\wamp\www\thinkphp\ThinkPHP\Library\Think\Model\RelationModel.class.php 第 187 行.
+SQL: SELECT b.* FROM article_attr AS a, attr AS b WHERE a.aid = b.id AND a. cid='869' [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `article` [ RunTime:0.0007s ]
+SQL: SELECT `id`,`title`,`content`,`image` FROM `article` ORDER BY click DESC LIMIT 10   [ RunTime:0.0450s ]
+SQL: SHOW COLUMNS FROM `fast` [ RunTime:0.0254s ]
+SQL: SELECT * FROM `fast` ORDER BY time DESC LIMIT 10   [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `think` [ RunTime:0.0184s ]
+SQL: SELECT `id`,`title`,`content`,`href` FROM `think` LIMIT 8   [ RunTime:0.0008s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.007288s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.007450s ]
+NOTIC: [8] Undefined offset: 0 D:\wamp\www\thinkphp\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 305 行.
+NOTIC: [8] Undefined index: hot D:\wamp\www\thinkphp\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 321 行.
+NOTIC: [8] Undefined offset: 0 D:\wamp\www\thinkphp\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 305 行.
+NOTIC: [8] Undefined index: hot D:\wamp\www\thinkphp\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 321 行.
+NOTIC: [8] Undefined offset: 0 D:\wamp\www\thinkphp\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 305 行.
+NOTIC: [8] Undefined index: hot D:\wamp\www\thinkphp\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 321 行.
+NOTIC: [8] Undefined offset: 0 D:\wamp\www\thinkphp\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 305 行.
+NOTIC: [8] Undefined index: hot D:\wamp\www\thinkphp\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 321 行.
+NOTIC: [8] Undefined offset: 0 D:\wamp\www\thinkphp\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 305 行.
+NOTIC: [8] Undefined index: hot D:\wamp\www\thinkphp\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 321 行.
+NOTIC: [8] Undefined offset: 0 D:\wamp\www\thinkphp\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 305 行.
+NOTIC: [8] Undefined index: hot D:\wamp\www\thinkphp\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 321 行.
+NOTIC: [8] Undefined offset: 0 D:\wamp\www\thinkphp\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 305 行.
+NOTIC: [8] Undefined index: hot D:\wamp\www\thinkphp\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 321 行.
+NOTIC: [8] Undefined offset: 0 D:\wamp\www\thinkphp\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 305 行.
+NOTIC: [8] Undefined index: hot D:\wamp\www\thinkphp\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 321 行.
+NOTIC: [8] Undefined offset: 0 D:\wamp\www\thinkphp\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 305 行.
+NOTIC: [8] Undefined index: hot D:\wamp\www\thinkphp\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 321 行.
+NOTIC: [8] Undefined offset: 0 D:\wamp\www\thinkphp\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 305 行.
+NOTIC: [8] Undefined index: hot D:\wamp\www\thinkphp\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 321 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.148359s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.148591s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.007039s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.007180s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.009730s ]
+INFO: [ app_end ] --END-- [ RunTime:0.009948s ]
+
+[ 2017-04-27T06:28:05+08:00 ] ::1 /thinkphp/index.php/Home/Login/createVerify
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000031s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000620s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000697s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000850s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001357s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001907s ]
+
+[ 2017-04-27T06:28:21+08:00 ] ::1 /thinkphp/index.php/Home/Cate/index/id/227
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000029s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000651s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000754s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000908s ]
+SQL: SHOW COLUMNS FROM `category` [ RunTime:0.0015s ]
+SQL: SELECT `id`,`name`,`sort` FROM `category` WHERE `pid` = 0 ORDER BY sort DESC LIMIT 5   [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `link` [ RunTime:0.0014s ]
+SQL: SELECT `id`,`name`,`url` FROM `link` ORDER BY id DESC LIMIT 10   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `system` [ RunTime:0.0013s ]
+SQL: SELECT * FROM `system` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `id`,`pid` FROM `category`  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `article` [ RunTime:0.0015s ]
+SQL: SELECT `id`,`title`,`createtime`,`tags`,`image`,`content`,`click` FROM `article` WHERE `cid` IN ('227') ORDER BY createtime DESC LIMIT 0,15   [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `attr` [ RunTime:0.0011s ]
+NOTIC: [8] Undefined index: mapping_order D:\wamp\www\thinkphp\ThinkPHP\Library\Think\Model\RelationModel.class.php 第 186 行.
+NOTIC: [8] Undefined index: mapping_limit D:\wamp\www\thinkphp\ThinkPHP\Library\Think\Model\RelationModel.class.php 第 187 行.
+SQL: SELECT b.* FROM article_attr AS a, attr AS b WHERE a.aid = b.id AND a. cid='886' [ RunTime:0.0012s ]
+SQL: SHOW COLUMNS FROM `like` [ RunTime:0.0151s ]
+SQL: SELECT `ip` FROM `like` WHERE ( 1=1 AND cid='886' )  [ RunTime:0.0004s ]
+NOTIC: [8] Undefined index: mapping_order D:\wamp\www\thinkphp\ThinkPHP\Library\Think\Model\RelationModel.class.php 第 186 行.
+NOTIC: [8] Undefined index: mapping_limit D:\wamp\www\thinkphp\ThinkPHP\Library\Think\Model\RelationModel.class.php 第 187 行.
+SQL: SELECT b.* FROM article_attr AS a, attr AS b WHERE a.aid = b.id AND a. cid='870' [ RunTime:0.0004s ]
+SQL: SELECT `ip` FROM `like` WHERE ( 1=1 AND cid='870' )  [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: mapping_order D:\wamp\www\thinkphp\ThinkPHP\Library\Think\Model\RelationModel.class.php 第 186 行.
+NOTIC: [8] Undefined index: mapping_limit D:\wamp\www\thinkphp\ThinkPHP\Library\Think\Model\RelationModel.class.php 第 187 行.
+SQL: SELECT b.* FROM article_attr AS a, attr AS b WHERE a.aid = b.id AND a. cid='874' [ RunTime:0.0003s ]
+SQL: SELECT `ip` FROM `like` WHERE ( 1=1 AND cid='874' )  [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: mapping_order D:\wamp\www\thinkphp\ThinkPHP\Library\Think\Model\RelationModel.class.php 第 186 行.
+NOTIC: [8] Undefined index: mapping_limit D:\wamp\www\thinkphp\ThinkPHP\Library\Think\Model\RelationModel.class.php 第 187 行.
+SQL: SELECT b.* FROM article_attr AS a, attr AS b WHERE a.aid = b.id AND a. cid='866' [ RunTime:0.0003s ]
+SQL: SELECT `ip` FROM `like` WHERE ( 1=1 AND cid='866' )  [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: mapping_order D:\wamp\www\thinkphp\ThinkPHP\Library\Think\Model\RelationModel.class.php 第 186 行.
+NOTIC: [8] Undefined index: mapping_limit D:\wamp\www\thinkphp\ThinkPHP\Library\Think\Model\RelationModel.class.php 第 187 行.
+SQL: SELECT b.* FROM article_attr AS a, attr AS b WHERE a.aid = b.id AND a. cid='868' [ RunTime:0.0003s ]
+SQL: SELECT `ip` FROM `like` WHERE ( 1=1 AND cid='868' )  [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: mapping_order D:\wamp\www\thinkphp\ThinkPHP\Library\Think\Model\RelationModel.class.php 第 186 行.
+NOTIC: [8] Undefined index: mapping_limit D:\wamp\www\thinkphp\ThinkPHP\Library\Think\Model\RelationModel.class.php 第 187 行.
+SQL: SELECT b.* FROM article_attr AS a, attr AS b WHERE a.aid = b.id AND a. cid='638' [ RunTime:0.0003s ]
+SQL: SELECT `ip` FROM `like` WHERE ( 1=1 AND cid='638' )  [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: mapping_order D:\wamp\www\thinkphp\ThinkPHP\Library\Think\Model\RelationModel.class.php 第 186 行.
+NOTIC: [8] Undefined index: mapping_limit D:\wamp\www\thinkphp\ThinkPHP\Library\Think\Model\RelationModel.class.php 第 187 行.
+SQL: SELECT b.* FROM article_attr AS a, attr AS b WHERE a.aid = b.id AND a. cid='639' [ RunTime:0.0003s ]
+SQL: SELECT `ip` FROM `like` WHERE ( 1=1 AND cid='639' )  [ RunTime:0.0004s ]
+NOTIC: [8] Undefined index: mapping_order D:\wamp\www\thinkphp\ThinkPHP\Library\Think\Model\RelationModel.class.php 第 186 行.
+NOTIC: [8] Undefined index: mapping_limit D:\wamp\www\thinkphp\ThinkPHP\Library\Think\Model\RelationModel.class.php 第 187 行.
+SQL: SELECT b.* FROM article_attr AS a, attr AS b WHERE a.aid = b.id AND a. cid='648' [ RunTime:0.0003s ]
+SQL: SELECT `ip` FROM `like` WHERE ( 1=1 AND cid='648' )  [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: mapping_order D:\wamp\www\thinkphp\ThinkPHP\Library\Think\Model\RelationModel.class.php 第 186 行.
+NOTIC: [8] Undefined index: mapping_limit D:\wamp\www\thinkphp\ThinkPHP\Library\Think\Model\RelationModel.class.php 第 187 行.
+SQL: SELECT b.* FROM article_attr AS a, attr AS b WHERE a.aid = b.id AND a. cid='651' [ RunTime:0.0003s ]
+SQL: SELECT `ip` FROM `like` WHERE ( 1=1 AND cid='651' )  [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: mapping_order D:\wamp\www\thinkphp\ThinkPHP\Library\Think\Model\RelationModel.class.php 第 186 行.
+NOTIC: [8] Undefined index: mapping_limit D:\wamp\www\thinkphp\ThinkPHP\Library\Think\Model\RelationModel.class.php 第 187 行.
+SQL: SELECT b.* FROM article_attr AS a, attr AS b WHERE a.aid = b.id AND a. cid='654' [ RunTime:0.0004s ]
+SQL: SELECT `ip` FROM `like` WHERE ( 1=1 AND cid='654' )  [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: mapping_order D:\wamp\www\thinkphp\ThinkPHP\Library\Think\Model\RelationModel.class.php 第 186 行.
+NOTIC: [8] Undefined index: mapping_limit D:\wamp\www\thinkphp\ThinkPHP\Library\Think\Model\RelationModel.class.php 第 187 行.
+SQL: SELECT b.* FROM article_attr AS a, attr AS b WHERE a.aid = b.id AND a. cid='626' [ RunTime:0.0004s ]
+SQL: SELECT `ip` FROM `like` WHERE ( 1=1 AND cid='626' )  [ RunTime:0.0005s ]
+NOTIC: [8] Undefined index: mapping_order D:\wamp\www\thinkphp\ThinkPHP\Library\Think\Model\RelationModel.class.php 第 186 行.
+NOTIC: [8] Undefined index: mapping_limit D:\wamp\www\thinkphp\ThinkPHP\Library\Think\Model\RelationModel.class.php 第 187 行.
+SQL: SELECT b.* FROM article_attr AS a, attr AS b WHERE a.aid = b.id AND a. cid='627' [ RunTime:0.0004s ]
+SQL: SELECT `ip` FROM `like` WHERE ( 1=1 AND cid='627' )  [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: mapping_order D:\wamp\www\thinkphp\ThinkPHP\Library\Think\Model\RelationModel.class.php 第 186 行.
+NOTIC: [8] Undefined index: mapping_limit D:\wamp\www\thinkphp\ThinkPHP\Library\Think\Model\RelationModel.class.php 第 187 行.
+SQL: SELECT b.* FROM article_attr AS a, attr AS b WHERE a.aid = b.id AND a. cid='624' [ RunTime:0.0004s ]
+SQL: SELECT `ip` FROM `like` WHERE ( 1=1 AND cid='624' )  [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: mapping_order D:\wamp\www\thinkphp\ThinkPHP\Library\Think\Model\RelationModel.class.php 第 186 行.
+NOTIC: [8] Undefined index: mapping_limit D:\wamp\www\thinkphp\ThinkPHP\Library\Think\Model\RelationModel.class.php 第 187 行.
+SQL: SELECT b.* FROM article_attr AS a, attr AS b WHERE a.aid = b.id AND a. cid='613' [ RunTime:0.0003s ]
+SQL: SELECT `ip` FROM `like` WHERE ( 1=1 AND cid='613' )  [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: mapping_order D:\wamp\www\thinkphp\ThinkPHP\Library\Think\Model\RelationModel.class.php 第 186 行.
+NOTIC: [8] Undefined index: mapping_limit D:\wamp\www\thinkphp\ThinkPHP\Library\Think\Model\RelationModel.class.php 第 187 行.
+SQL: SELECT b.* FROM article_attr AS a, attr AS b WHERE a.aid = b.id AND a. cid='597' [ RunTime:0.0003s ]
+SQL: SELECT `ip` FROM `like` WHERE ( 1=1 AND cid='597' )  [ RunTime:0.0003s ]
+SQL: SELECT `id`,`title` FROM `article` ORDER BY click DESC LIMIT 30   [ RunTime:0.0007s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `article` WHERE `cid` IN ('227') LIMIT 1   [ RunTime:0.0222s ]
+SQL: SHOW COLUMNS FROM `article` [ RunTime:0.0009s ]
+SQL: SELECT `id`,`title`,`content`,`image` FROM `article` ORDER BY click DESC LIMIT 10   [ RunTime:0.0019s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000260s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000395s ]
+NOTIC: [8] Undefined offset: 0 D:\wamp\www\thinkphp\Application\Runtime\Cache\Home\924808055458c07e9f4d1040ae4bac5b.php 第 204 行.
+NOTIC: [8] Undefined offset: 0 D:\wamp\www\thinkphp\Application\Runtime\Cache\Home\924808055458c07e9f4d1040ae4bac5b.php 第 204 行.
+NOTIC: [8] Undefined offset: 0 D:\wamp\www\thinkphp\Application\Runtime\Cache\Home\924808055458c07e9f4d1040ae4bac5b.php 第 204 行.
+NOTIC: [8] Undefined offset: 0 D:\wamp\www\thinkphp\Application\Runtime\Cache\Home\924808055458c07e9f4d1040ae4bac5b.php 第 204 行.
+NOTIC: [8] Undefined offset: 0 D:\wamp\www\thinkphp\Application\Runtime\Cache\Home\924808055458c07e9f4d1040ae4bac5b.php 第 204 行.
+NOTIC: [8] Undefined offset: 0 D:\wamp\www\thinkphp\Application\Runtime\Cache\Home\924808055458c07e9f4d1040ae4bac5b.php 第 204 行.
+NOTIC: [8] Undefined offset: 0 D:\wamp\www\thinkphp\Application\Runtime\Cache\Home\924808055458c07e9f4d1040ae4bac5b.php 第 204 行.
+NOTIC: [8] Undefined offset: 0 D:\wamp\www\thinkphp\Application\Runtime\Cache\Home\924808055458c07e9f4d1040ae4bac5b.php 第 204 行.
+NOTIC: [8] Undefined offset: 0 D:\wamp\www\thinkphp\Application\Runtime\Cache\Home\924808055458c07e9f4d1040ae4bac5b.php 第 204 行.
+NOTIC: [8] Undefined offset: 0 D:\wamp\www\thinkphp\Application\Runtime\Cache\Home\924808055458c07e9f4d1040ae4bac5b.php 第 204 行.
+NOTIC: [8] Undefined offset: 0 D:\wamp\www\thinkphp\Application\Runtime\Cache\Home\924808055458c07e9f4d1040ae4bac5b.php 第 204 行.
+NOTIC: [8] Undefined offset: 0 D:\wamp\www\thinkphp\Application\Runtime\Cache\Home\924808055458c07e9f4d1040ae4bac5b.php 第 204 行.
+NOTIC: [8] Undefined offset: 0 D:\wamp\www\thinkphp\Application\Runtime\Cache\Home\924808055458c07e9f4d1040ae4bac5b.php 第 204 行.
+NOTIC: [8] Undefined offset: 0 D:\wamp\www\thinkphp\Application\Runtime\Cache\Home\924808055458c07e9f4d1040ae4bac5b.php 第 204 行.
+NOTIC: [8] Undefined offset: 0 D:\wamp\www\thinkphp\Application\Runtime\Cache\Home\924808055458c07e9f4d1040ae4bac5b.php 第 204 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.083250s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.083429s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000642s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000757s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001286s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001442s ]
+
+[ 2017-04-27T06:28:21+08:00 ] ::1 /thinkphp/index.php/Home/Login/createVerify
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000060s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000964s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000670s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000824s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001196s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001490s ]
+
+[ 2017-04-27T06:28:27+08:00 ] ::1 /thinkphp/index.php/Home/Details/detail/id/651
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000069s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001431s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001032s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001421s ]
+SQL: SHOW COLUMNS FROM `category` [ RunTime:0.0014s ]
+SQL: SELECT `id`,`name`,`sort` FROM `category` WHERE `pid` = 0 ORDER BY sort DESC LIMIT 5   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `link` [ RunTime:0.0020s ]
+SQL: SELECT `id`,`name`,`url` FROM `link` ORDER BY id DESC LIMIT 10   [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `system` [ RunTime:0.0015s ]
+SQL: SELECT * FROM `system` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `article` [ RunTime:0.0014s ]
+NOTIC: [2] Missing argument 1 for Think\Model::field(), called in D:\wamp\www\thinkphp\Application\Home\Model\ArticleModel.class.php on line 66 and defined D:\wamp\www\thinkphp\ThinkPHP\Library\Think\Model.class.php 第 1740 行.
+NOTIC: [8] Undefined variable: field D:\wamp\www\thinkphp\ThinkPHP\Library\Think\Model.class.php 第 1741 行.
+NOTIC: [8] Undefined variable: field D:\wamp\www\thinkphp\ThinkPHP\Library\Think\Model.class.php 第 1751 行.
+SQL: SELECT * FROM `article` WHERE `id` = 651 LIMIT 1   [ RunTime:0.0004s ]
+SQL: UPDATE `article` SET `click`=click+1 WHERE `id` = 651 [ RunTime:0.0675s ]
+SQL: SELECT `id`,`pid` FROM `category`  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `article` [ RunTime:0.0007s ]
+SQL: SELECT `id`,`title`,`image`,`content` FROM `article` WHERE `cid` IN ('227') ORDER BY click DESC LIMIT 6   [ RunTime:0.0013s ]
+SQL: SHOW COLUMNS FROM `article` [ RunTime:0.0007s ]
+SQL: SELECT `id`,`title`,`content`,`image` FROM `article` ORDER BY click DESC LIMIT 10   [ RunTime:0.0017s ]
+SQL: SELECT `id`,`title` FROM `article` ORDER BY click DESC LIMIT 30   [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `comments` [ RunTime:0.0438s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0222s ]
+SQL: SELECT Comments.id AS id,Comments.comment AS comment,Comments.up AS up,Comments.down AS down,Comments.time AS time,Comments.uid AS uid,User.image AS image,User.username AS username FROM comments Comments  JOIN user User ON Comments.uid = User.id WHERE `aid` = 651 ORDER BY Comments.up DESC LIMIT 10   [ RunTime:0.0092s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000501s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000752s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.079256s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.079571s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000641s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000759s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000997s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001494s ]
+
+[ 2017-04-27T06:28:27+08:00 ] ::1 /thinkphp/index.php/Home/Login/createVerify
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000051s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000972s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001131s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001356s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000834s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001038s ]
+
+[ 2017-04-27T06:28:31+08:00 ] ::1 /thinkphp/index.php/Home/Details/like
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000033s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000687s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000616s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000732s ]
+SQL: SHOW COLUMNS FROM `category` [ RunTime:0.0023s ]
+SQL: SELECT `id`,`name`,`sort` FROM `category` WHERE `pid` = 0 ORDER BY sort DESC LIMIT 5   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `link` [ RunTime:0.0014s ]
+SQL: SELECT `id`,`name`,`url` FROM `link` ORDER BY id DESC LIMIT 10   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `system` [ RunTime:0.0013s ]
+SQL: SELECT * FROM `system` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `article` [ RunTime:0.0015s ]
+SQL: SELECT `id` FROM `article` WHERE `id` = 651 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `like` [ RunTime:0.0014s ]
+SQL: SELECT `ip` FROM `like` WHERE ( 1=1 AND cid='651' )  [ RunTime:0.0003s ]
+SQL: UPDATE `article` SET `favorite`=favorite+1 WHERE `id` = 651 [ RunTime:0.0568s ]
+SQL: SHOW COLUMNS FROM `like` [ RunTime:0.0007s ]
+SQL: INSERT INTO `like` (`cid`,`ip`) VALUES ('651','::1') [ RunTime:0.0252s ]
+SQL: SELECT `favorite` FROM `article` WHERE `id` = 651 LIMIT 1   [ RunTime:0.0006s ]
+
+[ 2017-04-27T06:28:46+08:00 ] ::1 /thinkphp/index.php/Home/Comment/handle
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000032s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000661s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000603s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000711s ]
+SQL: SHOW COLUMNS FROM `comments` [ RunTime:0.0011s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0014s ]
+SQL: SELECT Comments.id AS id,Comments.comment AS comment,Comments.up AS up,Comments.down AS down,Comments.time AS time,Comments.uid AS uid,User.image AS image,User.username AS username FROM comments Comments  JOIN user User ON Comments.uid = User.id WHERE `aid` = 651 ORDER BY Comments.time DESC LIMIT 10   [ RunTime:0.0007s ]
+
+[ 2017-04-27T06:28:50+08:00 ] ::1 /thinkphp/index.php/Home/Cate/index/id/224
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000030s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000641s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000657s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000787s ]
+SQL: SHOW COLUMNS FROM `category` [ RunTime:0.0015s ]
+SQL: SELECT `id`,`name`,`sort` FROM `category` WHERE `pid` = 0 ORDER BY sort DESC LIMIT 5   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `link` [ RunTime:0.0014s ]
+SQL: SELECT `id`,`name`,`url` FROM `link` ORDER BY id DESC LIMIT 10   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `system` [ RunTime:0.0014s ]
+SQL: SELECT * FROM `system` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `id`,`pid` FROM `category`  [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `article` [ RunTime:0.0015s ]
+SQL: SELECT `id`,`title`,`createtime`,`tags`,`image`,`content`,`click` FROM `article` WHERE `cid` IN ('224') ORDER BY createtime DESC LIMIT 0,15   [ RunTime:0.0017s ]
+SQL: SHOW COLUMNS FROM `attr` [ RunTime:0.0010s ]
+NOTIC: [8] Undefined index: mapping_order D:\wamp\www\thinkphp\ThinkPHP\Library\Think\Model\RelationModel.class.php 第 186 行.
+NOTIC: [8] Undefined index: mapping_limit D:\wamp\www\thinkphp\ThinkPHP\Library\Think\Model\RelationModel.class.php 第 187 行.
+SQL: SELECT b.* FROM article_attr AS a, attr AS b WHERE a.aid = b.id AND a. cid='882' [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `like` [ RunTime:0.0014s ]
+SQL: SELECT `ip` FROM `like` WHERE ( 1=1 AND cid='882' )  [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: mapping_order D:\wamp\www\thinkphp\ThinkPHP\Library\Think\Model\RelationModel.class.php 第 186 行.
+NOTIC: [8] Undefined index: mapping_limit D:\wamp\www\thinkphp\ThinkPHP\Library\Think\Model\RelationModel.class.php 第 187 行.
+SQL: SELECT b.* FROM article_attr AS a, attr AS b WHERE a.aid = b.id AND a. cid='871' [ RunTime:0.0003s ]
+SQL: SELECT `ip` FROM `like` WHERE ( 1=1 AND cid='871' )  [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: mapping_order D:\wamp\www\thinkphp\ThinkPHP\Library\Think\Model\RelationModel.class.php 第 186 行.
+NOTIC: [8] Undefined index: mapping_limit D:\wamp\www\thinkphp\ThinkPHP\Library\Think\Model\RelationModel.class.php 第 187 行.
+SQL: SELECT b.* FROM article_attr AS a, attr AS b WHERE a.aid = b.id AND a. cid='877' [ RunTime:0.0003s ]
+SQL: SELECT `ip` FROM `like` WHERE ( 1=1 AND cid='877' )  [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: mapping_order D:\wamp\www\thinkphp\ThinkPHP\Library\Think\Model\RelationModel.class.php 第 186 行.
+NOTIC: [8] Undefined index: mapping_limit D:\wamp\www\thinkphp\ThinkPHP\Library\Think\Model\RelationModel.class.php 第 187 行.
+SQL: SELECT b.* FROM article_attr AS a, attr AS b WHERE a.aid = b.id AND a. cid='860' [ RunTime:0.0004s ]
+SQL: SELECT `ip` FROM `like` WHERE ( 1=1 AND cid='860' )  [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: mapping_order D:\wamp\www\thinkphp\ThinkPHP\Library\Think\Model\RelationModel.class.php 第 186 行.
+NOTIC: [8] Undefined index: mapping_limit D:\wamp\www\thinkphp\ThinkPHP\Library\Think\Model\RelationModel.class.php 第 187 行.
+SQL: SELECT b.* FROM article_attr AS a, attr AS b WHERE a.aid = b.id AND a. cid='867' [ RunTime:0.0007s ]
+SQL: SELECT `ip` FROM `like` WHERE ( 1=1 AND cid='867' )  [ RunTime:0.0004s ]
+NOTIC: [8] Undefined index: mapping_order D:\wamp\www\thinkphp\ThinkPHP\Library\Think\Model\RelationModel.class.php 第 186 行.
+NOTIC: [8] Undefined index: mapping_limit D:\wamp\www\thinkphp\ThinkPHP\Library\Think\Model\RelationModel.class.php 第 187 行.
+SQL: SELECT b.* FROM article_attr AS a, attr AS b WHERE a.aid = b.id AND a. cid='641' [ RunTime:0.0003s ]
+SQL: SELECT `ip` FROM `like` WHERE ( 1=1 AND cid='641' )  [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: mapping_order D:\wamp\www\thinkphp\ThinkPHP\Library\Think\Model\RelationModel.class.php 第 186 行.
+NOTIC: [8] Undefined index: mapping_limit D:\wamp\www\thinkphp\ThinkPHP\Library\Think\Model\RelationModel.class.php 第 187 行.
+SQL: SELECT b.* FROM article_attr AS a, attr AS b WHERE a.aid = b.id AND a. cid='652' [ RunTime:0.0004s ]
+SQL: SELECT `ip` FROM `like` WHERE ( 1=1 AND cid='652' )  [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: mapping_order D:\wamp\www\thinkphp\ThinkPHP\Library\Think\Model\RelationModel.class.php 第 186 行.
+NOTIC: [8] Undefined index: mapping_limit D:\wamp\www\thinkphp\ThinkPHP\Library\Think\Model\RelationModel.class.php 第 187 行.
+SQL: SELECT b.* FROM article_attr AS a, attr AS b WHERE a.aid = b.id AND a. cid='653' [ RunTime:0.0003s ]
+SQL: SELECT `ip` FROM `like` WHERE ( 1=1 AND cid='653' )  [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: mapping_order D:\wamp\www\thinkphp\ThinkPHP\Library\Think\Model\RelationModel.class.php 第 186 行.
+NOTIC: [8] Undefined index: mapping_limit D:\wamp\www\thinkphp\ThinkPHP\Library\Think\Model\RelationModel.class.php 第 187 行.
+SQL: SELECT b.* FROM article_attr AS a, attr AS b WHERE a.aid = b.id AND a. cid='655' [ RunTime:0.0003s ]
+SQL: SELECT `ip` FROM `like` WHERE ( 1=1 AND cid='655' )  [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: mapping_order D:\wamp\www\thinkphp\ThinkPHP\Library\Think\Model\RelationModel.class.php 第 186 行.
+NOTIC: [8] Undefined index: mapping_limit D:\wamp\www\thinkphp\ThinkPHP\Library\Think\Model\RelationModel.class.php 第 187 行.
+SQL: SELECT b.* FROM article_attr AS a, attr AS b WHERE a.aid = b.id AND a. cid='635' [ RunTime:0.0003s ]
+SQL: SELECT `ip` FROM `like` WHERE ( 1=1 AND cid='635' )  [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: mapping_order D:\wamp\www\thinkphp\ThinkPHP\Library\Think\Model\RelationModel.class.php 第 186 行.
+NOTIC: [8] Undefined index: mapping_limit D:\wamp\www\thinkphp\ThinkPHP\Library\Think\Model\RelationModel.class.php 第 187 行.
+SQL: SELECT b.* FROM article_attr AS a, attr AS b WHERE a.aid = b.id AND a. cid='628' [ RunTime:0.0003s ]
+SQL: SELECT `ip` FROM `like` WHERE ( 1=1 AND cid='628' )  [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: mapping_order D:\wamp\www\thinkphp\ThinkPHP\Library\Think\Model\RelationModel.class.php 第 186 行.
+NOTIC: [8] Undefined index: mapping_limit D:\wamp\www\thinkphp\ThinkPHP\Library\Think\Model\RelationModel.class.php 第 187 行.
+SQL: SELECT b.* FROM article_attr AS a, attr AS b WHERE a.aid = b.id AND a. cid='616' [ RunTime:0.0003s ]
+SQL: SELECT `ip` FROM `like` WHERE ( 1=1 AND cid='616' )  [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: mapping_order D:\wamp\www\thinkphp\ThinkPHP\Library\Think\Model\RelationModel.class.php 第 186 行.
+NOTIC: [8] Undefined index: mapping_limit D:\wamp\www\thinkphp\ThinkPHP\Library\Think\Model\RelationModel.class.php 第 187 行.
+SQL: SELECT b.* FROM article_attr AS a, attr AS b WHERE a.aid = b.id AND a. cid='598' [ RunTime:0.0003s ]
+SQL: SELECT `ip` FROM `like` WHERE ( 1=1 AND cid='598' )  [ RunTime:0.0004s ]
+NOTIC: [8] Undefined index: mapping_order D:\wamp\www\thinkphp\ThinkPHP\Library\Think\Model\RelationModel.class.php 第 186 行.
+NOTIC: [8] Undefined index: mapping_limit D:\wamp\www\thinkphp\ThinkPHP\Library\Think\Model\RelationModel.class.php 第 187 行.
+SQL: SELECT b.* FROM article_attr AS a, attr AS b WHERE a.aid = b.id AND a. cid='606' [ RunTime:0.0003s ]
+SQL: SELECT `ip` FROM `like` WHERE ( 1=1 AND cid='606' )  [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: mapping_order D:\wamp\www\thinkphp\ThinkPHP\Library\Think\Model\RelationModel.class.php 第 186 行.
+NOTIC: [8] Undefined index: mapping_limit D:\wamp\www\thinkphp\ThinkPHP\Library\Think\Model\RelationModel.class.php 第 187 行.
+SQL: SELECT b.* FROM article_attr AS a, attr AS b WHERE a.aid = b.id AND a. cid='580' [ RunTime:0.0003s ]
+SQL: SELECT `ip` FROM `like` WHERE ( 1=1 AND cid='580' )  [ RunTime:0.0004s ]
+SQL: SELECT `id`,`title` FROM `article` ORDER BY click DESC LIMIT 30   [ RunTime:0.0010s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `article` WHERE `cid` IN ('224') LIMIT 1   [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `article` [ RunTime:0.0006s ]
+SQL: SELECT `id`,`title`,`content`,`image` FROM `article` ORDER BY click DESC LIMIT 10   [ RunTime:0.0012s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000269s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000424s ]
+NOTIC: [8] Undefined offset: 0 D:\wamp\www\thinkphp\Application\Runtime\Cache\Home\924808055458c07e9f4d1040ae4bac5b.php 第 204 行.
+NOTIC: [8] Undefined offset: 0 D:\wamp\www\thinkphp\Application\Runtime\Cache\Home\924808055458c07e9f4d1040ae4bac5b.php 第 204 行.
+NOTIC: [8] Undefined offset: 0 D:\wamp\www\thinkphp\Application\Runtime\Cache\Home\924808055458c07e9f4d1040ae4bac5b.php 第 204 行.
+NOTIC: [8] Undefined offset: 0 D:\wamp\www\thinkphp\Application\Runtime\Cache\Home\924808055458c07e9f4d1040ae4bac5b.php 第 204 行.
+NOTIC: [8] Undefined offset: 0 D:\wamp\www\thinkphp\Application\Runtime\Cache\Home\924808055458c07e9f4d1040ae4bac5b.php 第 204 行.
+NOTIC: [8] Undefined offset: 0 D:\wamp\www\thinkphp\Application\Runtime\Cache\Home\924808055458c07e9f4d1040ae4bac5b.php 第 204 行.
+NOTIC: [8] Undefined offset: 0 D:\wamp\www\thinkphp\Application\Runtime\Cache\Home\924808055458c07e9f4d1040ae4bac5b.php 第 204 行.
+NOTIC: [8] Undefined offset: 0 D:\wamp\www\thinkphp\Application\Runtime\Cache\Home\924808055458c07e9f4d1040ae4bac5b.php 第 204 行.
+NOTIC: [8] Undefined offset: 0 D:\wamp\www\thinkphp\Application\Runtime\Cache\Home\924808055458c07e9f4d1040ae4bac5b.php 第 204 行.
+NOTIC: [8] Undefined offset: 0 D:\wamp\www\thinkphp\Application\Runtime\Cache\Home\924808055458c07e9f4d1040ae4bac5b.php 第 204 行.
+NOTIC: [8] Undefined offset: 0 D:\wamp\www\thinkphp\Application\Runtime\Cache\Home\924808055458c07e9f4d1040ae4bac5b.php 第 204 行.
+NOTIC: [8] Undefined offset: 0 D:\wamp\www\thinkphp\Application\Runtime\Cache\Home\924808055458c07e9f4d1040ae4bac5b.php 第 204 行.
+NOTIC: [8] Undefined offset: 0 D:\wamp\www\thinkphp\Application\Runtime\Cache\Home\924808055458c07e9f4d1040ae4bac5b.php 第 204 行.
+NOTIC: [8] Undefined offset: 0 D:\wamp\www\thinkphp\Application\Runtime\Cache\Home\924808055458c07e9f4d1040ae4bac5b.php 第 204 行.
+NOTIC: [8] Undefined offset: 0 D:\wamp\www\thinkphp\Application\Runtime\Cache\Home\924808055458c07e9f4d1040ae4bac5b.php 第 204 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.053173s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.053317s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000644s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000760s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000926s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001264s ]
+
+[ 2017-04-27T06:28:50+08:00 ] ::1 /thinkphp/index.php/Home/Login/createVerify
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000067s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001130s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001408s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001854s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001105s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001407s ]
+
+[ 2017-04-27T06:28:57+08:00 ] ::1 /thinkphp/index.php/Home/Cate/randArticle
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000028s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000688s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000620s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000728s ]
+SQL: SHOW COLUMNS FROM `category` [ RunTime:0.0014s ]
+SQL: SELECT `id`,`name`,`sort` FROM `category` WHERE `pid` = 0 ORDER BY sort DESC LIMIT 5   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `link` [ RunTime:0.0016s ]
+SQL: SELECT `id`,`name`,`url` FROM `link` ORDER BY id DESC LIMIT 10   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `system` [ RunTime:0.0014s ]
+SQL: SELECT * FROM `system` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `article` [ RunTime:0.0014s ]
+SQL: SELECT `id`,`title` FROM `article` ORDER BY click DESC LIMIT 30   [ RunTime:0.0008s ]
+
+[ 2017-04-27T06:28:58+08:00 ] ::1 /thinkphp/index.php/Home/Cate/randArticle
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000028s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000615s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000595s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000702s ]
+SQL: SHOW COLUMNS FROM `category` [ RunTime:0.0014s ]
+SQL: SELECT `id`,`name`,`sort` FROM `category` WHERE `pid` = 0 ORDER BY sort DESC LIMIT 5   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `link` [ RunTime:0.0013s ]
+SQL: SELECT `id`,`name`,`url` FROM `link` ORDER BY id DESC LIMIT 10   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `system` [ RunTime:0.0013s ]
+SQL: SELECT * FROM `system` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `article` [ RunTime:0.0013s ]
+SQL: SELECT `id`,`title` FROM `article` ORDER BY click DESC LIMIT 30   [ RunTime:0.0008s ]
+
+[ 2017-04-27T06:28:58+08:00 ] ::1 /thinkphp/index.php/Home/Cate/randArticle
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000028s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000626s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000832s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000981s ]
+SQL: SHOW COLUMNS FROM `category` [ RunTime:0.0014s ]
+SQL: SELECT `id`,`name`,`sort` FROM `category` WHERE `pid` = 0 ORDER BY sort DESC LIMIT 5   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `link` [ RunTime:0.0013s ]
+SQL: SELECT `id`,`name`,`url` FROM `link` ORDER BY id DESC LIMIT 10   [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `system` [ RunTime:0.0014s ]
+SQL: SELECT * FROM `system` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `article` [ RunTime:0.0014s ]
+SQL: SELECT `id`,`title` FROM `article` ORDER BY click DESC LIMIT 30   [ RunTime:0.0008s ]
+
+[ 2017-04-27T06:29:01+08:00 ] ::1 /thinkphp/index.php/Home/Cate/index/id/223
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000028s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000619s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000668s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000802s ]
+SQL: SHOW COLUMNS FROM `category` [ RunTime:0.0014s ]
+SQL: SELECT `id`,`name`,`sort` FROM `category` WHERE `pid` = 0 ORDER BY sort DESC LIMIT 5   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `link` [ RunTime:0.0013s ]
+SQL: SELECT `id`,`name`,`url` FROM `link` ORDER BY id DESC LIMIT 10   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `system` [ RunTime:0.0018s ]
+SQL: SELECT * FROM `system` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `id`,`pid` FROM `category`  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `article` [ RunTime:0.0014s ]
+SQL: SELECT `id`,`title`,`createtime`,`tags`,`image`,`content`,`click` FROM `article` WHERE `cid` IN ('223') ORDER BY createtime DESC LIMIT 0,15   [ RunTime:0.0707s ]
+SQL: SHOW COLUMNS FROM `attr` [ RunTime:0.0010s ]
+NOTIC: [8] Undefined index: mapping_order D:\wamp\www\thinkphp\ThinkPHP\Library\Think\Model\RelationModel.class.php 第 186 行.
+NOTIC: [8] Undefined index: mapping_limit D:\wamp\www\thinkphp\ThinkPHP\Library\Think\Model\RelationModel.class.php 第 187 行.
+SQL: SELECT b.* FROM article_attr AS a, attr AS b WHERE a.aid = b.id AND a. cid='885' [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `like` [ RunTime:0.0013s ]
+SQL: SELECT `ip` FROM `like` WHERE ( 1=1 AND cid='885' )  [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: mapping_order D:\wamp\www\thinkphp\ThinkPHP\Library\Think\Model\RelationModel.class.php 第 186 行.
+NOTIC: [8] Undefined index: mapping_limit D:\wamp\www\thinkphp\ThinkPHP\Library\Think\Model\RelationModel.class.php 第 187 行.
+SQL: SELECT b.* FROM article_attr AS a, attr AS b WHERE a.aid = b.id AND a. cid='862' [ RunTime:0.0003s ]
+SQL: SELECT `ip` FROM `like` WHERE ( 1=1 AND cid='862' )  [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: mapping_order D:\wamp\www\thinkphp\ThinkPHP\Library\Think\Model\RelationModel.class.php 第 186 行.
+NOTIC: [8] Undefined index: mapping_limit D:\wamp\www\thinkphp\ThinkPHP\Library\Think\Model\RelationModel.class.php 第 187 行.
+SQL: SELECT b.* FROM article_attr AS a, attr AS b WHERE a.aid = b.id AND a. cid='647' [ RunTime:0.0003s ]
+SQL: SELECT `ip` FROM `like` WHERE ( 1=1 AND cid='647' )  [ RunTime:0.0004s ]
+NOTIC: [8] Undefined index: mapping_order D:\wamp\www\thinkphp\ThinkPHP\Library\Think\Model\RelationModel.class.php 第 186 行.
+NOTIC: [8] Undefined index: mapping_limit D:\wamp\www\thinkphp\ThinkPHP\Library\Think\Model\RelationModel.class.php 第 187 行.
+SQL: SELECT b.* FROM article_attr AS a, attr AS b WHERE a.aid = b.id AND a. cid='650' [ RunTime:0.0003s ]
+SQL: SELECT `ip` FROM `like` WHERE ( 1=1 AND cid='650' )  [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: mapping_order D:\wamp\www\thinkphp\ThinkPHP\Library\Think\Model\RelationModel.class.php 第 186 行.
+NOTIC: [8] Undefined index: mapping_limit D:\wamp\www\thinkphp\ThinkPHP\Library\Think\Model\RelationModel.class.php 第 187 行.
+SQL: SELECT b.* FROM article_attr AS a, attr AS b WHERE a.aid = b.id AND a. cid='657' [ RunTime:0.0003s ]
+SQL: SELECT `ip` FROM `like` WHERE ( 1=1 AND cid='657' )  [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: mapping_order D:\wamp\www\thinkphp\ThinkPHP\Library\Think\Model\RelationModel.class.php 第 186 行.
+NOTIC: [8] Undefined index: mapping_limit D:\wamp\www\thinkphp\ThinkPHP\Library\Think\Model\RelationModel.class.php 第 187 行.
+SQL: SELECT b.* FROM article_attr AS a, attr AS b WHERE a.aid = b.id AND a. cid='658' [ RunTime:0.0003s ]
+SQL: SELECT `ip` FROM `like` WHERE ( 1=1 AND cid='658' )  [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: mapping_order D:\wamp\www\thinkphp\ThinkPHP\Library\Think\Model\RelationModel.class.php 第 186 行.
+NOTIC: [8] Undefined index: mapping_limit D:\wamp\www\thinkphp\ThinkPHP\Library\Think\Model\RelationModel.class.php 第 187 行.
+SQL: SELECT b.* FROM article_attr AS a, attr AS b WHERE a.aid = b.id AND a. cid='631' [ RunTime:0.0003s ]
+SQL: SELECT `ip` FROM `like` WHERE ( 1=1 AND cid='631' )  [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: mapping_order D:\wamp\www\thinkphp\ThinkPHP\Library\Think\Model\RelationModel.class.php 第 186 行.
+NOTIC: [8] Undefined index: mapping_limit D:\wamp\www\thinkphp\ThinkPHP\Library\Think\Model\RelationModel.class.php 第 187 行.
+SQL: SELECT b.* FROM article_attr AS a, attr AS b WHERE a.aid = b.id AND a. cid='632' [ RunTime:0.0004s ]
+SQL: SELECT `ip` FROM `like` WHERE ( 1=1 AND cid='632' )  [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: mapping_order D:\wamp\www\thinkphp\ThinkPHP\Library\Think\Model\RelationModel.class.php 第 186 行.
+NOTIC: [8] Undefined index: mapping_limit D:\wamp\www\thinkphp\ThinkPHP\Library\Think\Model\RelationModel.class.php 第 187 行.
+SQL: SELECT b.* FROM article_attr AS a, attr AS b WHERE a.aid = b.id AND a. cid='619' [ RunTime:0.0003s ]
+SQL: SELECT `ip` FROM `like` WHERE ( 1=1 AND cid='619' )  [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: mapping_order D:\wamp\www\thinkphp\ThinkPHP\Library\Think\Model\RelationModel.class.php 第 186 行.
+NOTIC: [8] Undefined index: mapping_limit D:\wamp\www\thinkphp\ThinkPHP\Library\Think\Model\RelationModel.class.php 第 187 行.
+SQL: SELECT b.* FROM article_attr AS a, attr AS b WHERE a.aid = b.id AND a. cid='622' [ RunTime:0.0003s ]
+SQL: SELECT `ip` FROM `like` WHERE ( 1=1 AND cid='622' )  [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: mapping_order D:\wamp\www\thinkphp\ThinkPHP\Library\Think\Model\RelationModel.class.php 第 186 行.
+NOTIC: [8] Undefined index: mapping_limit D:\wamp\www\thinkphp\ThinkPHP\Library\Think\Model\RelationModel.class.php 第 187 行.
+SQL: SELECT b.* FROM article_attr AS a, attr AS b WHERE a.aid = b.id AND a. cid='617' [ RunTime:0.0003s ]
+SQL: SELECT `ip` FROM `like` WHERE ( 1=1 AND cid='617' )  [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: mapping_order D:\wamp\www\thinkphp\ThinkPHP\Library\Think\Model\RelationModel.class.php 第 186 行.
+NOTIC: [8] Undefined index: mapping_limit D:\wamp\www\thinkphp\ThinkPHP\Library\Think\Model\RelationModel.class.php 第 187 行.
+SQL: SELECT b.* FROM article_attr AS a, attr AS b WHERE a.aid = b.id AND a. cid='589' [ RunTime:0.0003s ]
+SQL: SELECT `ip` FROM `like` WHERE ( 1=1 AND cid='589' )  [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: mapping_order D:\wamp\www\thinkphp\ThinkPHP\Library\Think\Model\RelationModel.class.php 第 186 行.
+NOTIC: [8] Undefined index: mapping_limit D:\wamp\www\thinkphp\ThinkPHP\Library\Think\Model\RelationModel.class.php 第 187 行.
+SQL: SELECT b.* FROM article_attr AS a, attr AS b WHERE a.aid = b.id AND a. cid='591' [ RunTime:0.0003s ]
+SQL: SELECT `ip` FROM `like` WHERE ( 1=1 AND cid='591' )  [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: mapping_order D:\wamp\www\thinkphp\ThinkPHP\Library\Think\Model\RelationModel.class.php 第 186 行.
+NOTIC: [8] Undefined index: mapping_limit D:\wamp\www\thinkphp\ThinkPHP\Library\Think\Model\RelationModel.class.php 第 187 行.
+SQL: SELECT b.* FROM article_attr AS a, attr AS b WHERE a.aid = b.id AND a. cid='596' [ RunTime:0.0003s ]
+SQL: SELECT `ip` FROM `like` WHERE ( 1=1 AND cid='596' )  [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: mapping_order D:\wamp\www\thinkphp\ThinkPHP\Library\Think\Model\RelationModel.class.php 第 186 行.
+NOTIC: [8] Undefined index: mapping_limit D:\wamp\www\thinkphp\ThinkPHP\Library\Think\Model\RelationModel.class.php 第 187 行.
+SQL: SELECT b.* FROM article_attr AS a, attr AS b WHERE a.aid = b.id AND a. cid='578' [ RunTime:0.0003s ]
+SQL: SELECT `ip` FROM `like` WHERE ( 1=1 AND cid='578' )  [ RunTime:0.0003s ]
+SQL: SELECT `id`,`title` FROM `article` ORDER BY click DESC LIMIT 30   [ RunTime:0.0012s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `article` WHERE `cid` IN ('223') LIMIT 1   [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `article` [ RunTime:0.0006s ]
+SQL: SELECT `id`,`title`,`content`,`image` FROM `article` ORDER BY click DESC LIMIT 10   [ RunTime:0.0012s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000282s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000418s ]
+NOTIC: [8] Undefined offset: 0 D:\wamp\www\thinkphp\Application\Runtime\Cache\Home\924808055458c07e9f4d1040ae4bac5b.php 第 204 行.
+NOTIC: [8] Undefined offset: 0 D:\wamp\www\thinkphp\Application\Runtime\Cache\Home\924808055458c07e9f4d1040ae4bac5b.php 第 204 行.
+NOTIC: [8] Undefined offset: 0 D:\wamp\www\thinkphp\Application\Runtime\Cache\Home\924808055458c07e9f4d1040ae4bac5b.php 第 204 行.
+NOTIC: [8] Undefined offset: 0 D:\wamp\www\thinkphp\Application\Runtime\Cache\Home\924808055458c07e9f4d1040ae4bac5b.php 第 204 行.
+NOTIC: [8] Undefined offset: 0 D:\wamp\www\thinkphp\Application\Runtime\Cache\Home\924808055458c07e9f4d1040ae4bac5b.php 第 204 行.
+NOTIC: [8] Undefined offset: 0 D:\wamp\www\thinkphp\Application\Runtime\Cache\Home\924808055458c07e9f4d1040ae4bac5b.php 第 204 行.
+NOTIC: [8] Undefined offset: 0 D:\wamp\www\thinkphp\Application\Runtime\Cache\Home\924808055458c07e9f4d1040ae4bac5b.php 第 204 行.
+NOTIC: [8] Undefined offset: 0 D:\wamp\www\thinkphp\Application\Runtime\Cache\Home\924808055458c07e9f4d1040ae4bac5b.php 第 204 行.
+NOTIC: [8] Undefined offset: 0 D:\wamp\www\thinkphp\Application\Runtime\Cache\Home\924808055458c07e9f4d1040ae4bac5b.php 第 204 行.
+NOTIC: [8] Undefined offset: 0 D:\wamp\www\thinkphp\Application\Runtime\Cache\Home\924808055458c07e9f4d1040ae4bac5b.php 第 204 行.
+NOTIC: [8] Undefined offset: 0 D:\wamp\www\thinkphp\Application\Runtime\Cache\Home\924808055458c07e9f4d1040ae4bac5b.php 第 204 行.
+NOTIC: [8] Undefined offset: 0 D:\wamp\www\thinkphp\Application\Runtime\Cache\Home\924808055458c07e9f4d1040ae4bac5b.php 第 204 行.
+NOTIC: [8] Undefined offset: 0 D:\wamp\www\thinkphp\Application\Runtime\Cache\Home\924808055458c07e9f4d1040ae4bac5b.php 第 204 行.
+NOTIC: [8] Undefined offset: 0 D:\wamp\www\thinkphp\Application\Runtime\Cache\Home\924808055458c07e9f4d1040ae4bac5b.php 第 204 行.
+NOTIC: [8] Undefined offset: 0 D:\wamp\www\thinkphp\Application\Runtime\Cache\Home\924808055458c07e9f4d1040ae4bac5b.php 第 204 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.049442s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.049576s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000656s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000772s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000960s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001246s ]
+
+[ 2017-04-27T06:29:01+08:00 ] ::1 /thinkphp/index.php/Home/Login/createVerify
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000032s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000632s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001071s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001363s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001280s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001594s ]
+
+[ 2017-04-27T06:29:07+08:00 ] ::1 /thinkphp/index.php/Home/Details/detail/id/617
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000085s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001362s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001271s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001506s ]
+SQL: SHOW COLUMNS FROM `category` [ RunTime:0.0014s ]
+SQL: SELECT `id`,`name`,`sort` FROM `category` WHERE `pid` = 0 ORDER BY sort DESC LIMIT 5   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `link` [ RunTime:0.0013s ]
+SQL: SELECT `id`,`name`,`url` FROM `link` ORDER BY id DESC LIMIT 10   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `system` [ RunTime:0.0016s ]
+SQL: SELECT * FROM `system` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `article` [ RunTime:0.0014s ]
+NOTIC: [2] Missing argument 1 for Think\Model::field(), called in D:\wamp\www\thinkphp\Application\Home\Model\ArticleModel.class.php on line 66 and defined D:\wamp\www\thinkphp\ThinkPHP\Library\Think\Model.class.php 第 1740 行.
+NOTIC: [8] Undefined variable: field D:\wamp\www\thinkphp\ThinkPHP\Library\Think\Model.class.php 第 1741 行.
+NOTIC: [8] Undefined variable: field D:\wamp\www\thinkphp\ThinkPHP\Library\Think\Model.class.php 第 1751 行.
+SQL: SELECT * FROM `article` WHERE `id` = 617 LIMIT 1   [ RunTime:0.0004s ]
+SQL: UPDATE `article` SET `click`=click+1 WHERE `id` = 617 [ RunTime:0.0541s ]
+SQL: SELECT `id`,`pid` FROM `category`  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `article` [ RunTime:0.0007s ]
+SQL: SELECT `id`,`title`,`image`,`content` FROM `article` WHERE `cid` IN ('223') ORDER BY click DESC LIMIT 6   [ RunTime:0.0085s ]
+SQL: SHOW COLUMNS FROM `article` [ RunTime:0.0006s ]
+SQL: SELECT `id`,`title`,`content`,`image` FROM `article` ORDER BY click DESC LIMIT 10   [ RunTime:0.0020s ]
+SQL: SELECT `id`,`title` FROM `article` ORDER BY click DESC LIMIT 30   [ RunTime:0.0012s ]
+SQL: SHOW COLUMNS FROM `comments` [ RunTime:0.0011s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0014s ]
+SQL: SELECT Comments.id AS id,Comments.comment AS comment,Comments.up AS up,Comments.down AS down,Comments.time AS time,Comments.uid AS uid,User.image AS image,User.username AS username FROM comments Comments  JOIN user User ON Comments.uid = User.id WHERE `aid` = 617 ORDER BY Comments.up DESC LIMIT 10   [ RunTime:0.0007s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000411s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000547s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.049241s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.049385s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000817s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000935s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000937s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001165s ]
+
+[ 2017-04-27T06:29:07+08:00 ] ::1 /thinkphp/index.php/Home/Login/createVerify
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000051s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000936s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001017s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001281s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000741s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000917s ]
+
+[ 2017-04-27T06:29:11+08:00 ] ::1 /thinkphp/index.php/Home/Details/detail/id/617
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000027s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000666s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000823s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001062s ]
+SQL: SHOW COLUMNS FROM `category` [ RunTime:0.0015s ]
+SQL: SELECT `id`,`name`,`sort` FROM `category` WHERE `pid` = 0 ORDER BY sort DESC LIMIT 5   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `link` [ RunTime:0.0016s ]
+SQL: SELECT `id`,`name`,`url` FROM `link` ORDER BY id DESC LIMIT 10   [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `system` [ RunTime:0.0015s ]
+SQL: SELECT * FROM `system` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `article` [ RunTime:0.0014s ]
+NOTIC: [2] Missing argument 1 for Think\Model::field(), called in D:\wamp\www\thinkphp\Application\Home\Model\ArticleModel.class.php on line 66 and defined D:\wamp\www\thinkphp\ThinkPHP\Library\Think\Model.class.php 第 1740 行.
+NOTIC: [8] Undefined variable: field D:\wamp\www\thinkphp\ThinkPHP\Library\Think\Model.class.php 第 1741 行.
+NOTIC: [8] Undefined variable: field D:\wamp\www\thinkphp\ThinkPHP\Library\Think\Model.class.php 第 1751 行.
+SQL: SELECT * FROM `article` WHERE `id` = 617 LIMIT 1   [ RunTime:0.0004s ]
+SQL: UPDATE `article` SET `click`=click+1 WHERE `id` = 617 [ RunTime:0.0553s ]
+SQL: SELECT `id`,`pid` FROM `category`  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `article` [ RunTime:0.0008s ]
+SQL: SELECT `id`,`title`,`image`,`content` FROM `article` WHERE `cid` IN ('223') ORDER BY click DESC LIMIT 6   [ RunTime:0.0011s ]
+SQL: SHOW COLUMNS FROM `article` [ RunTime:0.0006s ]
+SQL: SELECT `id`,`title`,`content`,`image` FROM `article` ORDER BY click DESC LIMIT 10   [ RunTime:0.0011s ]
+SQL: SELECT `id`,`title` FROM `article` ORDER BY click DESC LIMIT 30   [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `comments` [ RunTime:0.0012s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0013s ]
+SQL: SELECT Comments.id AS id,Comments.comment AS comment,Comments.up AS up,Comments.down AS down,Comments.time AS time,Comments.uid AS uid,User.image AS image,User.username AS username FROM comments Comments  JOIN user User ON Comments.uid = User.id WHERE `aid` = 617 ORDER BY Comments.up DESC LIMIT 10   [ RunTime:0.0006s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000399s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000529s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.045838s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.045977s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000623s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000748s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000891s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001139s ]
+
+[ 2017-04-27T06:29:11+08:00 ] ::1 /thinkphp/index.php/Home/Login/createVerify
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000053s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000984s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000993s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001260s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000909s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001079s ]
+
+[ 2017-04-27T06:29:13+08:00 ] ::1 /thinkphp/index.php/Home/Details/detail/id/617
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000099s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001439s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000633s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000782s ]
+SQL: SHOW COLUMNS FROM `category` [ RunTime:0.0022s ]
+SQL: SELECT `id`,`name`,`sort` FROM `category` WHERE `pid` = 0 ORDER BY sort DESC LIMIT 5   [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `link` [ RunTime:0.0016s ]
+SQL: SELECT `id`,`name`,`url` FROM `link` ORDER BY id DESC LIMIT 10   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `system` [ RunTime:0.0014s ]
+SQL: SELECT * FROM `system` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `article` [ RunTime:0.0014s ]
+NOTIC: [2] Missing argument 1 for Think\Model::field(), called in D:\wamp\www\thinkphp\Application\Home\Model\ArticleModel.class.php on line 66 and defined D:\wamp\www\thinkphp\ThinkPHP\Library\Think\Model.class.php 第 1740 行.
+NOTIC: [8] Undefined variable: field D:\wamp\www\thinkphp\ThinkPHP\Library\Think\Model.class.php 第 1741 行.
+NOTIC: [8] Undefined variable: field D:\wamp\www\thinkphp\ThinkPHP\Library\Think\Model.class.php 第 1751 行.
+SQL: SELECT * FROM `article` WHERE `id` = 617 LIMIT 1   [ RunTime:0.0004s ]
+SQL: UPDATE `article` SET `click`=click+1 WHERE `id` = 617 [ RunTime:0.0146s ]
+SQL: SELECT `id`,`pid` FROM `category`  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `article` [ RunTime:0.0006s ]
+SQL: SELECT `id`,`title`,`image`,`content` FROM `article` WHERE `cid` IN ('223') ORDER BY click DESC LIMIT 6   [ RunTime:0.0012s ]
+SQL: SHOW COLUMNS FROM `article` [ RunTime:0.0009s ]
+SQL: SELECT `id`,`title`,`content`,`image` FROM `article` ORDER BY click DESC LIMIT 10   [ RunTime:0.0012s ]
+SQL: SELECT `id`,`title` FROM `article` ORDER BY click DESC LIMIT 30   [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `comments` [ RunTime:0.0011s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0013s ]
+SQL: SELECT Comments.id AS id,Comments.comment AS comment,Comments.up AS up,Comments.down AS down,Comments.time AS time,Comments.uid AS uid,User.image AS image,User.username AS username FROM comments Comments  JOIN user User ON Comments.uid = User.id WHERE `aid` = 617 ORDER BY Comments.up DESC LIMIT 10   [ RunTime:0.0006s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000389s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000515s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.058070s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.058210s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000831s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000950s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000875s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001071s ]
+
+[ 2017-04-27T06:29:14+08:00 ] ::1 /thinkphp/index.php/Home/Login/createVerify
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000054s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000978s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001147s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001413s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000945s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001170s ]
+
+[ 2017-04-27T06:29:15+08:00 ] ::1 /thinkphp/index.php/Home/Details/detail/id/617
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000030s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000659s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000649s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000778s ]
+SQL: SHOW COLUMNS FROM `category` [ RunTime:0.0564s ]
+SQL: SELECT `id`,`name`,`sort` FROM `category` WHERE `pid` = 0 ORDER BY sort DESC LIMIT 5   [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `link` [ RunTime:0.0422s ]
+SQL: SELECT `id`,`name`,`url` FROM `link` ORDER BY id DESC LIMIT 10   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `system` [ RunTime:0.0022s ]
+SQL: SELECT * FROM `system` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `article` [ RunTime:0.0022s ]
+NOTIC: [2] Missing argument 1 for Think\Model::field(), called in D:\wamp\www\thinkphp\Application\Home\Model\ArticleModel.class.php on line 66 and defined D:\wamp\www\thinkphp\ThinkPHP\Library\Think\Model.class.php 第 1740 行.
+NOTIC: [8] Undefined variable: field D:\wamp\www\thinkphp\ThinkPHP\Library\Think\Model.class.php 第 1741 行.
+NOTIC: [8] Undefined variable: field D:\wamp\www\thinkphp\ThinkPHP\Library\Think\Model.class.php 第 1751 行.
+SQL: SELECT * FROM `article` WHERE `id` = 617 LIMIT 1   [ RunTime:0.0008s ]
+SQL: UPDATE `article` SET `click`=click+1 WHERE `id` = 617 [ RunTime:0.0108s ]
+SQL: SELECT `id`,`pid` FROM `category`  [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `article` [ RunTime:0.0008s ]
+SQL: SELECT `id`,`title`,`image`,`content` FROM `article` WHERE `cid` IN ('223') ORDER BY click DESC LIMIT 6   [ RunTime:0.0018s ]
+SQL: SHOW COLUMNS FROM `article` [ RunTime:0.0008s ]
+SQL: SELECT `id`,`title`,`content`,`image` FROM `article` ORDER BY click DESC LIMIT 10   [ RunTime:0.0013s ]
+SQL: SELECT `id`,`title` FROM `article` ORDER BY click DESC LIMIT 30   [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `comments` [ RunTime:0.0012s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0019s ]
+SQL: SELECT Comments.id AS id,Comments.comment AS comment,Comments.up AS up,Comments.down AS down,Comments.time AS time,Comments.uid AS uid,User.image AS image,User.username AS username FROM comments Comments  JOIN user User ON Comments.uid = User.id WHERE `aid` = 617 ORDER BY Comments.up DESC LIMIT 10   [ RunTime:0.0008s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000362s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000491s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.046162s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.046304s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001128s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001271s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000740s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000887s ]
+
+[ 2017-04-27T06:29:15+08:00 ] ::1 /thinkphp/index.php/Home/Login/createVerify
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000077s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001132s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001672s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001988s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001123s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001391s ]
+
+[ 2017-04-27T06:29:16+08:00 ] ::1 /thinkphp/index.php/Home/Details/detail/id/617
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000030s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000678s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000618s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000745s ]
+SQL: SHOW COLUMNS FROM `category` [ RunTime:0.0014s ]
+SQL: SELECT `id`,`name`,`sort` FROM `category` WHERE `pid` = 0 ORDER BY sort DESC LIMIT 5   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `link` [ RunTime:0.0013s ]
+SQL: SELECT `id`,`name`,`url` FROM `link` ORDER BY id DESC LIMIT 10   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `system` [ RunTime:0.0014s ]
+SQL: SELECT * FROM `system` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `article` [ RunTime:0.0025s ]
+NOTIC: [2] Missing argument 1 for Think\Model::field(), called in D:\wamp\www\thinkphp\Application\Home\Model\ArticleModel.class.php on line 66 and defined D:\wamp\www\thinkphp\ThinkPHP\Library\Think\Model.class.php 第 1740 行.
+NOTIC: [8] Undefined variable: field D:\wamp\www\thinkphp\ThinkPHP\Library\Think\Model.class.php 第 1741 行.
+NOTIC: [8] Undefined variable: field D:\wamp\www\thinkphp\ThinkPHP\Library\Think\Model.class.php 第 1751 行.
+SQL: SELECT * FROM `article` WHERE `id` = 617 LIMIT 1   [ RunTime:0.0014s ]
+SQL: UPDATE `article` SET `click`=click+1 WHERE `id` = 617 [ RunTime:0.0132s ]
+SQL: SELECT `id`,`pid` FROM `category`  [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `article` [ RunTime:0.0008s ]
+SQL: SELECT `id`,`title`,`image`,`content` FROM `article` WHERE `cid` IN ('223') ORDER BY click DESC LIMIT 6   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `article` [ RunTime:0.0006s ]
+SQL: SELECT `id`,`title`,`content`,`image` FROM `article` ORDER BY click DESC LIMIT 10   [ RunTime:0.0012s ]
+SQL: SELECT `id`,`title` FROM `article` ORDER BY click DESC LIMIT 30   [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `comments` [ RunTime:0.0012s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0029s ]
+SQL: SELECT Comments.id AS id,Comments.comment AS comment,Comments.up AS up,Comments.down AS down,Comments.time AS time,Comments.uid AS uid,User.image AS image,User.username AS username FROM comments Comments  JOIN user User ON Comments.uid = User.id WHERE `aid` = 617 ORDER BY Comments.up DESC LIMIT 10   [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000818s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001114s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.048929s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.049069s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000714s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000832s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001548s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001912s ]
+
+[ 2017-04-27T06:29:16+08:00 ] ::1 /thinkphp/index.php/Home/Login/createVerify
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000055s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001126s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001238s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001519s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000837s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001006s ]
+
+[ 2017-04-27T06:29:17+08:00 ] ::1 /thinkphp/index.php/Home/Details/detail/id/617
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000029s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000632s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000865s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001055s ]
+SQL: SHOW COLUMNS FROM `category` [ RunTime:0.0026s ]
+SQL: SELECT `id`,`name`,`sort` FROM `category` WHERE `pid` = 0 ORDER BY sort DESC LIMIT 5   [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `link` [ RunTime:0.0021s ]
+SQL: SELECT `id`,`name`,`url` FROM `link` ORDER BY id DESC LIMIT 10   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `system` [ RunTime:0.0014s ]
+SQL: SELECT * FROM `system` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `article` [ RunTime:0.0015s ]
+NOTIC: [2] Missing argument 1 for Think\Model::field(), called in D:\wamp\www\thinkphp\Application\Home\Model\ArticleModel.class.php on line 66 and defined D:\wamp\www\thinkphp\ThinkPHP\Library\Think\Model.class.php 第 1740 行.
+NOTIC: [8] Undefined variable: field D:\wamp\www\thinkphp\ThinkPHP\Library\Think\Model.class.php 第 1741 行.
+NOTIC: [8] Undefined variable: field D:\wamp\www\thinkphp\ThinkPHP\Library\Think\Model.class.php 第 1751 行.
+SQL: SELECT * FROM `article` WHERE `id` = 617 LIMIT 1   [ RunTime:0.0004s ]
+SQL: UPDATE `article` SET `click`=click+1 WHERE `id` = 617 [ RunTime:0.0156s ]
+SQL: SELECT `id`,`pid` FROM `category`  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `article` [ RunTime:0.0012s ]
+SQL: SELECT `id`,`title`,`image`,`content` FROM `article` WHERE `cid` IN ('223') ORDER BY click DESC LIMIT 6   [ RunTime:0.0011s ]
+SQL: SHOW COLUMNS FROM `article` [ RunTime:0.0006s ]
+SQL: SELECT `id`,`title`,`content`,`image` FROM `article` ORDER BY click DESC LIMIT 10   [ RunTime:0.0011s ]
+SQL: SELECT `id`,`title` FROM `article` ORDER BY click DESC LIMIT 30   [ RunTime:0.0011s ]
+SQL: SHOW COLUMNS FROM `comments` [ RunTime:0.0011s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0013s ]
+SQL: SELECT Comments.id AS id,Comments.comment AS comment,Comments.up AS up,Comments.down AS down,Comments.time AS time,Comments.uid AS uid,User.image AS image,User.username AS username FROM comments Comments  JOIN user User ON Comments.uid = User.id WHERE `aid` = 617 ORDER BY Comments.up DESC LIMIT 10   [ RunTime:0.0008s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000368s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000499s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.051882s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.052133s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000793s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000950s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000687s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000831s ]
+
+[ 2017-04-27T06:29:17+08:00 ] ::1 /thinkphp/index.php/Home/Login/createVerify
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000056s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001093s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001390s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001672s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000836s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001001s ]
+
+[ 2017-04-27T06:29:18+08:00 ] ::1 /thinkphp/index.php/Home/Details/detail/id/617
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000027s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000634s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000613s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000740s ]
+SQL: SHOW COLUMNS FROM `category` [ RunTime:0.0006s ]
+SQL: SELECT `id`,`name`,`sort` FROM `category` WHERE `pid` = 0 ORDER BY sort DESC LIMIT 5   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `link` [ RunTime:0.0005s ]
+SQL: SELECT `id`,`name`,`url` FROM `link` ORDER BY id DESC LIMIT 10   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `system` [ RunTime:0.0005s ]
+SQL: SELECT * FROM `system` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `article` [ RunTime:0.0009s ]
+NOTIC: [2] Missing argument 1 for Think\Model::field(), called in D:\wamp\www\thinkphp\Application\Home\Model\ArticleModel.class.php on line 66 and defined D:\wamp\www\thinkphp\ThinkPHP\Library\Think\Model.class.php 第 1740 行.
+NOTIC: [8] Undefined variable: field D:\wamp\www\thinkphp\ThinkPHP\Library\Think\Model.class.php 第 1741 行.
+NOTIC: [8] Undefined variable: field D:\wamp\www\thinkphp\ThinkPHP\Library\Think\Model.class.php 第 1751 行.
+SQL: SELECT * FROM `article` WHERE `id` = 617 LIMIT 1   [ RunTime:0.0010s ]
+SQL: UPDATE `article` SET `click`=click+1 WHERE `id` = 617 [ RunTime:0.0562s ]
+SQL: SELECT `id`,`pid` FROM `category`  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `article` [ RunTime:0.0006s ]
+SQL: SELECT `id`,`title`,`image`,`content` FROM `article` WHERE `cid` IN ('223') ORDER BY click DESC LIMIT 6   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `article` [ RunTime:0.0009s ]
+SQL: SELECT `id`,`title`,`content`,`image` FROM `article` ORDER BY click DESC LIMIT 10   [ RunTime:0.0023s ]
+SQL: SELECT `id`,`title` FROM `article` ORDER BY click DESC LIMIT 30   [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `comments` [ RunTime:0.0011s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0013s ]
+SQL: SELECT Comments.id AS id,Comments.comment AS comment,Comments.up AS up,Comments.down AS down,Comments.time AS time,Comments.uid AS uid,User.image AS image,User.username AS username FROM comments Comments  JOIN user User ON Comments.uid = User.id WHERE `aid` = 617 ORDER BY Comments.up DESC LIMIT 10   [ RunTime:0.0006s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000389s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000524s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.052128s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.052279s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000619s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000759s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001482s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002028s ]
+
+[ 2017-04-27T06:29:18+08:00 ] ::1 /thinkphp/index.php/Home/Login/createVerify
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000113s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002713s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000989s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001260s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000828s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001040s ]
+
+[ 2017-04-27T06:29:19+08:00 ] ::1 /thinkphp/index.php/Home/Details/detail/id/617
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000062s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001057s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000642s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000776s ]
+SQL: SHOW COLUMNS FROM `category` [ RunTime:0.0006s ]
+SQL: SELECT `id`,`name`,`sort` FROM `category` WHERE `pid` = 0 ORDER BY sort DESC LIMIT 5   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `link` [ RunTime:0.0006s ]
+SQL: SELECT `id`,`name`,`url` FROM `link` ORDER BY id DESC LIMIT 10   [ RunTime:0.0012s ]
+SQL: SHOW COLUMNS FROM `system` [ RunTime:0.0012s ]
+SQL: SELECT * FROM `system` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `article` [ RunTime:0.0009s ]
+NOTIC: [2] Missing argument 1 for Think\Model::field(), called in D:\wamp\www\thinkphp\Application\Home\Model\ArticleModel.class.php on line 66 and defined D:\wamp\www\thinkphp\ThinkPHP\Library\Think\Model.class.php 第 1740 行.
+NOTIC: [8] Undefined variable: field D:\wamp\www\thinkphp\ThinkPHP\Library\Think\Model.class.php 第 1741 行.
+NOTIC: [8] Undefined variable: field D:\wamp\www\thinkphp\ThinkPHP\Library\Think\Model.class.php 第 1751 行.
+SQL: SELECT * FROM `article` WHERE `id` = 617 LIMIT 1   [ RunTime:0.0005s ]
+SQL: UPDATE `article` SET `click`=click+1 WHERE `id` = 617 [ RunTime:0.0139s ]
+SQL: SELECT `id`,`pid` FROM `category`  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `article` [ RunTime:0.0006s ]
+SQL: SELECT `id`,`title`,`image`,`content` FROM `article` WHERE `cid` IN ('223') ORDER BY click DESC LIMIT 6   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `article` [ RunTime:0.0006s ]
+SQL: SELECT `id`,`title`,`content`,`image` FROM `article` ORDER BY click DESC LIMIT 10   [ RunTime:0.0012s ]
+SQL: SELECT `id`,`title` FROM `article` ORDER BY click DESC LIMIT 30   [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `comments` [ RunTime:0.0015s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0017s ]
+SQL: SELECT Comments.id AS id,Comments.comment AS comment,Comments.up AS up,Comments.down AS down,Comments.time AS time,Comments.uid AS uid,User.image AS image,User.username AS username FROM comments Comments  JOIN user User ON Comments.uid = User.id WHERE `aid` = 617 ORDER BY Comments.up DESC LIMIT 10   [ RunTime:0.0008s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000449s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000595s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.055871s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.056009s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000544s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000680s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001661s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002177s ]
+
+[ 2017-04-27T06:29:19+08:00 ] ::1 /thinkphp/index.php/Home/Login/createVerify
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000051s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000947s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001268s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001650s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001244s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001513s ]
+
+[ 2017-04-27T06:29:20+08:00 ] ::1 /thinkphp/index.php/Home/Details/detail/id/617
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000031s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000590s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000631s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000786s ]
+SQL: SHOW COLUMNS FROM `category` [ RunTime:0.0007s ]
+SQL: SELECT `id`,`name`,`sort` FROM `category` WHERE `pid` = 0 ORDER BY sort DESC LIMIT 5   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `link` [ RunTime:0.0009s ]
+SQL: SELECT `id`,`name`,`url` FROM `link` ORDER BY id DESC LIMIT 10   [ RunTime:0.0011s ]
+SQL: SHOW COLUMNS FROM `system` [ RunTime:0.0011s ]
+SQL: SELECT * FROM `system` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `article` [ RunTime:0.0008s ]
+NOTIC: [2] Missing argument 1 for Think\Model::field(), called in D:\wamp\www\thinkphp\Application\Home\Model\ArticleModel.class.php on line 66 and defined D:\wamp\www\thinkphp\ThinkPHP\Library\Think\Model.class.php 第 1740 行.
+NOTIC: [8] Undefined variable: field D:\wamp\www\thinkphp\ThinkPHP\Library\Think\Model.class.php 第 1741 行.
+NOTIC: [8] Undefined variable: field D:\wamp\www\thinkphp\ThinkPHP\Library\Think\Model.class.php 第 1751 行.
+SQL: SELECT * FROM `article` WHERE `id` = 617 LIMIT 1   [ RunTime:0.0005s ]
+SQL: UPDATE `article` SET `click`=click+1 WHERE `id` = 617 [ RunTime:0.0684s ]
+SQL: SELECT `id`,`pid` FROM `category`  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `article` [ RunTime:0.0013s ]
+SQL: SELECT `id`,`title`,`image`,`content` FROM `article` WHERE `cid` IN ('223') ORDER BY click DESC LIMIT 6   [ RunTime:0.0024s ]
+SQL: SHOW COLUMNS FROM `article` [ RunTime:0.0006s ]
+SQL: SELECT `id`,`title`,`content`,`image` FROM `article` ORDER BY click DESC LIMIT 10   [ RunTime:0.0011s ]
+SQL: SELECT `id`,`title` FROM `article` ORDER BY click DESC LIMIT 30   [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `comments` [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0005s ]
+SQL: SELECT Comments.id AS id,Comments.comment AS comment,Comments.up AS up,Comments.down AS down,Comments.time AS time,Comments.uid AS uid,User.image AS image,User.username AS username FROM comments Comments  JOIN user User ON Comments.uid = User.id WHERE `aid` = 617 ORDER BY Comments.up DESC LIMIT 10   [ RunTime:0.0005s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000364s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000497s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.051886s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.052087s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001685s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001986s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001036s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002170s ]
+
+[ 2017-04-27T06:29:20+08:00 ] ::1 /thinkphp/index.php/Home/Login/createVerify
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000052s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000942s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000972s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001243s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000893s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001056s ]
+
+[ 2017-04-27T06:29:21+08:00 ] ::1 /thinkphp/index.php/Home/Details/detail/id/617
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000051s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001228s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001322s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001613s ]
+SQL: SHOW COLUMNS FROM `category` [ RunTime:0.0009s ]
+SQL: SELECT `id`,`name`,`sort` FROM `category` WHERE `pid` = 0 ORDER BY sort DESC LIMIT 5   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `link` [ RunTime:0.0007s ]
+SQL: SELECT `id`,`name`,`url` FROM `link` ORDER BY id DESC LIMIT 10   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `system` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `system` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `article` [ RunTime:0.0006s ]
+NOTIC: [2] Missing argument 1 for Think\Model::field(), called in D:\wamp\www\thinkphp\Application\Home\Model\ArticleModel.class.php on line 66 and defined D:\wamp\www\thinkphp\ThinkPHP\Library\Think\Model.class.php 第 1740 行.
+NOTIC: [8] Undefined variable: field D:\wamp\www\thinkphp\ThinkPHP\Library\Think\Model.class.php 第 1741 行.
+NOTIC: [8] Undefined variable: field D:\wamp\www\thinkphp\ThinkPHP\Library\Think\Model.class.php 第 1751 行.
+SQL: SELECT * FROM `article` WHERE `id` = 617 LIMIT 1   [ RunTime:0.0003s ]
+SQL: UPDATE `article` SET `click`=click+1 WHERE `id` = 617 [ RunTime:0.0572s ]
+SQL: SELECT `id`,`pid` FROM `category`  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `article` [ RunTime:0.0008s ]
+SQL: SELECT `id`,`title`,`image`,`content` FROM `article` WHERE `cid` IN ('223') ORDER BY click DESC LIMIT 6   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `article` [ RunTime:0.0006s ]
+SQL: SELECT `id`,`title`,`content`,`image` FROM `article` ORDER BY click DESC LIMIT 10   [ RunTime:0.0015s ]
+SQL: SELECT `id`,`title` FROM `article` ORDER BY click DESC LIMIT 30   [ RunTime:0.0009s ]
+SQL: SHOW COLUMNS FROM `comments` [ RunTime:0.0021s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0015s ]
+SQL: SELECT Comments.id AS id,Comments.comment AS comment,Comments.up AS up,Comments.down AS down,Comments.time AS time,Comments.uid AS uid,User.image AS image,User.username AS username FROM comments Comments  JOIN user User ON Comments.uid = User.id WHERE `aid` = 617 ORDER BY Comments.up DESC LIMIT 10   [ RunTime:0.0007s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000518s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000724s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.049406s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.049600s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000956s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001126s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000825s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001022s ]
+
+[ 2017-04-27T06:29:21+08:00 ] ::1 /thinkphp/index.php/Home/Login/createVerify
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000056s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001124s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001083s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001360s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.012729s ]
+INFO: [ app_end ] --END-- [ RunTime:0.013075s ]
+
+[ 2017-04-27T06:37:05+08:00 ] ::1 /thinkphp/index.php/Home/Cate/index/id/223
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000044s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001328s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000745s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000878s ]
+SQL: SHOW COLUMNS FROM `category` [ RunTime:0.0016s ]
+SQL: SELECT `id`,`name`,`sort` FROM `category` WHERE `pid` = 0 ORDER BY sort DESC LIMIT 5   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `link` [ RunTime:0.0013s ]
+SQL: SELECT `id`,`name`,`url` FROM `link` ORDER BY id DESC LIMIT 10   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `system` [ RunTime:0.0014s ]
+SQL: SELECT * FROM `system` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `id`,`pid` FROM `category`  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `article` [ RunTime:0.0022s ]
+SQL: SELECT `id`,`title`,`createtime`,`tags`,`image`,`content`,`click` FROM `article` WHERE `cid` IN ('223') ORDER BY createtime DESC LIMIT 0,15   [ RunTime:0.0023s ]
+SQL: SHOW COLUMNS FROM `attr` [ RunTime:0.0011s ]
+NOTIC: [8] Undefined index: mapping_order D:\wamp\www\thinkphp\ThinkPHP\Library\Think\Model\RelationModel.class.php 第 186 行.
+NOTIC: [8] Undefined index: mapping_limit D:\wamp\www\thinkphp\ThinkPHP\Library\Think\Model\RelationModel.class.php 第 187 行.
+SQL: SELECT b.* FROM article_attr AS a, attr AS b WHERE a.aid = b.id AND a. cid='885' [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `like` [ RunTime:0.0014s ]
+SQL: SELECT `ip` FROM `like` WHERE ( 1=1 AND cid='885' )  [ RunTime:0.0004s ]
+NOTIC: [8] Undefined index: mapping_order D:\wamp\www\thinkphp\ThinkPHP\Library\Think\Model\RelationModel.class.php 第 186 行.
+NOTIC: [8] Undefined index: mapping_limit D:\wamp\www\thinkphp\ThinkPHP\Library\Think\Model\RelationModel.class.php 第 187 行.
+SQL: SELECT b.* FROM article_attr AS a, attr AS b WHERE a.aid = b.id AND a. cid='862' [ RunTime:0.0003s ]
+SQL: SELECT `ip` FROM `like` WHERE ( 1=1 AND cid='862' )  [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: mapping_order D:\wamp\www\thinkphp\ThinkPHP\Library\Think\Model\RelationModel.class.php 第 186 行.
+NOTIC: [8] Undefined index: mapping_limit D:\wamp\www\thinkphp\ThinkPHP\Library\Think\Model\RelationModel.class.php 第 187 行.
+SQL: SELECT b.* FROM article_attr AS a, attr AS b WHERE a.aid = b.id AND a. cid='647' [ RunTime:0.0003s ]
+SQL: SELECT `ip` FROM `like` WHERE ( 1=1 AND cid='647' )  [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: mapping_order D:\wamp\www\thinkphp\ThinkPHP\Library\Think\Model\RelationModel.class.php 第 186 行.
+NOTIC: [8] Undefined index: mapping_limit D:\wamp\www\thinkphp\ThinkPHP\Library\Think\Model\RelationModel.class.php 第 187 行.
+SQL: SELECT b.* FROM article_attr AS a, attr AS b WHERE a.aid = b.id AND a. cid='650' [ RunTime:0.0004s ]
+SQL: SELECT `ip` FROM `like` WHERE ( 1=1 AND cid='650' )  [ RunTime:0.0006s ]
+NOTIC: [8] Undefined index: mapping_order D:\wamp\www\thinkphp\ThinkPHP\Library\Think\Model\RelationModel.class.php 第 186 行.
+NOTIC: [8] Undefined index: mapping_limit D:\wamp\www\thinkphp\ThinkPHP\Library\Think\Model\RelationModel.class.php 第 187 行.
+SQL: SELECT b.* FROM article_attr AS a, attr AS b WHERE a.aid = b.id AND a. cid='657' [ RunTime:0.0008s ]
+SQL: SELECT `ip` FROM `like` WHERE ( 1=1 AND cid='657' )  [ RunTime:0.0004s ]
+NOTIC: [8] Undefined index: mapping_order D:\wamp\www\thinkphp\ThinkPHP\Library\Think\Model\RelationModel.class.php 第 186 行.
+NOTIC: [8] Undefined index: mapping_limit D:\wamp\www\thinkphp\ThinkPHP\Library\Think\Model\RelationModel.class.php 第 187 行.
+SQL: SELECT b.* FROM article_attr AS a, attr AS b WHERE a.aid = b.id AND a. cid='658' [ RunTime:0.0004s ]
+SQL: SELECT `ip` FROM `like` WHERE ( 1=1 AND cid='658' )  [ RunTime:0.0007s ]
+NOTIC: [8] Undefined index: mapping_order D:\wamp\www\thinkphp\ThinkPHP\Library\Think\Model\RelationModel.class.php 第 186 行.
+NOTIC: [8] Undefined index: mapping_limit D:\wamp\www\thinkphp\ThinkPHP\Library\Think\Model\RelationModel.class.php 第 187 行.
+SQL: SELECT b.* FROM article_attr AS a, attr AS b WHERE a.aid = b.id AND a. cid='631' [ RunTime:0.0004s ]
+SQL: SELECT `ip` FROM `like` WHERE ( 1=1 AND cid='631' )  [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: mapping_order D:\wamp\www\thinkphp\ThinkPHP\Library\Think\Model\RelationModel.class.php 第 186 行.
+NOTIC: [8] Undefined index: mapping_limit D:\wamp\www\thinkphp\ThinkPHP\Library\Think\Model\RelationModel.class.php 第 187 行.
+SQL: SELECT b.* FROM article_attr AS a, attr AS b WHERE a.aid = b.id AND a. cid='632' [ RunTime:0.0003s ]
+SQL: SELECT `ip` FROM `like` WHERE ( 1=1 AND cid='632' )  [ RunTime:0.0004s ]
+NOTIC: [8] Undefined index: mapping_order D:\wamp\www\thinkphp\ThinkPHP\Library\Think\Model\RelationModel.class.php 第 186 行.
+NOTIC: [8] Undefined index: mapping_limit D:\wamp\www\thinkphp\ThinkPHP\Library\Think\Model\RelationModel.class.php 第 187 行.
+SQL: SELECT b.* FROM article_attr AS a, attr AS b WHERE a.aid = b.id AND a. cid='619' [ RunTime:0.0003s ]
+SQL: SELECT `ip` FROM `like` WHERE ( 1=1 AND cid='619' )  [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: mapping_order D:\wamp\www\thinkphp\ThinkPHP\Library\Think\Model\RelationModel.class.php 第 186 行.
+NOTIC: [8] Undefined index: mapping_limit D:\wamp\www\thinkphp\ThinkPHP\Library\Think\Model\RelationModel.class.php 第 187 行.
+SQL: SELECT b.* FROM article_attr AS a, attr AS b WHERE a.aid = b.id AND a. cid='622' [ RunTime:0.0003s ]
+SQL: SELECT `ip` FROM `like` WHERE ( 1=1 AND cid='622' )  [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: mapping_order D:\wamp\www\thinkphp\ThinkPHP\Library\Think\Model\RelationModel.class.php 第 186 行.
+NOTIC: [8] Undefined index: mapping_limit D:\wamp\www\thinkphp\ThinkPHP\Library\Think\Model\RelationModel.class.php 第 187 行.
+SQL: SELECT b.* FROM article_attr AS a, attr AS b WHERE a.aid = b.id AND a. cid='617' [ RunTime:0.0003s ]
+SQL: SELECT `ip` FROM `like` WHERE ( 1=1 AND cid='617' )  [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: mapping_order D:\wamp\www\thinkphp\ThinkPHP\Library\Think\Model\RelationModel.class.php 第 186 行.
+NOTIC: [8] Undefined index: mapping_limit D:\wamp\www\thinkphp\ThinkPHP\Library\Think\Model\RelationModel.class.php 第 187 行.
+SQL: SELECT b.* FROM article_attr AS a, attr AS b WHERE a.aid = b.id AND a. cid='589' [ RunTime:0.0003s ]
+SQL: SELECT `ip` FROM `like` WHERE ( 1=1 AND cid='589' )  [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: mapping_order D:\wamp\www\thinkphp\ThinkPHP\Library\Think\Model\RelationModel.class.php 第 186 行.
+NOTIC: [8] Undefined index: mapping_limit D:\wamp\www\thinkphp\ThinkPHP\Library\Think\Model\RelationModel.class.php 第 187 行.
+SQL: SELECT b.* FROM article_attr AS a, attr AS b WHERE a.aid = b.id AND a. cid='591' [ RunTime:0.0003s ]
+SQL: SELECT `ip` FROM `like` WHERE ( 1=1 AND cid='591' )  [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: mapping_order D:\wamp\www\thinkphp\ThinkPHP\Library\Think\Model\RelationModel.class.php 第 186 行.
+NOTIC: [8] Undefined index: mapping_limit D:\wamp\www\thinkphp\ThinkPHP\Library\Think\Model\RelationModel.class.php 第 187 行.
+SQL: SELECT b.* FROM article_attr AS a, attr AS b WHERE a.aid = b.id AND a. cid='596' [ RunTime:0.0003s ]
+SQL: SELECT `ip` FROM `like` WHERE ( 1=1 AND cid='596' )  [ RunTime:0.0008s ]
+NOTIC: [8] Undefined index: mapping_order D:\wamp\www\thinkphp\ThinkPHP\Library\Think\Model\RelationModel.class.php 第 186 行.
+NOTIC: [8] Undefined index: mapping_limit D:\wamp\www\thinkphp\ThinkPHP\Library\Think\Model\RelationModel.class.php 第 187 行.
+SQL: SELECT b.* FROM article_attr AS a, attr AS b WHERE a.aid = b.id AND a. cid='578' [ RunTime:0.0004s ]
+SQL: SELECT `ip` FROM `like` WHERE ( 1=1 AND cid='578' )  [ RunTime:0.0003s ]
+SQL: SELECT `id`,`title` FROM `article` ORDER BY click DESC LIMIT 30   [ RunTime:0.0010s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `article` WHERE `cid` IN ('223') LIMIT 1   [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `article` [ RunTime:0.0006s ]
+SQL: SELECT `id`,`title`,`content`,`image` FROM `article` ORDER BY click DESC LIMIT 10   [ RunTime:0.0012s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000253s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000384s ]
+NOTIC: [8] Undefined offset: 0 D:\wamp\www\thinkphp\Application\Runtime\Cache\Home\924808055458c07e9f4d1040ae4bac5b.php 第 204 行.
+NOTIC: [8] Undefined offset: 0 D:\wamp\www\thinkphp\Application\Runtime\Cache\Home\924808055458c07e9f4d1040ae4bac5b.php 第 204 行.
+NOTIC: [8] Undefined offset: 0 D:\wamp\www\thinkphp\Application\Runtime\Cache\Home\924808055458c07e9f4d1040ae4bac5b.php 第 204 行.
+NOTIC: [8] Undefined offset: 0 D:\wamp\www\thinkphp\Application\Runtime\Cache\Home\924808055458c07e9f4d1040ae4bac5b.php 第 204 行.
+NOTIC: [8] Undefined offset: 0 D:\wamp\www\thinkphp\Application\Runtime\Cache\Home\924808055458c07e9f4d1040ae4bac5b.php 第 204 行.
+NOTIC: [8] Undefined offset: 0 D:\wamp\www\thinkphp\Application\Runtime\Cache\Home\924808055458c07e9f4d1040ae4bac5b.php 第 204 行.
+NOTIC: [8] Undefined offset: 0 D:\wamp\www\thinkphp\Application\Runtime\Cache\Home\924808055458c07e9f4d1040ae4bac5b.php 第 204 行.
+NOTIC: [8] Undefined offset: 0 D:\wamp\www\thinkphp\Application\Runtime\Cache\Home\924808055458c07e9f4d1040ae4bac5b.php 第 204 行.
+NOTIC: [8] Undefined offset: 0 D:\wamp\www\thinkphp\Application\Runtime\Cache\Home\924808055458c07e9f4d1040ae4bac5b.php 第 204 行.
+NOTIC: [8] Undefined offset: 0 D:\wamp\www\thinkphp\Application\Runtime\Cache\Home\924808055458c07e9f4d1040ae4bac5b.php 第 204 行.
+NOTIC: [8] Undefined offset: 0 D:\wamp\www\thinkphp\Application\Runtime\Cache\Home\924808055458c07e9f4d1040ae4bac5b.php 第 204 行.
+NOTIC: [8] Undefined offset: 0 D:\wamp\www\thinkphp\Application\Runtime\Cache\Home\924808055458c07e9f4d1040ae4bac5b.php 第 204 行.
+NOTIC: [8] Undefined offset: 0 D:\wamp\www\thinkphp\Application\Runtime\Cache\Home\924808055458c07e9f4d1040ae4bac5b.php 第 204 行.
+NOTIC: [8] Undefined offset: 0 D:\wamp\www\thinkphp\Application\Runtime\Cache\Home\924808055458c07e9f4d1040ae4bac5b.php 第 204 行.
+NOTIC: [8] Undefined offset: 0 D:\wamp\www\thinkphp\Application\Runtime\Cache\Home\924808055458c07e9f4d1040ae4bac5b.php 第 204 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.055729s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.055872s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000925s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001089s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001219s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001489s ]
+
+[ 2017-04-27T06:37:06+08:00 ] ::1 /thinkphp/index.php/Home/Login/createVerify
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000061s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001735s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000990s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001346s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001236s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001512s ]
+
+[ 2017-04-27T06:37:08+08:00 ] ::1 /thinkphp/index.php/Home/Index/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000052s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000961s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000846s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000991s ]
+SQL: SHOW COLUMNS FROM `category` [ RunTime:0.0007s ]
+SQL: SELECT `id`,`name`,`sort` FROM `category` WHERE `pid` = 0 ORDER BY sort DESC LIMIT 5   [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `link` [ RunTime:0.0007s ]
+SQL: SELECT `id`,`name`,`url` FROM `link` ORDER BY id DESC LIMIT 10   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `system` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `system` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `carousel` [ RunTime:0.0014s ]
+SQL: SELECT * FROM `carousel` WHERE `status` = 1 LIMIT 3   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `article` [ RunTime:0.0007s ]
+SQL: SELECT `id`,`title`,`image`,`content`,`click`,`tags`,`createtime`,`favorite` FROM `article` WHERE `delete` = 0 ORDER BY createtime DESC LIMIT 0,10   [ RunTime:0.0014s ]
+SQL: SHOW COLUMNS FROM `attr` [ RunTime:0.0008s ]
+NOTIC: [8] Undefined index: mapping_order D:\wamp\www\thinkphp\ThinkPHP\Library\Think\Model\RelationModel.class.php 第 186 行.
+NOTIC: [8] Undefined index: mapping_limit D:\wamp\www\thinkphp\ThinkPHP\Library\Think\Model\RelationModel.class.php 第 187 行.
+SQL: SELECT b.* FROM article_attr AS a, attr AS b WHERE a.aid = b.id AND a. cid='880' [ RunTime:0.0006s ]
+NOTIC: [8] Undefined index: mapping_order D:\wamp\www\thinkphp\ThinkPHP\Library\Think\Model\RelationModel.class.php 第 186 行.
+NOTIC: [8] Undefined index: mapping_limit D:\wamp\www\thinkphp\ThinkPHP\Library\Think\Model\RelationModel.class.php 第 187 行.
+SQL: SELECT b.* FROM article_attr AS a, attr AS b WHERE a.aid = b.id AND a. cid='881' [ RunTime:0.0004s ]
+NOTIC: [8] Undefined index: mapping_order D:\wamp\www\thinkphp\ThinkPHP\Library\Think\Model\RelationModel.class.php 第 186 行.
+NOTIC: [8] Undefined index: mapping_limit D:\wamp\www\thinkphp\ThinkPHP\Library\Think\Model\RelationModel.class.php 第 187 行.
+SQL: SELECT b.* FROM article_attr AS a, attr AS b WHERE a.aid = b.id AND a. cid='882' [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: mapping_order D:\wamp\www\thinkphp\ThinkPHP\Library\Think\Model\RelationModel.class.php 第 186 行.
+NOTIC: [8] Undefined index: mapping_limit D:\wamp\www\thinkphp\ThinkPHP\Library\Think\Model\RelationModel.class.php 第 187 行.
+SQL: SELECT b.* FROM article_attr AS a, attr AS b WHERE a.aid = b.id AND a. cid='883' [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: mapping_order D:\wamp\www\thinkphp\ThinkPHP\Library\Think\Model\RelationModel.class.php 第 186 行.
+NOTIC: [8] Undefined index: mapping_limit D:\wamp\www\thinkphp\ThinkPHP\Library\Think\Model\RelationModel.class.php 第 187 行.
+SQL: SELECT b.* FROM article_attr AS a, attr AS b WHERE a.aid = b.id AND a. cid='884' [ RunTime:0.0005s ]
+NOTIC: [8] Undefined index: mapping_order D:\wamp\www\thinkphp\ThinkPHP\Library\Think\Model\RelationModel.class.php 第 186 行.
+NOTIC: [8] Undefined index: mapping_limit D:\wamp\www\thinkphp\ThinkPHP\Library\Think\Model\RelationModel.class.php 第 187 行.
+SQL: SELECT b.* FROM article_attr AS a, attr AS b WHERE a.aid = b.id AND a. cid='885' [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: mapping_order D:\wamp\www\thinkphp\ThinkPHP\Library\Think\Model\RelationModel.class.php 第 186 行.
+NOTIC: [8] Undefined index: mapping_limit D:\wamp\www\thinkphp\ThinkPHP\Library\Think\Model\RelationModel.class.php 第 187 行.
+SQL: SELECT b.* FROM article_attr AS a, attr AS b WHERE a.aid = b.id AND a. cid='886' [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: mapping_order D:\wamp\www\thinkphp\ThinkPHP\Library\Think\Model\RelationModel.class.php 第 186 行.
+NOTIC: [8] Undefined index: mapping_limit D:\wamp\www\thinkphp\ThinkPHP\Library\Think\Model\RelationModel.class.php 第 187 行.
+SQL: SELECT b.* FROM article_attr AS a, attr AS b WHERE a.aid = b.id AND a. cid='887' [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: mapping_order D:\wamp\www\thinkphp\ThinkPHP\Library\Think\Model\RelationModel.class.php 第 186 行.
+NOTIC: [8] Undefined index: mapping_limit D:\wamp\www\thinkphp\ThinkPHP\Library\Think\Model\RelationModel.class.php 第 187 行.
+SQL: SELECT b.* FROM article_attr AS a, attr AS b WHERE a.aid = b.id AND a. cid='879' [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: mapping_order D:\wamp\www\thinkphp\ThinkPHP\Library\Think\Model\RelationModel.class.php 第 186 行.
+NOTIC: [8] Undefined index: mapping_limit D:\wamp\www\thinkphp\ThinkPHP\Library\Think\Model\RelationModel.class.php 第 187 行.
+SQL: SELECT b.* FROM article_attr AS a, attr AS b WHERE a.aid = b.id AND a. cid='869' [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `article` [ RunTime:0.0006s ]
+SQL: SELECT `id`,`title`,`content`,`image` FROM `article` ORDER BY click DESC LIMIT 10   [ RunTime:0.0011s ]
+SQL: SHOW COLUMNS FROM `fast` [ RunTime:0.0014s ]
+SQL: SELECT * FROM `fast` ORDER BY time DESC LIMIT 10   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `think` [ RunTime:0.0021s ]
+SQL: SELECT `id`,`title`,`content`,`href` FROM `think` LIMIT 8   [ RunTime:0.0004s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000303s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000442s ]
+NOTIC: [8] Undefined offset: 0 D:\wamp\www\thinkphp\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 305 行.
+NOTIC: [8] Undefined index: hot D:\wamp\www\thinkphp\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 321 行.
+NOTIC: [8] Undefined offset: 0 D:\wamp\www\thinkphp\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 305 行.
+NOTIC: [8] Undefined index: hot D:\wamp\www\thinkphp\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 321 行.
+NOTIC: [8] Undefined offset: 0 D:\wamp\www\thinkphp\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 305 行.
+NOTIC: [8] Undefined index: hot D:\wamp\www\thinkphp\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 321 行.
+NOTIC: [8] Undefined offset: 0 D:\wamp\www\thinkphp\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 305 行.
+NOTIC: [8] Undefined index: hot D:\wamp\www\thinkphp\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 321 行.
+NOTIC: [8] Undefined offset: 0 D:\wamp\www\thinkphp\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 305 行.
+NOTIC: [8] Undefined index: hot D:\wamp\www\thinkphp\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 321 行.
+NOTIC: [8] Undefined offset: 0 D:\wamp\www\thinkphp\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 305 行.
+NOTIC: [8] Undefined index: hot D:\wamp\www\thinkphp\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 321 行.
+NOTIC: [8] Undefined offset: 0 D:\wamp\www\thinkphp\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 305 行.
+NOTIC: [8] Undefined index: hot D:\wamp\www\thinkphp\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 321 行.
+NOTIC: [8] Undefined offset: 0 D:\wamp\www\thinkphp\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 305 行.
+NOTIC: [8] Undefined index: hot D:\wamp\www\thinkphp\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 321 行.
+NOTIC: [8] Undefined offset: 0 D:\wamp\www\thinkphp\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 305 行.
+NOTIC: [8] Undefined index: hot D:\wamp\www\thinkphp\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 321 行.
+NOTIC: [8] Undefined offset: 0 D:\wamp\www\thinkphp\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 305 行.
+NOTIC: [8] Undefined index: hot D:\wamp\www\thinkphp\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 321 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.056548s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.056792s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000973s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001235s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.007227s ]
+INFO: [ app_end ] --END-- [ RunTime:0.007600s ]
+
+[ 2017-04-27T06:37:08+08:00 ] ::1 /thinkphp/index.php/Home/Login/createVerify
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000054s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000935s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000973s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001210s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001148s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001438s ]
+
+[ 2017-04-27T14:01:14+08:00 ] ::1 /thinkphp/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000033s ]
+INFO: [ app_init ] --END-- [ RunTime:0.004479s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.018663s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.018897s ]
+SQL: SHOW COLUMNS FROM `category` [ RunTime:0.0041s ]
+SQL: SELECT `id`,`name`,`sort` FROM `category` WHERE `pid` = 0 ORDER BY sort DESC LIMIT 5   [ RunTime:0.0015s ]
+SQL: SHOW COLUMNS FROM `link` [ RunTime:0.0014s ]
+SQL: SELECT `id`,`name`,`url` FROM `link` ORDER BY id DESC LIMIT 10   [ RunTime:0.0011s ]
+SQL: SHOW COLUMNS FROM `system` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `system` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `carousel` [ RunTime:0.0024s ]
+SQL: SELECT * FROM `carousel` WHERE `status` = 1 LIMIT 3   [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `article` [ RunTime:0.0009s ]
+SQL: SELECT `id`,`title`,`image`,`content`,`click`,`tags`,`createtime`,`favorite` FROM `article` WHERE `delete` = 0 ORDER BY createtime DESC LIMIT 0,10   [ RunTime:0.0068s ]
+SQL: SHOW COLUMNS FROM `attr` [ RunTime:0.0014s ]
+NOTIC: [8] Undefined index: mapping_order D:\wamp\www\thinkphp\ThinkPHP\Library\Think\Model\RelationModel.class.php 第 186 行.
+NOTIC: [8] Undefined index: mapping_limit D:\wamp\www\thinkphp\ThinkPHP\Library\Think\Model\RelationModel.class.php 第 187 行.
+SQL: SELECT b.* FROM article_attr AS a, attr AS b WHERE a.aid = b.id AND a. cid='880' [ RunTime:0.0010s ]
+NOTIC: [8] Undefined index: mapping_order D:\wamp\www\thinkphp\ThinkPHP\Library\Think\Model\RelationModel.class.php 第 186 行.
+NOTIC: [8] Undefined index: mapping_limit D:\wamp\www\thinkphp\ThinkPHP\Library\Think\Model\RelationModel.class.php 第 187 行.
+SQL: SELECT b.* FROM article_attr AS a, attr AS b WHERE a.aid = b.id AND a. cid='881' [ RunTime:0.0005s ]
+NOTIC: [8] Undefined index: mapping_order D:\wamp\www\thinkphp\ThinkPHP\Library\Think\Model\RelationModel.class.php 第 186 行.
+NOTIC: [8] Undefined index: mapping_limit D:\wamp\www\thinkphp\ThinkPHP\Library\Think\Model\RelationModel.class.php 第 187 行.
+SQL: SELECT b.* FROM article_attr AS a, attr AS b WHERE a.aid = b.id AND a. cid='882' [ RunTime:0.0008s ]
+NOTIC: [8] Undefined index: mapping_order D:\wamp\www\thinkphp\ThinkPHP\Library\Think\Model\RelationModel.class.php 第 186 行.
+NOTIC: [8] Undefined index: mapping_limit D:\wamp\www\thinkphp\ThinkPHP\Library\Think\Model\RelationModel.class.php 第 187 行.
+SQL: SELECT b.* FROM article_attr AS a, attr AS b WHERE a.aid = b.id AND a. cid='883' [ RunTime:0.0008s ]
+NOTIC: [8] Undefined index: mapping_order D:\wamp\www\thinkphp\ThinkPHP\Library\Think\Model\RelationModel.class.php 第 186 行.
+NOTIC: [8] Undefined index: mapping_limit D:\wamp\www\thinkphp\ThinkPHP\Library\Think\Model\RelationModel.class.php 第 187 行.
+SQL: SELECT b.* FROM article_attr AS a, attr AS b WHERE a.aid = b.id AND a. cid='884' [ RunTime:0.0005s ]
+NOTIC: [8] Undefined index: mapping_order D:\wamp\www\thinkphp\ThinkPHP\Library\Think\Model\RelationModel.class.php 第 186 行.
+NOTIC: [8] Undefined index: mapping_limit D:\wamp\www\thinkphp\ThinkPHP\Library\Think\Model\RelationModel.class.php 第 187 行.
+SQL: SELECT b.* FROM article_attr AS a, attr AS b WHERE a.aid = b.id AND a. cid='885' [ RunTime:0.0004s ]
+NOTIC: [8] Undefined index: mapping_order D:\wamp\www\thinkphp\ThinkPHP\Library\Think\Model\RelationModel.class.php 第 186 行.
+NOTIC: [8] Undefined index: mapping_limit D:\wamp\www\thinkphp\ThinkPHP\Library\Think\Model\RelationModel.class.php 第 187 行.
+SQL: SELECT b.* FROM article_attr AS a, attr AS b WHERE a.aid = b.id AND a. cid='886' [ RunTime:0.0006s ]
+NOTIC: [8] Undefined index: mapping_order D:\wamp\www\thinkphp\ThinkPHP\Library\Think\Model\RelationModel.class.php 第 186 行.
+NOTIC: [8] Undefined index: mapping_limit D:\wamp\www\thinkphp\ThinkPHP\Library\Think\Model\RelationModel.class.php 第 187 行.
+SQL: SELECT b.* FROM article_attr AS a, attr AS b WHERE a.aid = b.id AND a. cid='887' [ RunTime:0.0005s ]
+NOTIC: [8] Undefined index: mapping_order D:\wamp\www\thinkphp\ThinkPHP\Library\Think\Model\RelationModel.class.php 第 186 行.
+NOTIC: [8] Undefined index: mapping_limit D:\wamp\www\thinkphp\ThinkPHP\Library\Think\Model\RelationModel.class.php 第 187 行.
+SQL: SELECT b.* FROM article_attr AS a, attr AS b WHERE a.aid = b.id AND a. cid='879' [ RunTime:0.0004s ]
+NOTIC: [8] Undefined index: mapping_order D:\wamp\www\thinkphp\ThinkPHP\Library\Think\Model\RelationModel.class.php 第 186 行.
+NOTIC: [8] Undefined index: mapping_limit D:\wamp\www\thinkphp\ThinkPHP\Library\Think\Model\RelationModel.class.php 第 187 行.
+SQL: SELECT b.* FROM article_attr AS a, attr AS b WHERE a.aid = b.id AND a. cid='869' [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `article` [ RunTime:0.0007s ]
+SQL: SELECT `id`,`title`,`content`,`image` FROM `article` ORDER BY click DESC LIMIT 10   [ RunTime:0.0015s ]
+SQL: SHOW COLUMNS FROM `fast` [ RunTime:0.0024s ]
+SQL: SELECT * FROM `fast` ORDER BY time DESC LIMIT 10   [ RunTime:0.0009s ]
+SQL: SHOW COLUMNS FROM `think` [ RunTime:0.0032s ]
+SQL: SELECT `id`,`title`,`content`,`href` FROM `think` LIMIT 8   [ RunTime:0.0006s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000678s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001087s ]
+NOTIC: [8] Undefined offset: 0 D:\wamp\www\thinkphp\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 305 行.
+NOTIC: [8] Undefined index: hot D:\wamp\www\thinkphp\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 321 行.
+NOTIC: [8] Undefined offset: 0 D:\wamp\www\thinkphp\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 305 行.
+NOTIC: [8] Undefined index: hot D:\wamp\www\thinkphp\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 321 行.
+NOTIC: [8] Undefined offset: 0 D:\wamp\www\thinkphp\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 305 行.
+NOTIC: [8] Undefined index: hot D:\wamp\www\thinkphp\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 321 行.
+NOTIC: [8] Undefined offset: 0 D:\wamp\www\thinkphp\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 305 行.
+NOTIC: [8] Undefined index: hot D:\wamp\www\thinkphp\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 321 行.
+NOTIC: [8] Undefined offset: 0 D:\wamp\www\thinkphp\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 305 行.
+NOTIC: [8] Undefined index: hot D:\wamp\www\thinkphp\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 321 行.
+NOTIC: [8] Undefined offset: 0 D:\wamp\www\thinkphp\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 305 行.
+NOTIC: [8] Undefined index: hot D:\wamp\www\thinkphp\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 321 行.
+NOTIC: [8] Undefined offset: 0 D:\wamp\www\thinkphp\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 305 行.
+NOTIC: [8] Undefined index: hot D:\wamp\www\thinkphp\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 321 行.
+NOTIC: [8] Undefined offset: 0 D:\wamp\www\thinkphp\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 305 行.
+NOTIC: [8] Undefined index: hot D:\wamp\www\thinkphp\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 321 行.
+NOTIC: [8] Undefined offset: 0 D:\wamp\www\thinkphp\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 305 行.
+NOTIC: [8] Undefined index: hot D:\wamp\www\thinkphp\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 321 行.
+NOTIC: [8] Undefined offset: 0 D:\wamp\www\thinkphp\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 305 行.
+NOTIC: [8] Undefined index: hot D:\wamp\www\thinkphp\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 321 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.115239s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.115396s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.007561s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.007711s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.009616s ]
+INFO: [ app_end ] --END-- [ RunTime:0.009817s ]
+
+[ 2017-04-27T14:01:15+08:00 ] ::1 /thinkphp/index.php/Home/Login/createVerify
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000056s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002196s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001477s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001743s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001358s ]
+INFO: [ app_end ] --END-- [ RunTime:0.003309s ]
+
+[ 2017-04-27T14:01:28+08:00 ] ::1 /thinkphp/index.php/Home/Index/getMore
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000047s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000763s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000770s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000933s ]
+SQL: SHOW COLUMNS FROM `category` [ RunTime:0.0015s ]
+SQL: SELECT `id`,`name`,`sort` FROM `category` WHERE `pid` = 0 ORDER BY sort DESC LIMIT 5   [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `link` [ RunTime:0.0007s ]
+SQL: SELECT `id`,`name`,`url` FROM `link` ORDER BY id DESC LIMIT 10   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `system` [ RunTime:0.0007s ]
+SQL: SELECT * FROM `system` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `article` [ RunTime:0.0008s ]
+SQL: SELECT `id`,`title`,`image`,`content`,`click`,`tags`,`createtime`,`favorite` FROM `article` WHERE `delete` = 0 ORDER BY createtime DESC LIMIT 19,10   [ RunTime:0.0156s ]
+SQL: SHOW COLUMNS FROM `attr` [ RunTime:0.0015s ]
+NOTIC: [8] Undefined index: mapping_order D:\wamp\www\thinkphp\ThinkPHP\Library\Think\Model\RelationModel.class.php 第 186 行.
+NOTIC: [8] Undefined index: mapping_limit D:\wamp\www\thinkphp\ThinkPHP\Library\Think\Model\RelationModel.class.php 第 187 行.
+SQL: SELECT b.* FROM article_attr AS a, attr AS b WHERE a.aid = b.id AND a. cid='859' [ RunTime:0.0008s ]
+NOTIC: [8] Undefined index: mapping_order D:\wamp\www\thinkphp\ThinkPHP\Library\Think\Model\RelationModel.class.php 第 186 行.
+NOTIC: [8] Undefined index: mapping_limit D:\wamp\www\thinkphp\ThinkPHP\Library\Think\Model\RelationModel.class.php 第 187 行.
+SQL: SELECT b.* FROM article_attr AS a, attr AS b WHERE a.aid = b.id AND a. cid='860' [ RunTime:0.0004s ]
+NOTIC: [8] Undefined index: mapping_order D:\wamp\www\thinkphp\ThinkPHP\Library\Think\Model\RelationModel.class.php 第 186 行.
+NOTIC: [8] Undefined index: mapping_limit D:\wamp\www\thinkphp\ThinkPHP\Library\Think\Model\RelationModel.class.php 第 187 行.
+SQL: SELECT b.* FROM article_attr AS a, attr AS b WHERE a.aid = b.id AND a. cid='861' [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: mapping_order D:\wamp\www\thinkphp\ThinkPHP\Library\Think\Model\RelationModel.class.php 第 186 行.
+NOTIC: [8] Undefined index: mapping_limit D:\wamp\www\thinkphp\ThinkPHP\Library\Think\Model\RelationModel.class.php 第 187 行.
+SQL: SELECT b.* FROM article_attr AS a, attr AS b WHERE a.aid = b.id AND a. cid='862' [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: mapping_order D:\wamp\www\thinkphp\ThinkPHP\Library\Think\Model\RelationModel.class.php 第 186 行.
+NOTIC: [8] Undefined index: mapping_limit D:\wamp\www\thinkphp\ThinkPHP\Library\Think\Model\RelationModel.class.php 第 187 行.
+SQL: SELECT b.* FROM article_attr AS a, attr AS b WHERE a.aid = b.id AND a. cid='863' [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: mapping_order D:\wamp\www\thinkphp\ThinkPHP\Library\Think\Model\RelationModel.class.php 第 186 行.
+NOTIC: [8] Undefined index: mapping_limit D:\wamp\www\thinkphp\ThinkPHP\Library\Think\Model\RelationModel.class.php 第 187 行.
+SQL: SELECT b.* FROM article_attr AS a, attr AS b WHERE a.aid = b.id AND a. cid='864' [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: mapping_order D:\wamp\www\thinkphp\ThinkPHP\Library\Think\Model\RelationModel.class.php 第 186 行.
+NOTIC: [8] Undefined index: mapping_limit D:\wamp\www\thinkphp\ThinkPHP\Library\Think\Model\RelationModel.class.php 第 187 行.
+SQL: SELECT b.* FROM article_attr AS a, attr AS b WHERE a.aid = b.id AND a. cid='865' [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: mapping_order D:\wamp\www\thinkphp\ThinkPHP\Library\Think\Model\RelationModel.class.php 第 186 行.
+NOTIC: [8] Undefined index: mapping_limit D:\wamp\www\thinkphp\ThinkPHP\Library\Think\Model\RelationModel.class.php 第 187 行.
+SQL: SELECT b.* FROM article_attr AS a, attr AS b WHERE a.aid = b.id AND a. cid='866' [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: mapping_order D:\wamp\www\thinkphp\ThinkPHP\Library\Think\Model\RelationModel.class.php 第 186 行.
+NOTIC: [8] Undefined index: mapping_limit D:\wamp\www\thinkphp\ThinkPHP\Library\Think\Model\RelationModel.class.php 第 187 行.
+SQL: SELECT b.* FROM article_attr AS a, attr AS b WHERE a.aid = b.id AND a. cid='867' [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: mapping_order D:\wamp\www\thinkphp\ThinkPHP\Library\Think\Model\RelationModel.class.php 第 186 行.
+NOTIC: [8] Undefined index: mapping_limit D:\wamp\www\thinkphp\ThinkPHP\Library\Think\Model\RelationModel.class.php 第 187 行.
+SQL: SELECT b.* FROM article_attr AS a, attr AS b WHERE a.aid = b.id AND a. cid='868' [ RunTime:0.0003s ]
+
+[ 2017-04-27T14:01:35+08:00 ] ::1 /thinkphp/index.php/Home/Index/getMore
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000031s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000607s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000838s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001057s ]
+SQL: SHOW COLUMNS FROM `category` [ RunTime:0.0008s ]
+SQL: SELECT `id`,`name`,`sort` FROM `category` WHERE `pid` = 0 ORDER BY sort DESC LIMIT 5   [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `link` [ RunTime:0.0008s ]
+SQL: SELECT `id`,`name`,`url` FROM `link` ORDER BY id DESC LIMIT 10   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `system` [ RunTime:0.0014s ]
+SQL: SELECT * FROM `system` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `article` [ RunTime:0.0008s ]
+SQL: SELECT `id`,`title`,`image`,`content`,`click`,`tags`,`createtime`,`favorite` FROM `article` WHERE `delete` = 0 ORDER BY createtime DESC LIMIT 29,10   [ RunTime:0.0491s ]
+SQL: SHOW COLUMNS FROM `attr` [ RunTime:0.0010s ]
+NOTIC: [8] Undefined index: mapping_order D:\wamp\www\thinkphp\ThinkPHP\Library\Think\Model\RelationModel.class.php 第 186 行.
+NOTIC: [8] Undefined index: mapping_limit D:\wamp\www\thinkphp\ThinkPHP\Library\Think\Model\RelationModel.class.php 第 187 行.
+SQL: SELECT b.* FROM article_attr AS a, attr AS b WHERE a.aid = b.id AND a. cid='638' [ RunTime:0.0010s ]
+NOTIC: [8] Undefined index: mapping_order D:\wamp\www\thinkphp\ThinkPHP\Library\Think\Model\RelationModel.class.php 第 186 行.
+NOTIC: [8] Undefined index: mapping_limit D:\wamp\www\thinkphp\ThinkPHP\Library\Think\Model\RelationModel.class.php 第 187 行.
+SQL: SELECT b.* FROM article_attr AS a, attr AS b WHERE a.aid = b.id AND a. cid='639' [ RunTime:0.0004s ]
+NOTIC: [8] Undefined index: mapping_order D:\wamp\www\thinkphp\ThinkPHP\Library\Think\Model\RelationModel.class.php 第 186 行.
+NOTIC: [8] Undefined index: mapping_limit D:\wamp\www\thinkphp\ThinkPHP\Library\Think\Model\RelationModel.class.php 第 187 行.
+SQL: SELECT b.* FROM article_attr AS a, attr AS b WHERE a.aid = b.id AND a. cid='640' [ RunTime:0.0004s ]
+NOTIC: [8] Undefined index: mapping_order D:\wamp\www\thinkphp\ThinkPHP\Library\Think\Model\RelationModel.class.php 第 186 行.
+NOTIC: [8] Undefined index: mapping_limit D:\wamp\www\thinkphp\ThinkPHP\Library\Think\Model\RelationModel.class.php 第 187 行.
+SQL: SELECT b.* FROM article_attr AS a, attr AS b WHERE a.aid = b.id AND a. cid='641' [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: mapping_order D:\wamp\www\thinkphp\ThinkPHP\Library\Think\Model\RelationModel.class.php 第 186 行.
+NOTIC: [8] Undefined index: mapping_limit D:\wamp\www\thinkphp\ThinkPHP\Library\Think\Model\RelationModel.class.php 第 187 行.
+SQL: SELECT b.* FROM article_attr AS a, attr AS b WHERE a.aid = b.id AND a. cid='642' [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: mapping_order D:\wamp\www\thinkphp\ThinkPHP\Library\Think\Model\RelationModel.class.php 第 186 行.
+NOTIC: [8] Undefined index: mapping_limit D:\wamp\www\thinkphp\ThinkPHP\Library\Think\Model\RelationModel.class.php 第 187 行.
+SQL: SELECT b.* FROM article_attr AS a, attr AS b WHERE a.aid = b.id AND a. cid='643' [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: mapping_order D:\wamp\www\thinkphp\ThinkPHP\Library\Think\Model\RelationModel.class.php 第 186 行.
+NOTIC: [8] Undefined index: mapping_limit D:\wamp\www\thinkphp\ThinkPHP\Library\Think\Model\RelationModel.class.php 第 187 行.
+SQL: SELECT b.* FROM article_attr AS a, attr AS b WHERE a.aid = b.id AND a. cid='645' [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: mapping_order D:\wamp\www\thinkphp\ThinkPHP\Library\Think\Model\RelationModel.class.php 第 186 行.
+NOTIC: [8] Undefined index: mapping_limit D:\wamp\www\thinkphp\ThinkPHP\Library\Think\Model\RelationModel.class.php 第 187 行.
+SQL: SELECT b.* FROM article_attr AS a, attr AS b WHERE a.aid = b.id AND a. cid='646' [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: mapping_order D:\wamp\www\thinkphp\ThinkPHP\Library\Think\Model\RelationModel.class.php 第 186 行.
+NOTIC: [8] Undefined index: mapping_limit D:\wamp\www\thinkphp\ThinkPHP\Library\Think\Model\RelationModel.class.php 第 187 行.
+SQL: SELECT b.* FROM article_attr AS a, attr AS b WHERE a.aid = b.id AND a. cid='647' [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: mapping_order D:\wamp\www\thinkphp\ThinkPHP\Library\Think\Model\RelationModel.class.php 第 186 行.
+NOTIC: [8] Undefined index: mapping_limit D:\wamp\www\thinkphp\ThinkPHP\Library\Think\Model\RelationModel.class.php 第 187 行.
+SQL: SELECT b.* FROM article_attr AS a, attr AS b WHERE a.aid = b.id AND a. cid='648' [ RunTime:0.0003s ]
+

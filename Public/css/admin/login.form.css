@@ -1,0 +1,225 @@
+@charset "UTF-8";
+
+.form-horizontal{
+    background: #fff;
+    padding-bottom: 40px;
+    border-radius: 15px;
+    text-align: center;
+}
+.form-horizontal .heading{
+    display: block;
+    /*font-size: 35px;*/
+    font-size: 3em;
+    font-weight: 700;
+    padding: 35px 0;
+    border-bottom: 1px solid #f0f0f0;
+    margin-bottom: 30px;
+}
+.form-horizontal .form-group{
+    padding: 0 40px;
+    margin: 0 0 25px 0;
+    position: relative;
+}
+.form-horizontal .form-control{
+    position: relative;
+    background: #f0f0f0;
+    border: none;
+    border-radius: 20px;
+    box-shadow: none;
+    padding: 0 20px 0 45px;
+    height: 40px;
+    transition: all 0.3s ease 0s;
+}
+.form-horizontal .form-control:focus{
+    background: #e0e0e0;
+    box-shadow: none;
+    outline: 0 none;
+}
+.form-horizontal .form-group i{
+    position: absolute;
+    top: 12px;
+    left: 60px;
+    font-size: 17px;
+    color: #c8c8c8;
+    transition : all 0.5s ease 0s;
+}
+
+.form-horizontal #inputVerify{
+
+    width: 50%;
+    float: left;
+}
+.form-horizontal .verify-image{
+    max-width: 160px;
+    height: 40px;
+    overflow: hidden;
+    margin-left: 10px;
+    cursor: pointer;
+
+}
+.form-horizontal .thumb-img{
+    display: block;
+    padding-top: 35px;
+}
+.form-horizontal .thumb-img img{
+    width: 160px;
+    height:160px;
+    overflow:hidden;
+    border-radius: 160px;
+    -webkit-border-radius: 160px;
+    -moz-border-radius: 160px;
+    text-align: center;
+    vertical-align: middle;
+
+}
+
+#countdown{
+    font-size: 1.5em;
+    color: #00b4ef;
+    position: relative;
+    top:3px;
+    right:4px ;
+}
+@media(max-width: 768px){
+    .form-horizontal #inputVerify{
+        width: 100%;
+    }
+    .form-horizontal .verify-image{
+        vertical-align: middle;
+        text-align: center;
+        float: none;
+        margin-top: 25px;
+
+
+    }
+}
+
+.form-horizontal .form-control:focus + i{
+    color: #00b4ef;
+}
+.form-horizontal .icon-help{
+    display: inline-block;
+    position: absolute;
+    top: 12px;
+    right: 60px;
+    font-size: 20px;
+    color: #808080;
+    transition: all 0.5s ease 0s;
+}
+.form-horizontal .icon-help:hover{
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+.form-horizontal .icon-help:link{
+    text-decoration: none;
+}
+.form-horizontal .main-checkbox{
+    float: left;
+    width: 20px;
+    height: 20px;
+    background: #11a3fc;
+    border-radius: 50%;
+    position: relative;
+    margin: 5px 0 0 5px;
+    border: 1px solid #11a3fc;
+}
+.form-horizontal .main-checkbox label{
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    cursor: pointer;
+}
+.form-horizontal .main-checkbox label:after{
+    content: "";
+    width: 10px;
+    height: 5px;
+    position: absolute;
+    top: 5px;
+    left: 4px;
+    border: 3px solid #fff;
+    border-top: none;
+    border-right: none;
+    background: transparent;
+    opacity: 0;
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+}
+.form-horizontal .main-checkbox input[type=checkbox]{
+    visibility: hidden;
+}
+.form-horizontal .main-checkbox input[type=checkbox]:checked + label:after{
+    opacity: 1;
+}
+.form-horizontal .text{
+    float: left;
+    margin-left: 7px;
+    line-height: 20px;
+    padding-top: 5px;
+    text-transform: capitalize;
+}
+.form-horizontal .btn{
+    vertical-align: middle;
+    font-size: 14px;
+    color: #fff;
+    background: #00b4ef;
+    border-radius: 30px;
+    padding: 10px 75px;
+    border: none;
+    text-transform: capitalize;
+    transition: all 0.5s ease 0s;
+}
+@media only screen and (max-width: 479px){
+    .form-horizontal .form-group{
+        padding: 0 25px;
+    }
+    .form-horizontal .form-group i{
+        left: 45px;
+    }
+    .form-horizontal .btn{
+        padding: 10px 20px;
+    }
+}
+
+/**==============================
+管理员登录数据验证返回信息样式 start
+=================================*/
+
+
+.pop-up{
+    position: absolute;
+    right: inherit;
+    bottom: 40px;
+    z-index: 1050;
+    display: none;
+    border: none;
+
+
+}
+.pop-up .triangle {
+    margin-left: 10px;
+    /*margin-right: auto;*/
+    width:0px;
+    height:0px;
+    border-left:8px solid transparent;
+    border-right:8px solid transparent;
+    border-top:8px solid rgb(34, 34, 34);
+
+
+}
+.pop-up .pop-up-msg{
+    height: 24px;
+    font-size: 12px;
+    color: #ffffff;
+    line-height: 24px;
+    font-weight: 500;
+    background-color: rgb(34, 34, 34);
+    text-align: center;
+    border-radius: 2px;
+    padding: 0px 10px;
+}
+/**===============================
+管理员登录数据验证返回信息样式 end
+=================================*/

@@ -1,0 +1,739 @@
+<extend name="./Application/Home/View/base.html"/>
+<block name="title">
+    <title>详情页</title>
+</block>
+<block name="style">
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/detail.css">
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/sidebar.css">
+    <empty name="Think.session.username">
+        <style>
+            .comment .comment-content-login {
+                display: none;
+            }
+
+            .comment .comment-content-not-login {
+                display: block;
+            }
+        </style>
+    </empty>
+    <notempty name="Think.session.username">
+        <style>
+            .comment .comment-content-login {
+                display: block;
+            }
+
+            .comment .comment-content-not-login {
+                display: none;
+            }
+        </style>
+
+    </notempty>
+</block>
+<block name="content">
+
+    <!-- start container content-->
+    <div class="container" id="detail-content">
+        <div class="row">
+            <div class="col-md-8 article-content">
+                <div class="list-margin">
+                    <article class="content">
+                        <header class="content-title">
+                            <h1 class="mscc-title">
+                                <a href="" target="_blank">{$detail.title}</a>
+                            </h1>
+                            <div class="mscc-address ">
+                                <span>{$detail.createtime|date='Y-m-d H:i',###}</span>
+                                <span>阅{$detail.click}</span>
+                            </div>
+                        </header>
+                        <div class="content-text">
+                            {$detail.content}
+                        </div>
+                        <!--content_text-->
+                        <div class="post-like">
+                            <span data-action="ding" data-id="{$detail.id}" class="favorite"><i
+                                    class="fa fa-thumbs-o-up"></i><span class="count">{$detail.favorite}</span>
+                            </span>
+                        </div>
+                        <div class="zhuan">
+                            <p>本文转载自其它网站</p>
+                            <p>如有再次转载，请加上转载地址。谢谢！</p>
+
+                        </div>
+
+                    </article>
+                    <div id="comment"></div>
+
+                    <!--文章评论发表框 start-->
+                    <div class="comment">
+                        <div class="comment-title">
+                            <span>发表评论</span>
+                        </div>
+                        <div class="comment-content-not-login user-login">
+                            <span><a href="javascript:void(0);">登录</a>后才能评论哦</span>
+                        </div>
+                        <div class="comment-content-login">
+                            <form id="form-comment" action="" method="post">
+                                <textarea data-scrollbar name="comment"></textarea>
+                                <span class="comment-alert-msg"></span>
+                            </form>
+                        </div>
+                        <div class="btn-comment">
+                            <button class="btn btn-submit">发表</button>
+                            <div class="is-login-msg"></div>
+                        </div>
+                    </div>
+                    <!--文章评论发表框 end-->
+
+                    <!--文章评论展示框 start-->
+                    <div class="comment-title comment-tabs">
+                        <a class="toggle-comment toggle-comment-default" href="javascript:void (0);" data-type="1" data-state="1">默认评论</a>
+                        <a class="toggle-comment toggle-comment-latest" href="javascript:void (0);" data-type="2" data-state="0">最新评论</a>
+                    </div>
+                    <div class="comment-show">
+                        <empty name="comments">
+                            <div class="show-comments empty">没有评论内容</div>
+                            <else/>
+                            <foreach name="comments" item="com">
+                                <div class="show-comments">
+                                    <div class="comment-member-info">
+                                        <img src="{$com.image|default='__PUBLIC__/images/thumb-head.jpg'}"/>
+                                        <span class="member-name">{$com.username}</span>
+                                        <span class="comment-time">{$com.time|diffTime=###}</span>
+                                    </div>
+                                    <span class="comment-content">{$com.comment}</span>
+                                    <div class="comment-up" data-id="{$com.id}">
+                                        <span class="thumb" data-type="2"><i class="fa fa-thumbs-o-down"></i><span>{$com.down}</span></span>
+                                        <span class="thumb" data-type="1"><i class="fa fa-thumbs-o-up"></i><span>{$com.up}</span></span>
+                                    </div>
+                                </div>
+                            </foreach>
+                        </empty>
+
+                    </div>
+
+
+                    <!--文章评论展示框 end-->
+
+                    <div class="row xiangguan">
+                        <div class="xianguantitle">
+                            <empty name="matchArticle">猜你喜欢
+                                <else/>
+                                相关文章！
+                            </empty>
+                        </div>
+
+                        <empty name="matchArticle">
+
+                            <div class="row" style="margin-left: 0px;margin-right: 0px">
+                                <volist name="hotArticle" id="ho" offset="0" length='3'>
+                                    <div class="col-md-4 list-about">
+                                        <a href="{:U('Details/detail',array('id'=>$ho['id']))}" target="_blank"
+                                           title="{$ho.title}">
+                                            <img src="{$ho.image}"/>
+                                        </a>
+                                        <a href="{:U('Details/detail',array('id'=>$ho['id']))}" target="_blank" title=""
+                                           class="about-title">{$ho.title}</a>
+                                    </div>
+                                </volist>
+                            </div>
+                            <div class="row" style="margin-left: 0px;margin-right: 0px">
+
+                                <volist name="hotArticle" id="ho" offset="3" length='3'>
+                                    <div class="col-md-4 list-about">
+                                        <a href="{:U('Details/detail',array('id'=>$ho['id']))}" target="_blank"
+                                           title="{$ho.title}">
+                                            <img src="{$ho.image}"/>
+                                        </a>
+                                        <a href="{:U('Details/detail',array('id'=>$ho['id']))}" target="_blank" title=""
+                                           class="about-title">{$ho.title}</a>
+                                    </div>
+                                </volist>
+                            </div>
+                            <else/>
+
+                            <div class="row" style="margin-left: 0px;margin-right: 0px">
+                                <volist name="matchArticle" id="ma" offset="0" length='3'>
+                                    <div class="col-md-4 list-about">
+                                        <a href="{:U('Details/detail',array('id'=>$ma['id']))}" target="_blank"
+                                           title="{$ma.title}">
+                                            <img src="{$ma.image}"/>
+                                        </a>
+                                        <a href="{:U('Details/detail',array('id'=>$ma['id']))}" target="_blank" title=""
+                                           class="about-title">{$ma.title}</a>
+                                    </div>
+                                </volist>
+                            </div>
+                            <div class="row" style="margin-left: 0px;margin-right: 0px">
+
+                                <volist name="matchArticle" id="ma" offset="3" length='3'>
+                                    <div class="col-md-4 list-about">
+                                        <a href="{:U('Details/detail',array('id'=>$ma['id']))}" target="_blank"
+                                           title="{$ma.title}">
+                                            <img src="{$ma.image}"/>
+                                        </a>
+                                        <a href="{:U('Details/detail',array('id'=>$ma['id']))}" target="_blank" title=""
+                                           class="about-title">{$ma.title}</a>
+                                    </div>
+                                </volist>
+                            </div>
+
+                        </empty>
+
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-md-4">
+                <div class="right-margin">
+                    <div data-scroll-reveal class="search-keyword">
+                        <form action="" method="post">
+                            <input class="keyword-search form-control" name="keyword" type="text" value=""
+                                   placeholder="请输入关键词"/>
+                            <input class="submit-btn" type="submit" value=""/>
+                        </form>
+                    </div>
+                    <hr/>
+                    <div data-scroll-reveal class="rand-hot-news">
+                        <span class="change-item"><i class="fa fa-refresh" aria-hidden="true" style="float:right;"></i>换一批</span>
+                        <h4>随机热文</h4>
+                        <ul class="rand-items">
+
+                            <foreach name="randArticle" item="ra" key="index">
+                                <li class="rand-news-list">
+                                    <a href="{:U('Details/detail',array('id'=>$ra['id']))}" target="_blank"
+                                       title="{$ra.title}"><span>{$index+1}</span>{$ra.title}</a>
+                                </li>
+
+                            </foreach>
+
+                        </ul>
+                    </div>
+                    <div class="hot-tags">
+                        <h4>图文热文</h4>
+                        <div class="list-for-hot">
+                            <ul>
+                                <foreach name="hotArticle" item="ho">
+                                    <li data-scroll-reveal>
+                                        <div class="list-article-img">
+                                            <a href="{:U('Details/detail',array('id'=>$ho['id']))}" title=""
+                                               target="_blank">
+                                                <img src="{$ho.image}">
+                                            </a>
+                                        </div>
+                                        <a class="list-title" href="{:U('Details/detail',array('id'=>$ho['id']))}"
+                                           target="_blank" title="{$ho.title}">
+                                            {$ho.title}
+                                        </a>
+                                    </li>
+
+                                </foreach>
+                            </ul>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+
+        <!-- start left-button-group  -->
+        <div class="left-btn-group position-absolute">
+            <ul>
+                <li class="wx-share">
+                    <a><i class="fa fa-weixin"></i></a>
+                    <div class="pic-container">
+                        <div class="triangle"></div>
+                        <div id="qrcode" class="pic qrcode"></div>
+                    </div>
+                </li>
+                <li class=""><a href="#comment"><i class="fa fa-comment-o"></i></a></li>
+                <li class="zan-favorite" data-id="{$detail.id}">
+                    <a><i class="fa fa-thumbs-o-up"></i></a>
+                    <span class="article-zan">+1</span>
+                    <div class="res-msg">
+                    </div>
+                </li>
+            </ul>
+
+        </div>
+        <!-- end left-button-group  -->
+
+    </div>
+
+    <!--end container content-->
+
+</block>
+
+<block name="js-first">
+    <script src="__PUBLIC__/js/vender/smooth-scrollbar.js"></script>
+    <script>
+        Scrollbar.initAll({
+            speed: 1,
+            overscrollEffect: 'bounce',
+            overscrollEffectColor: '#d2527f'
+        });
+        $(document).ready(function () {
+            $('.content .content-text img').each(function () {
+                $(this).css({
+                    'max-width': '100%',
+                    'width': 'auto',
+                    'height': 'auto',
+                    'display': 'block',
+
+                });
+                $(this).parents('p').css('text-indent', '0px');
+            });
+            //判断是否是空节点
+            $('.content .content-text h2').each(function () {
+                if ($(this).html().trim() === '') {
+                    $(this).remove();
+                }
+            });
+
+
+        });
+
+        //判断已经滚动的高度，动态设置position值
+        var judgeScrollTop = function (height, positionLeft, positionTop) {
+            if ($(window).scrollTop() > height) {
+                $('.left-btn-group').removeClass('position-absolute').addClass('position-fixed');
+                $('.left-btn-group').css({
+                    'left': positionLeft + 'px',
+                    'top': positionTop + 'px'
+                });
+            } else {
+                $('.left-btn-group').removeClass('position-fixed').addClass('position-absolute');
+                $('.left-btn-group').css({
+                    'left': '-60px',
+                    'top': '30px'
+                });
+
+            }
+
+        };
+        //设置文章左侧固定栏的定位
+        var setBtnGroupPosition = function () {
+            var windowWidth = $(window).width();
+            var containerWidth = $('#detail-content').width();
+            var leftGroupWidth = $('.left-btn-group').width();
+            var positionLeft = ((windowWidth - containerWidth) / 2) - leftGroupWidth - 15;
+
+            if (positionLeft < 5) {
+                $('.left-btn-group').css('display', 'none');
+                return false;
+            }
+            $('.left-btn-group').css('display', 'block');
+            var headerHeight;
+            var positionTop;
+
+            if ($('.main-navigation').hasClass('navbar-fixed-top')) {
+                $('.left-btn-group').removeClass('position-absolute').addClass('position-fixed');
+                headerHeight = $('.main-navigation').height();
+                positionTop = headerHeight + 30;
+                $('.left-btn-group').css({
+                    'left': positionLeft + 'px',
+                    'top': positionTop + 'px'
+                });
+
+            } else {
+                $('.left-btn-group').removeClass('position-fixed').addClass('position-absolute');
+                $('.left-btn-group').css({
+                    'left': '-60px',
+                    'top': '30px'
+                });
+                headerHeight = $('.main-navigation').offset().top;
+                positionTop = $('#detail-content').offset().top - headerHeight + 30;
+            }
+
+
+            $(window).scroll(function () {
+
+                judgeScrollTop(headerHeight, positionLeft, positionTop);
+            });
+
+
+        };
+
+        //执行设置position的方法，设置.left-btn-group类的位置
+        setBtnGroupPosition();
+
+
+        //相关文章的图片高度控制
+        var setImage = function () {
+            var tmpHeight = 0;
+            $('.xiangguan .list-about').each(function () {
+                var _this = $(this).find('img');
+                //w为box的宽度
+                var w = $(this).width();
+                //h为box的高度
+                var h = w * 0.7;
+                var img = new Image();
+                img.src = _this.attr("src");
+                var realWidth = img.width;  //图片的原始宽度
+                var realHeight = img.height; //图片的原始高度
+                if (realHeight / realWidth >= 0.7) {
+                    var multiple = (realWidth / w);
+
+                    var boxHeight = (realHeight / multiple);
+                    var position = -((boxHeight - h) / 2);
+                    _this.css({
+                        'width': '100%',
+                        'position': 'relative',
+                        'top': position + 'px'
+                    });
+                    _this.parent().css({
+                        'max-height': h + 'px',
+                        'overflow': 'hidden'
+                    });
+                } else {
+                    var multiple = (realHeight / h);
+
+                    //boxWidth 为宽度
+                    var boxWidth = (realWidth / multiple);
+                    var position = -((boxWidth - w) / 2);
+
+                    _this.parent().css({
+                        'overflow': 'hidden',
+                        'height': h + 'px',
+                        'max-width': w + 'px',
+                    });
+                    _this.css({
+                        'position': 'relative',
+                        'left': position + 'px',
+                        'height': '100%'
+
+                    });
+
+
+                }
+
+            });
+        };
+        setImage();
+        //相关文章图片显示
+        $('.xiangguan .list-about img').css('display', 'block');
+        $(window).resize(function () {
+            setImage();
+            setBtnGroupPosition();
+        });
+
+    </script>
+</block>
+<block name="js-second">
+    <script>
+        $('.change-item').click(function () {
+            $.ajax({
+                type: 'POST',
+                url: '{:U("Details/randArticle")}',
+                dataType: 'json',
+                success: function (res) {
+                    if (res.state === 1) {
+                        $('.rand-items').empty();
+                        var html = '';
+                        $.each(res.randArticle, function (index, value) {
+                            var url = '{:U("Details/detail")}' + '?id=' + value.id;
+                            html += '<li class="rand-news-list">';
+                            html += '<a href="' + url + '" target="_blank" title="' + value.title + '"><span>' + (index + 1) + '</span>' + value.title + '</a>';
+                            html += '</li>';
+
+                        });
+                        $('.rand-items').html(html);
+
+                    }
+                }
+
+            });
+        })
+    </script>
+    <script>
+        $('.zan-favorite').click(function () {
+            var end = 'webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend';
+            var _this = $(this);
+            var id = _this.attr('data-id');
+
+            $.ajax({
+                type: "post",
+                url: "{:U('Details/like')}",
+                data: {id: id},
+                dataType: 'json',
+                //cache:false, //不缓存此页面
+                success: function (res) {
+                    if (res.state == 1) {
+                        //var end = 'webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend';
+                        $('.article-zan').addClass('animated fadeInDown').one(end, function () {
+                            $(this).removeClass('animated fadeInDown');
+
+                        });
+                        $('.zan-favorite .fa-thumbs-o-up').addClass('animated zoomIn').one(end, function () {
+                            $(this).removeClass('animated zoomIn');
+
+                        });
+
+                    } else {
+                        $('.res-msg').text(res.msg);
+                        //var end = 'webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend';
+                        $('.res-msg').addClass('animated fadeInDown').one(end, function () {
+                            $(this).removeClass('animated fadeInDown');
+
+                        });
+
+                    }
+
+                },
+                error: function () {
+                    $('.res-msg').text('请求超时');
+                    var left = ($('.left-btn-group ul li.zan-favorite').width() - $('.res-msg').width() - 2) / 2;
+                    $('.res-msg').css('left', left);
+                    //var end = 'webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend';
+                    $('.res-msg').addClass('animated fadeInDown').one(end, function () {
+                        $(this).removeClass('animated fadeInDown');
+
+                    });
+                }
+
+            });
+
+        });
+        $('.post-like .favorite').click(function () {
+            var _this = $(this);
+            var id = _this.attr('data-id');
+            var showMsg = function (state, msg) {
+                var html = '<div class="pop-up">' +
+                    '<div class="pop-up-msg">' + msg + '</div>' +
+                    '<div class="triangle"></div>' +
+                    '</div>';
+                var show = function () {
+                    _this.append(html);
+                    $('.pop-up').fadeIn(300, function () {
+                        setTimeout(function () {
+                            $('.pop-up').fadeOut(300, function () {
+                                $('.pop-up').remove();
+                            });
+                        }, 1500);
+                    });
+
+                };
+                if (state === 1) {
+                    $('.favorite .fa-thumbs-o-up').animate({
+                        fontSize: '35px',
+                        opacity: 0.8,
+
+                    }, 300, function () {
+                        $('.favorite .fa-thumbs-o-up').animate({
+                            fontSize: '25px',
+                            opacity: 1
+
+                        }, 300, function () {
+                            show();
+
+                        });
+                    });
+                } else {
+                    show();
+                }
+            };
+
+            $.ajax({
+                type: "post",
+                url: "{:U('Details/like')}",
+                data: {id: id},
+                dataType: 'json',
+                //cache:false, //不缓存此页面
+                success: function (res) {
+                    if (res.state === 1) {
+                        $('.favorite .count').text(res.favorite);
+                        showMsg(res.state, res.msg);
+                    } else {
+                        showMsg(res.state, res.msg);
+                    }
+
+                },
+                error: function () {
+                    showMsg(2, '请稍后再试');
+                }
+
+            });
+        })
+    </script>
+    <script>
+        $(function () {
+            var end = 'webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend';
+
+            //评论内容数据验证
+            //ajax验证用户是否登录
+            $('.btn-submit').click(function () {
+                var comments = $('#form-comment textarea').val().trim();
+                if (comments === '' || comments === null) {
+                    $('.comment-alert-msg').text('不能为空');
+                    $('.comment-alert-msg').addClass('animated zoomIn').one(end, function () {
+                        $(this).removeClass('animated zoomIn');
+                    });
+                    return false;
+
+                }
+                if (comments.length < 10 || comments.length > 250) {
+                    $('.comment-alert-msg').text('字数在10-250之间');
+                    $('.comment-alert-msg').addClass('animated zoomIn').one(end, function () {
+                        $(this).removeClass('animated zoomIn');
+                    });
+                    return false;
+                }
+                var aid = $('.post-like .favorite').attr('data-id');
+                var data = {
+                    comment: comments,
+                    aid: aid
+                };
+                $.ajax({
+                    type: 'post',
+                    url: '{:U("Comment/addComment")}',
+                    dataType: 'json',
+                    data: data,
+                    beforeSend: function () {
+                        $('.btn-submit').text('数据提交中.....');
+                        //$('.btn-submit').attr('disabled', 'disabled');
+                    },
+                    success: function (res) {
+
+                        //state 1为用户已经登录并且数据验证成功，2为用户没有登录，3用户已经登录，但数据没有验证成功
+                        if(res.state === 2) {
+                            $('.comment-content-not-login').css('display', 'block');
+                            $('.comment-content-login').css('display', 'none');
+                            $('.is-login-msg').text(res.msg);
+                            $('.is-login-msg').addClass('animated fadeInDown').one(end, function () {
+                                $(this).removeClass('animated fadeInDown');
+                            });
+                        }else {
+                            $('.comment-content-not-login').css('display', 'none');
+                            $('.comment-content-login').css('display', 'block');
+                            $('.is-login-msg').text(res.msg);
+                            $('.is-login-msg').addClass('animated fadeInDown').one(end, function () {
+                                $(this).removeClass('animated fadeInDown');
+                            });
+                        }
+                        if(res.state === 1){
+                            $('#form-comment textarea').val('');
+                        }
+
+
+                    },
+                    error: function () {
+                        $('.is-login-msg').text('请求超时');
+                        $('.is-login-msg').addClass('animated fadeInDown').one(end, function () {
+                            $(this).removeClass('animated fadeInDown');
+                        });
+                    },
+                    complete: function () {
+                        $('.btn-submit').text('发表');
+                       //$('.btn-submit').attr('disabled', 'false');
+                    }
+                });
+                return false;
+            });
+
+        });
+
+
+    </script>
+    <script>
+        //默认评论与最新评论切换
+        $(function () {
+            $('.toggle-comment').click(function () {
+                var _this = $(this);
+                var state = parseInt($(this).attr('data-state'));
+                if(state === 1 ) return false;
+                var type = $(this).attr('data-type');
+                var aid = $('.zan-favorite').attr('data-id');
+                var data = {type:type,aid:aid};
+                $.ajax({
+                    type:'post',
+                    data :data,
+                    url:'{:U("Comment/handle")}',
+                    dataType:'json',
+
+                    success: function (res) {
+                        if(res.state === 1){
+                            if(res.msg.length === 0){
+                                var inner  ='<div class="row show-comments empty">没有评论内容</div>';
+                                $('.comment-show').empty();
+                                $('.comment-show').html(inner);
+                                return false;
+
+                            }
+                            var html ='';
+                            $.each(res.msg, function (index, value) {
+                                html += '<div class="row show-comments">';
+                                html += '<div class="comment-member-info">';
+                                if (null === value.image || '' === value.image) {
+                                    value.image = '__PUBLIC__/images/thumb-head.jpg'
+                                }
+
+                                html += '<img src="' + value.image + '"/>';
+                                html += '<span class="member-name">' + value.username + '</span>';
+                                html += '<span class="comment-time">'+value.time+'</span>';
+                                html += '</div>';
+                                html += '<span class="comment-content">' + value.comment + '</span>';
+                                html += '<div class="comment-up" data-id="'+value.id+'">';
+                                html += '<span class="thumb"><i class="fa fa-thumbs-o-down"></i><span>' + value.down + '</span></span>';
+                                html += '<span class="thumb"><i class="fa fa-thumbs-o-up"></i><span>' + value.up + '</span></span>';
+                                html += ' </div></div>';
+
+                            });
+                            $('.comment-show').html(html);
+                            _this.attr('data-state','1');
+                            _this.css('color','#1d1d1d')
+                            _this.siblings().attr('data-state','0');
+                            _this.siblings().css('color','#bbb');
+
+                        }
+
+                    },
+                    error: function () {
+
+                    },
+
+
+
+                })
+            });
+        });
+    </script>
+    <script>
+        $(function () {
+           $('.comment-up span.thumb').click(function () {
+               var _this = $(this);
+               var type = $(this).attr('data-type');
+               var aid = $('.zan-favorite').attr('data-id');
+               var id = _this.parent().attr('data-id');
+               var data = {type:type,aid:aid,id:id};
+               $.ajax({
+                   url: '{:U("Comment/ifLike")}',
+                   type: 'post',
+                   dataType:'json',
+                   data:data,
+                   success:function (res) {
+                       if(res.state ===1){
+                           _this.find('.fa').css('color','red');
+                           _this.find('span').text(res.data);
+                       }else{
+                           var html = '<span class="toast-msg">'+res.msg+'</span>'
+                           _this.append(html);
+                           $('.toast-msg').fadeIn(500,function () {
+                               $('.toast-msg').fadeOut(500,function () {
+                                   $('.toast-msg').remove();
+                               });
+
+                           });
+
+                       }
+                   },
+                   error:function () {
+
+                   }
+               });
+           });
+        });
+    </script>
+</block>

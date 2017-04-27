@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>轮播图设置</title>
+
+    <link href="__PUBLIC__/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="__PUBLIC__/css/admin/styles.css" rel="stylesheet">
+    <link href="__PUBLIC__/css/admin/cropper.css" rel="stylesheet">
+    <link href="__PUBLIC__/css/admin/system.pic.upload.css" rel="stylesheet">
+    <link href="__PUBLIC__/css/admin/pic_upload.css" rel="stylesheet">
+
+
+
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if Viewview the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="http://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                    data-target="#sidebar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#"><span>后台</span>管理系统</a>
+            <ul class="user-menu">
+                <li class="dropdown pull-right">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span
+                            class="glyphicon glyphicon-user"></span>管理员<span class="caret"></span></a>
+                    <ul class="dropdown-menu" role="menu">
+                        <li><a href="#"><span class="glyphicon glyphicon-user"></span>属性</a></li>
+                        <li><a href="#"><span class="glyphicon glyphicon-cog"></span>设置</a></li>
+                        <li><a href="#"><span class="glyphicon glyphicon-log-out"></span>登出</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div><!-- /.container-fluid -->
+</nav>
+
+<div id="sidebar-collapse" class="col-sm-3 col-lg-2 sidebar">
+    <form role="search">
+        <div class="form-group">
+            <input type="text" class="form-control" placeholder="搜索">
+        </div>
+    </form>
+    <ul class="nav menu">
+        <li class="active"><a href="{:U('Index/index')}"><span class="glyphicon glyphicon-dashboard"></span>控制板</a></li>
+        <li><a href="{:U('System/add')}"><span class="glyphicon glyphicon-th"></span>系统设置</a></li>
+        <li class="parent ">
+            <a href="#">
+                <span class="glyphicon glyphicon-list"></span>轮播图设置<span data-toggle="collapse" href="#sub-item-2"
+                                                                         class="icon pull-right"><em
+                    class="glyphicon glyphicon-s glyphicon-plus"></em></span>
+            </a>
+            <ul class="children collapse" id="sub-item-2">
+                <li class="active">
+                    <a class="" href="{:U('Carousel/add')}">
+                        <span class="glyphicon glyphicon-share-alt"></span>轮播图添加
+                    </a>
+                </li>
+                <li>
+                    <a class="" href="{:U('Carousel/index')}">
+                        <span class="glyphicon glyphicon-share-alt"></span>轮播图列表
+                    </a>
+                </li>
+                <li>
+                    <a class="" href="{:U('Carousel/update')}">
+                        <span class="glyphicon glyphicon-share-alt"></span>轮播图修改
+                    </a>
+                </li>
+            </ul>
+        </li>
+        <li><a href="{:U('Link/add')}"><span class="glyphicon glyphicon-list-alt"></span>友情链接</a></li>
+        <li class="parent ">
+            <a href="#">
+                <span class="glyphicon glyphicon-list"></span>分类管理<span data-toggle="collapse" href="#sub-item-3"
+                                                                        class="icon pull-right"><em
+                    class="glyphicon glyphicon-s glyphicon-plus"></em></span>
+            </a>
+            <ul class="children collapse" id="sub-item-3">
+                <li class="active">
+                    <a class="" href="{:U('Category/add')}">
+                        <span class="glyphicon glyphicon-share-alt"></span>添加分类
+                    </a>
+                </li>
+                <li>
+                    <a class="" href="{:U('Category/index')}">
+                        <span class="glyphicon glyphicon-share-alt"></span>分类列表
+                    </a>
+                </li>
+            </ul>
+        </li>
+        <li><a href="comment.html"><span class="glyphicon glyphicon-info-sign"></span>评论列表</a></li>
+        <li class="parent ">
+            <a href="#">
+                <span class="glyphicon glyphicon-list"></span>文章管理<span data-toggle="collapse" href="#sub-item-1"
+                                                                        class="icon pull-right"><em
+                    class="glyphicon glyphicon-s glyphicon-plus"></em></span>
+            </a>
+            <ul class="children collapse" id="sub-item-1">
+                <li>
+                    <a class="" href="{:U('Article/add')}">
+                        <span class="glyphicon glyphicon-share-alt"></span>添加文章
+                    </a>
+                </li>
+                <li>
+                    <a class="" href="{:U('Article/add')}">
+                        <span class="glyphicon glyphicon-share-alt"></span>文章列表
+                    </a>
+                </li>
+                <li>
+                    <a class="" href="{:U('Article/add')}">
+                        <span class="glyphicon glyphicon-share-alt"></span>文章管理
+                    </a>
+                </li>
+            </ul>
+        </li>
+        <li role="presentation" class="divider"></li>
+        <li><a href="login.html"><span class="glyphicon glyphicon-user"></span>会员管理</a></li>
+    </ul>
+</div><!--/.sidebar-->
+
+<div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main">
+    <div class="row">
+        <ol class="breadcrumb">
+            <li><a href="#"><span class="glyphicon glyphicon-home"></span></a></li>
+            <li class="active">轮播图设置</li>
+        </ol>
+    </div><!--/.row-->
+
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="page-header">轮播图设置</h1>
+        </div>
+    </div><!--/.row-->
+
+
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="panel panel-default">
+                <div class="panel-heading">轮播图添加</div>
+                <div class="panel-body">
+                    <form id="carousel_info" role="form" method="post" enctype="multipart/form-data">
+                        <div class="col-md-12">
+                            <div class="input-list">
+                                <div class="input-group carousel-attr">
+                                    <label class="input-group-addon" for="carousel_name">轮播图名称：</label>
+                                    <input class="form-control" id="carousel_name" name="carousel_name" type="text"
+                                           placeholder="轮播图名称">
+                                </div>
+
+                            </div>
+                            <div class="input-list">
+                                <div class="input-group carousel-attr">
+                                    <label class="input-group-addon" for="carousel_description">轮播图描述：</label>
+                                    <input class="form-control" id="carousel_description" name="carousel_description"
+                                           type="text" placeholder="轮播图描述">
+                                </div>
+                            </div>
+                            <div class="input-list">
+                                <div class="input-group carousel-attr">
+                                    <label class="input-group-addon" for="carousel_link">轮播图链接：</label>
+                                    <input class="form-control" id="carousel_link" name="carousel_link" type="text"
+                                           placeholder="轮播图链接">
+                                </div>
+                            </div>
+                       <!--
+                            <div class="input-list">
+                                <div class="input-group carousel-attr">
+                                    <label class="input-group-addon" for="carousel_url">轮播图地址：</label>
+                                    <input class="form-control" id="carousel_url" name="carousel_url" type="text"
+                                           placeholder="轮播图地址">
+                                </div>
+                            </div>-->
+
+                            <div class="input-list">
+                                <div class="input-group carousel-attr">
+                                    <label class="input-group-addon">是否开启</label>
+                                    <select name="carousel_status">
+                                        <option  value="0">关闭</option>
+                                        <option  value="1">开启</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="form-group" id="carousel-upload">
+                                <label>轮播图上传：</label>
+                                <!--<div pic-upload></div>-->
+                                <!---->
+
+                                <!-- Content -->
+                                <div>
+                                    <div class="row">
+
+                                        <div class="col-md-12">
+                                            <div class="btn-group upload-image">
+                                                <label class="btn btn-primary btn-upload" for="inputImage"
+                                                       title="Upload image file">
+
+                                                    <input class="sr-only" id="inputImage" name="file" type="file"
+                                                           accept="image/*">
+                                                    <em class="docs-tooltip" data-toggle="tooltip" title="请选择本地图片"
+                                                        style="margin-left: auto;margin-right: auto;text-align: center;">
+                                                        选择图片
+                                                    </em>
+                                                </label>
+
+                                            </div>
+                                            <!-- Alert -->
+                                            <div class="docs-alert"><span class="warning message"></span></div>
+
+                                        </div>
+
+                                        <div class="col-md-12">
+                                            <!-- <h3 class="page-header">Demo:</h3> -->
+                                            <div class="img-container">
+                                                <img src="__PUBLIC__/images/picture.jpg" alt="Picture"/>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12 docs-buttons">
+
+                                            <div class="btn-group btn-group-justified" data-toggle="buttons">
+                                                <label class="btn btn-primary active" data-method="setAspectRatio"
+                                                       data-option="1.7777777777777777">
+                                                    <span class="docs-tooltip" data-toggle="tooltip" title="16 / 9比例">
+                                                        16:9
+                                                    </span>
+                                                </label>
+                                                <label class="btn btn-primary" data-method="setAspectRatio"
+                                                       data-option="1.3333333333333333">
+                                                    <span class="docs-tooltip" data-toggle="tooltip" title="4 / 3比例">
+                                                          4:3
+                                                    </span>
+                                                </label>
+                                                <label class="btn btn-primary" data-method="setAspectRatio"
+                                                       data-option="1">
+                                                    <span class="docs-tooltip" data-toggle="tooltip" title="1 / 1比例">
+                                                        1:1
+                                                    </span>
+                                                </label>
+                                                <label class="btn btn-primary" data-method="setAspectRatio"
+                                                       data-option="0.6666666666666666">
+                                                    <span class="docs-tooltip" data-toggle="tooltip" title="2 / 3比例">
+                                                    2:3
+                                                    </span>
+                                                </label>
+                                                <label class="btn btn-primary" data-method="setAspectRatio"
+                                                       data-option="NaN" title="Set Aspect Ratio">
+
+                                                    <span class="docs-tooltip" data-toggle="tooltip" title="自由剪切">
+                                                        自由剪切
+                                                    </span>
+                                                </label>
+                                            </div>
+                                            <input class="form-control" id="putData" name="cropData" type="hidden"/>
+                                        </div><!-- /.docs-buttons -->
+                                    </div>
+                                </div>
+
+                                <!--upload pic-->
+                                <p class="help-block">请选择本地图片上传，像素最好为1280*768</p>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <button id="btn-upload" type="submit" class="btn btn-success btn-block"
+                                    style="width: 50%;margin-left:auto;margin-right:auto;"
+                                    onclick="return ajaxUploadBtn();">提交
+                            </button>
+                        </div>
+                    </form>
+
+                    <hr/>
+                </div>
+            </div><!-- /.col-->
+        </div>
+        <!-- /.row -->
+
+    </div><!--/.main-->
+
+
+
+    <!--模态框 start-->
+    <div class="modal fade" id="submit-msg">
+        <div class="modal-dialog  modal-sm">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">关闭</span></button>
+                    <h3 class="modal-title">信息提示</h3>
+                </div>
+                <div class="modal-body">
+                    <div class="response-msg"></div>
+                </div>
+                <!--  <div class="modal-footer">
+                      <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                  </div>-->
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+    <!--模态框 end-->
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="http://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="__PUBLIC__/bootstrap/js/bootstrap.min.js"></script>
+    <script src="//cdn.bootcss.com/angular.js/1.4.8/angular.js"></script>
+
+    <script src="__PUBLIC__/js/vender/cropper.min.js"></script>
+
+
+    <script>
+        !function ($) {
+            $(document).on("click", "ul.nav li.parent > a > span.icon", function () {
+                $(this).find('em:first').toggleClass("glyphicon-minus");
+            });
+            $(".sidebar span.icon").find('em:first').addClass("glyphicon-plus");
+        }(window.jQuery);
+
+        $(window).on('resize', function () {
+            if ($(window).width() > 768) $('#sidebar-collapse').collapse('show')
+        })
+        $(window).on('resize', function () {
+            if ($(window).width() <= 767) $('#sidebar-collapse').collapse('hide')
+        });
+        var addCarouse ="{:U('Carousel/addCarousel')}";
+
+    </script>
+    <script src="__PUBLIC__/js/admin/pic_upload.js"></script>
+    <script src="__PUBLIC__/js/admin/handle.image.js"></script>
+
+
+
+</div>
+</body>
+
+</html>

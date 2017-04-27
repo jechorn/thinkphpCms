@@ -1,0 +1,183 @@
+<extend name="./Application/Admin/View/base.html"/>
+<block name="title">
+    <title>修改文章</title>
+</block>
+<block name="extends-style">
+    <link href="__PUBLIC__/css/admin/jquery.filer.css" type="text/css" rel="stylesheet"/>
+    <link href="__PUBLIC__/css/admin/jquery.filer-dragdropbox-theme.css" type="text/css" rel="stylesheet"/>
+    <style>
+        .jFiler-theme-dragdropbox {
+            position: relative;
+        }
+    </style>
+</block>
+<block name="content">
+    <!--文章修改框 start-->
+    <div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main">
+        <div class="row">
+            <ol class="breadcrumb">
+                <li><a href="#"><span class="glyphicon glyphicon-home"></span></a></li>
+                <li class="active">文章管理</li>
+            </ol>
+        </div><!--/.row-->
+
+        <div class="row">
+            <div class="col-md-12">
+                <h1 class="page-header">修改文章</h1>
+            </div>
+        </div><!--/.row-->
+
+        <div class="row">
+            <div class="col-md-12">
+                <div class="panel panel-default">
+                    <div class="panel-heading">修改文章 <a class="back-list" href="{:U('Article/index')}">[文章列表]</a></div>
+                    <div class="panel-body">
+                        <form id="article-add" method="post" enctype="multipart/form-data">
+                            <fieldset>
+                                <input id="article-id" name="id" value="{$article.id}" type="hidden"/>
+                                <!-- 文章标题 input-->
+                                <div class="input-msg">
+                                    <div class="input-group carousel-attr">
+                                        <label class="input-group-addon system-label" for="article-name">文章标题</label>
+                                        <input id="article-name" name="name" type="text" placeholder="文章标题"
+                                               class="form-control" value="{$article.title}"/>
+                                    </div>
+                                </div>
+                                <!-- 文章标签 input-->
+                                <div class="input-msg">
+                                    <div class="input-group carousel-attr">
+                                        <label class="input-group-addon system-label" for="article-tags">文章标签</label>
+                                        <input id="article-tags" name="tags" type="text" placeholder="例子: 科技|数码"
+                                               class="form-control" value="{$article.tags}">
+                                    </div>
+                                </div>
+
+                                <!-- 文章属性 input-->
+                                <div class="input-msg">
+                                    <div class="input-group carousel-attr" id="article-attr">
+                                        <label class="input-group-addon system-label">文章属性</label>
+                                        <foreach name="attr" item="v">
+                                            <input class="checkbox-attr" name="attr[]" type="checkbox" value="{$v.id}"
+                                            <foreach name="article['Attr']" item="at">
+                                                <if condition="$at['id'] == $v['id']">
+                                                    <php>echo 'checked="checked"';</php>
+                                                </if>
+
+                                            </foreach>
+                                            />
+                                            <span>{$v.name}</span>
+                                        </foreach>
+
+                                    </div>
+                                </div>
+                                <!-- 文章点击数 input-->
+                                <div class="input-msg">
+                                    <div class="input-group carousel-attr">
+                                        <label class="input-group-addon system-label" for="article-click">点击次数</label>
+                                        <input id="article-click" name="click" type="number" placeholder="文章点击数"
+                                               value="{$article.click}"
+                                               class="form-control">
+
+                                    </div>
+                                </div>
+
+                                <!-- 文章分类 input-->
+                                <div class="input-msg">
+                                    <div class="input-group carousel-attr">
+                                        <label class="input-group-addon system-label" for="article-cate">文章分类</label>
+                                        <select name="cid" id="article-cate">
+                                            <option value="">===请选择分类===</option>
+                                            <foreach name="cate" item="v">
+
+                                                <option value="{$v.id}"
+                                                <if condition="$article['cid']==$v['id']">
+                                                    <php>echo 'selected="selected"';</php>
+                                                </if>
+                                                >{$v.html}{$v.name}</option>
+                                            </foreach>
+
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <!-- 文章图片上传 input-->
+                                <input type="file" name="files" id="filer_input" accept="image/*"/>
+
+
+                                <!-- 文章分类 input-->
+                                <div class="input-msg">
+                                    <div class="input-group carousel-attr">
+                                        <!-- 加载编辑器的容器 -->
+                                        <script id="editor" name="content" type="text/plain">
+                                        </script>
+                                        <!--<textarea name="content" id="editor"></textarea>-->
+                                    </div>
+                                </div>
+
+                                <!-- Form actions -->
+                                <div class="form-group">
+                                    <div class="col-md-12 widget-right">
+                                        <button id="system-submit" type="submit" class="btn btn-success"
+                                                onclick="return articleAdd();">修改
+                                        </button>
+                                    </div>
+                                </div>
+                            </fieldset>
+
+                        </form>
+
+                    </div>
+                </div><!-- /.col-->
+            </div>
+            <!-- /.row -->
+        </div><!--/.main-->
+    </div>
+    <!--文章修改框 end-->
+    <!--模态框 start-->
+    <div class="modal fade" id="submit-msg">
+        <div class="modal-dialog  modal-sm">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal"><span
+                            aria-hidden="true">&times;</span><span class="sr-only">关闭</span></button>
+                    <h3 class="modal-title">删除信息提示</h3>
+                </div>
+                <div class="modal-body">
+                    <div class="response-msg"></div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-confirm">确定</button>
+                    <button type="button" class="btn btn-cancel" data-dismiss="modal">取消</button>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+    <!--模态框 end-->
+</block>
+<block name="js">
+    <script src="__PUBLIC__/js/vender/jquery.filer.js"></script>
+    <script src="__PUBLIC__/ueditor/ueditor.config.js"></script>
+    <script src="__PUBLIC__/ueditor/ueditor.all.min.js"></script>
+    <!-- 实例化编辑器 -->
+
+    <script type="text/javascript" src="__PUBLIC__/js/admin/article.add.js"></script>
+    <script type="text/javascript">
+        var content = `{$article["content"]}`;
+        console.log(content);
+        $(document).ready(function () {
+            ue.ready(function () {
+                ue.setContent(content);
+            });
+        });
+
+        var actionName = "{$Think.ACTION_NAME}";
+        var handleUrl = "{:U('Article/updateHandle')}";
+        var hrefUrl = "{:U('Article/index')}";
+    </script>
+
+
+    <!--文章添加提交验证-->
+    <script type="text/javascript" src="__PUBLIC__/js/admin/article.verify.js"></script>
+
+
+</block>

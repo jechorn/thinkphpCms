@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>分类列表</title>
+
+    <link href="__PUBLIC__/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <link href="__PUBLIC__/FontAwesome-3.2.1/css/font-awesome.min.css" rel="stylesheet">
+    <!--[if IE 7]>
+    <link rel="stylesheet" href="__PUBLIC__/FontAwesome-3.2.1/css/font-awesome-ie7.min.css">
+    <![endif]-->
+    <link href="__PUBLIC__/css/admin/styles.css" rel="stylesheet">
+    <link href="__PUBLIC__/css/admin/jquery.filer.css" type="text/css" rel="stylesheet" />
+    <link href="__PUBLIC__/css/admin/jquery.filer-dragdropbox-theme.css" type="text/css" rel="stylesheet" />
+    <link href="__PUBLIC__/css/admin/x0popup.min.css" rel="stylesheet">
+
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="http://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="http://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <style>
+        .jFiler-theme-dragdropbox{
+            position: relative;
+        }
+    </style>
+
+
+
+</head>
+
+<body>
+<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                    data-target="#sidebar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#"><span>后台</span>管理系统</a>
+            <ul class="user-menu">
+                <li class="dropdown pull-right">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span
+                            class="glyphicon glyphicon-user"></span>管理员<span class="caret"></span></a>
+                    <ul class="dropdown-menu" role="menu">
+                        <li><a href="#"><span class="glyphicon glyphicon-user"></span>属性</a></li>
+                        <li><a href="#"><span class="glyphicon glyphicon-cog"></span>设置</a></li>
+                        <li><a href="#"><span class="glyphicon glyphicon-log-out"></span>登出</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div><!-- /.container-fluid -->
+</nav>
+
+<div id="sidebar-collapse" class="col-sm-3 col-lg-2 sidebar">
+    <form role="search">
+        <div class="form-group">
+            <input type="text" class="form-control" placeholder="搜索">
+        </div>
+    </form>
+    <ul class="nav menu">
+        <li class="active"><a href="{:U('Index/index')}"><span class="glyphicon glyphicon-dashboard"></span>控制板</a></li>
+        <li><a href="{:U('System/add')}"><span class="glyphicon glyphicon-th"></span>系统设置</a></li>
+        <li class="parent ">
+            <a href="#">
+                <span class="glyphicon glyphicon-list"></span>轮播图设置<span data-toggle="collapse" href="#sub-item-2"
+                                                                         class="icon pull-right"><em
+                    class="glyphicon glyphicon-s glyphicon-plus"></em></span>
+            </a>
+            <ul class="children collapse" id="sub-item-2">
+                <li class="active">
+                    <a class="" href="{:U('Carousel/add')}">
+                        <span class="glyphicon glyphicon-share-alt"></span>轮播图添加
+                    </a>
+                </li>
+                <li>
+                    <a class="" href="{:U('Carousel/index')}">
+                        <span class="glyphicon glyphicon-share-alt"></span>轮播图列表
+                    </a>
+                </li>
+                <li>
+                    <a class="" href="{:U('Carousel/update')}">
+                        <span class="glyphicon glyphicon-share-alt"></span>轮播图修改
+                    </a>
+                </li>
+            </ul>
+        </li>
+        <li><a href="{:U('Link/add')}"><span class="glyphicon glyphicon-list-alt"></span>友情链接</a></li>
+        <li class="parent ">
+            <a href="#">
+                <span class="glyphicon glyphicon-list"></span>分类管理<span data-toggle="collapse" href="#sub-item-3"
+                                                                        class="icon pull-right"><em
+                    class="glyphicon glyphicon-s glyphicon-plus"></em></span>
+            </a>
+            <ul class="children collapse" id="sub-item-3">
+                <li class="active">
+                    <a class="" href="{:U('Category/add')}">
+                        <span class="glyphicon glyphicon-share-alt"></span>添加分类
+                    </a>
+                </li>
+                <li>
+                    <a class="" href="{:U('Category/index')}">
+                        <span class="glyphicon glyphicon-share-alt"></span>分类列表
+                    </a>
+                </li>
+            </ul>
+        </li>
+        <li><a href="comment.html"><span class="glyphicon glyphicon-info-sign"></span>评论列表</a></li>
+        <li class="parent ">
+            <a href="#">
+                <span class="glyphicon glyphicon-list"></span>文章管理<span data-toggle="collapse" href="#sub-item-1"
+                                                                        class="icon pull-right"><em
+                    class="glyphicon glyphicon-s glyphicon-plus"></em></span>
+            </a>
+            <ul class="children collapse" id="sub-item-1">
+                <li>
+                    <a class="" href="{:U('Article/add')}">
+                        <span class="glyphicon glyphicon-share-alt"></span>添加文章
+                    </a>
+                </li>
+                <li>
+                    <a class="" href="{:U('Article/add')}">
+                        <span class="glyphicon glyphicon-share-alt"></span>文章列表
+                    </a>
+                </li>
+                <li>
+                    <a class="" href="{:U('Article/add')}">
+                        <span class="glyphicon glyphicon-share-alt"></span>文章管理
+                    </a>
+                </li>
+            </ul>
+        </li>
+        <li role="presentation" class="divider"></li>
+        <li><a href="login.html"><span class="glyphicon glyphicon-user"></span>会员管理</a></li>
+    </ul>
+</div><!--/.sidebar-->
+
+<div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main">
+    <div class="row">
+        <ol class="breadcrumb">
+            <li><a href="#"><span class="glyphicon glyphicon-home"></span></a></li>
+            <li class="active">文章管理</li>
+        </ol>
+    </div><!--/.row-->
+
+    <div class="row">
+        <div class="col-md-12">
+            <h1 class="page-header">添加文章</h1>
+        </div>
+    </div><!--/.row-->
+
+    <div class="row">
+        <div class="col-md-12">
+            <div class="panel panel-default">
+                <div class="panel-heading">添加文章 <a class="back-list" href="{:U('Article/index')}">[文章列表]</a></div>
+                <div class="panel-body">
+                    <form id="article-add" method="post" enctype="multipart/form-data">
+                        <fieldset>
+                            <!-- 文章标题 input-->
+                            <div class="input-msg">
+                                <div class="input-group carousel-attr">
+                                    <label class="input-group-addon system-label" for="article-name">文章标题</label>
+                                    <input id="article-name" name="name" type="text" placeholder="文章标题"
+                                           class="form-control">
+                                </div>
+                            </div>
+                            <!-- 文章标签 input-->
+                            <div class="input-msg">
+                                <div class="input-group carousel-attr">
+                                    <label class="input-group-addon system-label" for="article-tags">文章标签</label>
+                                    <input id="article-tags" name="tags" type="text" placeholder="例子: 科技|数码"
+                                           class="form-control">
+                                </div>
+                            </div>
+
+                            <!-- 文章属性 input-->
+                            <div class="input-msg">
+                                <div class="input-group carousel-attr" id="article-attr">
+                                    <label class="input-group-addon system-label" >文章属性</label>
+                                    <foreach name="attr" item="v">
+                                        <input class="checkbox-attr" name="attr[]" type="checkbox" value="{$v.id}"/>
+                                        <span>{$v.name}</span>
+                                    </foreach>
+
+                                </div>
+                            </div>
+                            <!-- 文章点击数 input-->
+                            <div class="input-msg">
+                                <div class="input-group carousel-attr">
+                                    <label class="input-group-addon system-label" for="article-click">点击次数</label>
+                                    <input id="article-click" name="click" type="number" placeholder="文章点击数" value="100"
+                                           class="form-control">
+
+                                </div>
+                            </div>
+
+                            <!-- 文章分类 input-->
+                            <div class="input-msg">
+                                <div class="input-group carousel-attr">
+                                    <label class="input-group-addon system-label" for="article-cate">文章分类</label>
+                                    <select name="cid" id="article-cate">
+                                        <option value="">===请选择分类===</option>
+                                        <foreach name="cate" item="v">
+                                            <option value="{$v.id}">{$v.html}{$v.name}</option>
+                                        </foreach>
+
+                                    </select>
+                                </div>
+                            </div>
+
+                            <!-- 文章图片上传 input-->
+                            <input type="file"  name="files" id="filer_input" accept="image/*"/>
+
+
+                            <!-- 文章分类 input-->
+                            <div class="input-msg">
+                                <div class="input-group carousel-attr">
+                                    <!-- 加载编辑器的容器 -->
+                                    <script id="editor" name="content" type="text/plain">
+                                    </script>
+                                    <!--<textarea name="content" id="editor"></textarea>-->
+                                </div>
+                            </div>
+
+                            <!-- Form actions -->
+                            <div class="form-group">
+                                <div class="col-md-12 widget-right">
+                                    <button id="system-submit" type="submit" class="btn btn-success" onclick="return articleAdd();">提交</button>
+                                </div>
+                            </div>
+                        </fieldset>
+
+                    </form>
+
+                </div>
+            </div><!-- /.col-->
+        </div>
+        <!-- /.row -->
+    </div><!--/.main-->
+</div>
+
+<!--模态框 start-->
+<div class="modal fade" id="submit-msg">
+    <div class="modal-dialog  modal-sm">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">关闭</span></button>
+                <h3 class="modal-title">删除信息提示</h3>
+            </div>
+            <div class="modal-body">
+                <div class="response-msg"></div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-confirm">确定</button>
+                <button type="button" class="btn btn-cancel" data-dismiss="modal">取消</button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+<!--模态框 end-->
+
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="__PUBLIC__/js/vender/jquery.1.11.1.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="__PUBLIC__/bootstrap/js/bootstrap.min.js"></script>
+<script src="//cdn.bootcss.com/angular.js/1.4.8/angular.js"></script>
+<script src="__PUBLIC__/js/vender/jquery.filer.js"></script>
+<script src="__PUBLIC__/js/vender/x0popup.min.js"></script>
+
+<script>
+    !function ($) {
+        $(document).on("click", "ul.nav li.parent > a > span.icon", function () {
+            $(this).find('em:first').toggleClass("glyphicon-minus");
+        });
+        $(".sidebar span.icon").find('em:first').addClass("glyphicon-plus");
+    }(window.jQuery);
+
+    $(window).on('resize', function () {
+        if ($(window).width() > 768) $('#sidebar-collapse').collapse('show')
+    })
+    $(window).on('resize', function () {
+        if ($(window).width() <= 767) $('#sidebar-collapse').collapse('hide')
+    });
+
+
+</script>
+
+<script src="__PUBLIC__/ueditor/ueditor.config.js"></script>
+<script src="__PUBLIC__/ueditor/ueditor.all.min.js"></script>
+<!-- 实例化编辑器 -->
+<script type="text/javascript" src="__PUBLIC__/js/admin/article.add.js"></script>
+<script>
+    var actionName = "{$Think.ACTION_NAME}";
+    var handleUrl = "{:U('Article/addHandle')}";
+    var hrefUrl = "{:U('Article/index')}";
+
+</script>
+
+<!--文章添加提交验证-->
+<script type="text/javascript" src="__PUBLIC__/js/admin/article.verify.js"></script>
+
+
+
+</body>
+
+</html>

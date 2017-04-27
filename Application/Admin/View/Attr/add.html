@@ -1,0 +1,66 @@
+<extend name="./Application/Admin/View/base.html" />
+<block name="title">
+    <title>属性添加</title>
+</block>
+<block name="extends-style">
+    <link href="__PUBLIC__/css/admin/cate.list.css" rel="stylesheet">
+</block>
+<block name="content">
+    <!--属性添加框 start-->
+    <div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main">
+        <div class="row">
+            <ol class="breadcrumb">
+                <li><a href="#"><span class="glyphicon glyphicon-home"></span></a></li>
+                <li class="active">属性管理</li>
+            </ol>
+        </div><!--/.row-->
+
+        <div class="row">
+            <div class="col-md-12">
+                <h1 class="page-header">属性管理</h1>
+            </div>
+        </div><!--/.row-->
+        <div class="row">
+            <div class="col-md-12">
+                <div class="panel panel-default">
+                    <div class="panel-heading">{$attrUpdate|default="属性添加"} <a class="back-list" href="{:U('Attr/index')}">[属性列表]</a></div>
+                    <div class="panel-body">
+                        <form  id="attr-form" method="post" action="{:U('Attr/addhandle',array('id'=>$result[0]['id']))}">
+                            <fieldset>
+                                <!-- article input-->
+                                <div class="input-msg">
+                                    <div class="input-group carousel-attr">
+                                        <label class="input-group-addon system-label" for="attr-name">属性名称</label>
+                                        <input id="attr-name" name="name" type="text" placeholder="置顶"
+                                               class="form-control" value="{$result[0]['name']}">
+                                    </div>
+                                </div>
+                                <!-- 标题颜色 input-->
+                                <div class="input-msg">
+                                    <div class="input-group carousel-attr">
+                                        <label class="input-group-addon system-label" for="attr-color">标题颜色</label>
+                                        <input id="attr-color" name="color" type="text" placeholder="#FFFFFF"
+                                               class="form-control" value="{$result[0]['color']}">
+                                    </div>
+                                </div>
+                                <!-- Form actions -->
+                                <div class="form-group">
+                                    <div class="col-md-12 widget-right">
+                                        <button id="system-submit" type="submit" class="btn btn-success" onclick="return attrVerify();">提交</button>
+                                    </div>
+                                </div>
+                            </fieldset>
+
+                        </form>
+
+                    </div>
+                </div><!-- /.col-->
+            </div>
+            <!-- /.row -->
+        </div><!--/.main-->
+    </div>
+    <!--属性添加框 end-->
+</block>
+<block name="js">
+    <script src="__PUBLIC__/js/admin/attr.form.js"></script>
+</block>
