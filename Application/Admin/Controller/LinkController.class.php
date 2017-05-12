@@ -42,7 +42,7 @@ class LinkController extends BaseController
                     return false;
 
                 } else {
-                    if (mb_strlen($data[$k]['name']) < 2 || mb_strlen($data[$k]['name']) > 5) {
+                    if (mb_strlen($data[$k]['name'],'utf8') < 2 || mb_strlen($data[$k]['name'],'utf8') > 5) {
                         $res = array(
                             'status' => 2,
                             'msg' => '第' . ($k + 1) . '条名称长度必须是2-5个字符'
